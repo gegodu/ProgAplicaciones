@@ -50,7 +50,7 @@ public class DataPedidoTest {
         long result = instance.getId();
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
+        ////fail("The test case is a prototype.");
     }
 
     /**
@@ -63,7 +63,7 @@ public class DataPedidoTest {
         DataPedido instance = new DataPedido(1, "nickUsr", "j@j.com", "1/1/2000", "nickRest", null, 250.0, estados.ENVIADO);
         instance.setId(id);
         // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
+        ////fail("The test case is a prototype.");
     }
 
     /**
@@ -77,7 +77,7 @@ public class DataPedidoTest {
         String result = instance.getFecha();
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
+        ////fail("The test case is a prototype.");
     }
 
     /**
@@ -90,7 +90,7 @@ public class DataPedidoTest {
         DataPedido instance = new DataPedido(1, "nickUsr", "j@j.com", "1/1/2000", "nickRest", null, 250.0, estados.ENVIADO);
         instance.setFecha(fecha);
         // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
+        ////fail("The test case is a prototype.");
     }
 
     /**
@@ -104,7 +104,7 @@ public class DataPedidoTest {
         double result = instance.getPrecio_total();
         assertEquals(expResult, result, 250.0);
         // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
+        ////fail("The test case is a prototype.");
     }
 
     /**
@@ -117,7 +117,7 @@ public class DataPedidoTest {
         DataPedido instance = new DataPedido(1, "nickUsr", "j@j.com", "1/1/2000", "nickRest", null, 250.0, estados.ENVIADO);
         instance.setPrecio_total(precio_total);
         // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
+        ////fail("The test case is a prototype.");
     }
 
     /**
@@ -131,7 +131,7 @@ public class DataPedidoTest {
         estados result = instance.getEstado();
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
+        ////fail("The test case is a prototype.");
     }
 
     /**
@@ -144,7 +144,7 @@ public class DataPedidoTest {
         DataPedido instance = new DataPedido(1, "nickUsr", "j@j.com", "1/1/2000", "nickRest", null, 250.0, estados.ENVIADO);
         instance.setEstado(estado);
         // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
+        ////fail("The test case is a prototype.");
     }
 
     /**
@@ -158,7 +158,7 @@ public class DataPedidoTest {
         String result = instance.getNickUsr();
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
-//        fail("The test case is a prototype.");
+//        //fail("The test case is a prototype.");
     }
 
     /**
@@ -171,7 +171,7 @@ public class DataPedidoTest {
         DataPedido instance = new DataPedido(1, "nickUsr", "j@j.com", "1/1/2000", "nickRest", null, 250.0, estados.ENVIADO);
         instance.setNickUsr(nickUsr);
         // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
+        ////fail("The test case is a prototype.");
     }
 
     /**
@@ -185,7 +185,7 @@ public class DataPedidoTest {
         String result = instance.getMailUsr();
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
+        ////fail("The test case is a prototype.");
     }
 
     /**
@@ -198,7 +198,7 @@ public class DataPedidoTest {
         DataPedido instance = new DataPedido(1, "nickUsr", "j@j.com", "1/1/2000", "nickRest", null, 250.0, estados.ENVIADO);
         instance.setMailUsr(mailUsr);
         // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
+        ////fail("The test case is a prototype.");
     }
 
     /**
@@ -212,7 +212,7 @@ public class DataPedidoTest {
         String result = instance.getNickRest();
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
+        ////fail("The test case is a prototype.");
     }
 
     /**
@@ -225,7 +225,7 @@ public class DataPedidoTest {
         DataPedido instance = new DataPedido(1, "nickUsr", "j@j.com", "1/1/2000", "nickRest", null, 250.0, estados.ENVIADO);
         instance.setNickRest(nickRest);
         // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
+        ////fail("The test case is a prototype.");
     }
 
     /**
@@ -239,7 +239,7 @@ public class DataPedidoTest {
         Map result = instance.getColCarrito();
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
+        ////fail("The test case is a prototype.");
     }
 
     /**
@@ -252,7 +252,7 @@ public class DataPedidoTest {
         DataPedido instance = new DataPedido(1, "nickUsr", "j@j.com", "1/1/2000", "nickRest", null, 250.0, estados.ENVIADO);
         instance.setColCarrito(ColCarrito);
         // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
+        ////fail("The test case is a prototype.");
     }
 
     /**
@@ -265,7 +265,7 @@ public class DataPedidoTest {
         DataPedido instance = new DataPedido(1, "nickUsr", "j@j.com", "1/1/2000", "nickRest", null, 250.0, estados.ENVIADO);
         instance.setDatCarrito(dc);
         // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
+        ////fail("The test case is a prototype.");
     }
     
 }

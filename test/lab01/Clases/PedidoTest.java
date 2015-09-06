@@ -49,7 +49,7 @@ public class PedidoTest {
         long result = instance.getId();
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
+        ////fail("The test case is a prototype.");
     }
 
     /**
@@ -62,7 +62,7 @@ public class PedidoTest {
 //        Pedido instance = new Pedido(125.0);
 //        instance.setId(id);
 //        // TODO review the generated test code and remove the default call to fail.
-//        //fail("The test case is a prototype.");
+//        ////fail("The test case is a prototype.");
 //    }
 
     /**
@@ -76,7 +76,7 @@ public class PedidoTest {
 //        String result = instance.getFecha();
 //        assertEquals(expResult, result);
 //        // TODO review the generated test code and remove the default call to fail.
-//        //fail("The test case is a prototype.");
+//        ////fail("The test case is a prototype.");
 //    }
 
     /**
@@ -89,7 +89,7 @@ public class PedidoTest {
 //        Pedido instance = new Pedido(1, "1/1/2000", 125.00, estados.PREPARACION);
 //        instance.setFecha(fecha);
 //        // TODO review the generated test code and remove the default call to fail.
-//        //fail("The test case is a prototype.");
+//        ////fail("The test case is a prototype.");
 //    }
 
     /**
@@ -103,7 +103,7 @@ public class PedidoTest {
         double result = instance.getPrecio_total();
         assertEquals(expResult, result, 0.0);
         // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
+        ////fail("The test case is a prototype.");
     }
 
     /**
@@ -116,7 +116,7 @@ public class PedidoTest {
         Pedido instance = new Pedido(125.00);
         instance.setPrecio_total(precio_total);
         // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
+        ////fail("The test case is a prototype.");
     }
 
     /**
@@ -130,7 +130,7 @@ public class PedidoTest {
         estados result = instance.getEstado();
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
+        ////fail("The test case is a prototype.");
     }
 
     /**
@@ -145,7 +145,7 @@ public class PedidoTest {
         instance.setEstado(estados.ENVIADO);
         instance.getDataPedido().setEstado(estado);
         // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
+        ////fail("The test case is a prototype.");
     }
 
     /**
@@ -159,7 +159,7 @@ public class PedidoTest {
         DataPedido result = instance.getDataPedido();
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
+        ////fail("The test case is a prototype.");
     }
 
     /**
@@ -172,7 +172,7 @@ public class PedidoTest {
         Pedido instance = new Pedido(125.00);
         instance.setDataPedido(dp);
         // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
+        ////fail("The test case is a prototype.");
     }
 
     /**
@@ -186,7 +186,7 @@ public class PedidoTest {
         ArrayList<Producto_Stock> result = instance.getDataCarrito();
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
+        ////fail("The test case is a prototype.");
     }
 
     /**
@@ -199,7 +199,7 @@ public class PedidoTest {
         Pedido instance = new Pedido(125.00);
         instance.setCarrito(carrito);
         // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
+        ////fail("The test case is a prototype.");
     }
     
 }

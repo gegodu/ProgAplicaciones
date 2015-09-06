@@ -49,7 +49,7 @@ public class DataUsuarioTest {
         String result = instance.getNombre();
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
+        ////fail("The test case is a prototype.");
     }
 
     /**
@@ -62,7 +62,7 @@ public class DataUsuarioTest {
         DataUsuario instance = new DataUsuario("Juan", "j@j.com");
         instance.setNombre(nombre);
         // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
+        ////fail("The test case is a prototype.");
     }
 
     /**
@@ -76,7 +76,7 @@ public class DataUsuarioTest {
         String result = instance.getMail();
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
+        ////fail("The test case is a prototype.");
     }
 
     /**
@@ -89,7 +89,7 @@ public class DataUsuarioTest {
         DataUsuario instance = new DataUsuario("Juan", "j@j.com");
         instance.setMail(mail);
         // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
+        ////fail("The test case is a prototype.");
     }
     
 }

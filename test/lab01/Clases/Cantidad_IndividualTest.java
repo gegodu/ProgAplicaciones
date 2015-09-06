@@ -48,7 +48,7 @@ public class Cantidad_IndividualTest {
         int result = instance.getCantidad();
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
+        ////fail("The test case is a prototype.");
     }
 
     /**
@@ -62,7 +62,7 @@ public class Cantidad_IndividualTest {
         instance.setCantidad(cantidad);
         //assertEquals(cantidad, instance);
         // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
+        ////fail("The test case is a prototype.");
     }
 
     /**
@@ -76,7 +76,7 @@ public class Cantidad_IndividualTest {
         Individual result = instance.getProdIndividual();
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        //fail("The test case is a prototype.");
     }
 
     /**
@@ -89,7 +89,7 @@ public class Cantidad_IndividualTest {
         Cantidad_Individual instance = new Cantidad_Individual();
         instance.setProdIndividual(prodIndividual);
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        //fail("The test case is a prototype.");
     }
     
 }

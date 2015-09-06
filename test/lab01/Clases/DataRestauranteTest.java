@@ -33,7 +33,7 @@ public class DataRestauranteTest {
     
     @Before
     public void setUp() {
-        DataRestaurante instance = new DataRestaurante("nickname", "nombre", "j@j.com", "direccion", null, null);
+        DataRestaurante instance = new DataRestaurante("nickname", "nombre", "j@j.com", "direccion", null, null, null);
         DataRestaurante inst = new DataRestaurante();
     }
     
@@ -47,12 +47,12 @@ public class DataRestauranteTest {
     @Test
     public void testDataResAres() {
         System.out.println("dataResAres");
-        DataRestaurante instance = new DataRestaurante("nickname", "nombre", "j@j.com", "direccion", null, null);
+        DataRestaurante instance = new DataRestaurante("nickname", "nombre", "j@j.com", "direccion", null, null, null);
         Usuario expResult = null;
         Usuario result = instance.dataResAres();
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
+        ////fail("The test case is a prototype.");
     }
 
     /**
@@ -62,10 +62,10 @@ public class DataRestauranteTest {
     public void testSetNickname() {
         System.out.println("setNickname");
         String nickname = "nick";
-        DataRestaurante instance = new DataRestaurante("nickname", "nombre", "j@j.com", "direccion", null, null);
+        DataRestaurante instance = new DataRestaurante("nickname", "nombre", "j@j.com", "direccion", null, null, null);
         instance.setNickname(nickname);
         // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
+        ////fail("The test case is a prototype.");
     }
 
     /**
@@ -74,12 +74,12 @@ public class DataRestauranteTest {
     @Test
     public void testGetNickname() {
         System.out.println("getNickname");
-        DataRestaurante instance = new DataRestaurante("nickname", "nombre", "j@j.com", "direccion", null, null);
+        DataRestaurante instance = new DataRestaurante("nickname", "nombre", "j@j.com", "direccion", null, null, null);
         String expResult = "nick";
         String result = instance.getNickname();
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
+        ////fail("The test case is a prototype.");
     }
 
     /**
@@ -89,10 +89,10 @@ public class DataRestauranteTest {
     public void testSetNombre() {
         System.out.println("setNombre");
         String nombre = "pasiva";
-        DataRestaurante instance = new DataRestaurante("nickname", "nombre", "j@j.com", "direccion", null, null);
+        DataRestaurante instance = new DataRestaurante("nickname", "nombre", "j@j.com", "direccion", null, null, null);
         instance.setNombre(nombre);
         // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
+        ////fail("The test case is a prototype.");
     }
 
     /**
@@ -101,12 +101,12 @@ public class DataRestauranteTest {
     @Test
     public void testGetNombre() {
         System.out.println("getNombre");
-        DataRestaurante instance = new DataRestaurante("nickname", "nombre", "j@j.com", "direccion", null, null);
+        DataRestaurante instance = new DataRestaurante("nickname", "nombre", "j@j.com", "direccion", null, null, null);
         String expResult = "pasiva";
         String result = instance.getNombre();
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
+        ////fail("The test case is a prototype.");
     }
 
     /**
@@ -116,10 +116,10 @@ public class DataRestauranteTest {
     public void testSetEmail() {
         System.out.println("setEmail");
         String mail = "j@j.com";
-        DataRestaurante instance = new DataRestaurante("nickname", "nombre", "j@j.com", "direccion", null, null);
+        DataRestaurante instance = new DataRestaurante("nickname", "nombre", "j@j.com", "direccion", null, null, null);
         instance.setEmail(mail);
         // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
+        ////fail("The test case is a prototype.");
     }
 
     /**
@@ -128,12 +128,12 @@ public class DataRestauranteTest {
     @Test
     public void testGetEmail() {
         System.out.println("getEmail");
-        DataRestaurante instance = new DataRestaurante("nickname", "nombre", "j@j.com", "direccion", null, null);
+        DataRestaurante instance = new DataRestaurante("nickname", "nombre", "j@j.com", "direccion", null, null, null);
         String expResult = "j@j.com";
         String result = instance.getEmail();
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
+        ////fail("The test case is a prototype.");
     }
 
     /**
@@ -143,10 +143,10 @@ public class DataRestauranteTest {
     public void testSetDireccion() {
         System.out.println("setDireccion");
         String direccion = "Calle";
-        DataRestaurante instance = new DataRestaurante("nickname", "nombre", "j@j.com", "direccion", null, null);
+        DataRestaurante instance = new DataRestaurante("nickname", "nombre", "j@j.com", "direccion", null, null, null);
         instance.setDireccion(direccion);
         // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
+        ////fail("The test case is a prototype.");
     }
 
     /**
@@ -155,12 +155,12 @@ public class DataRestauranteTest {
     @Test
     public void testGetDireccion() {
         System.out.println("getDireccion");
-        DataRestaurante instance = new DataRestaurante("nickname", "nombre", "j@j.com", "direccion", null, null);
+        DataRestaurante instance = new DataRestaurante("nickname", "nombre", "j@j.com", "direccion", null, null, null);
         String expResult = "Calle";
         String result = instance.getDireccion();
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
+        ////fail("The test case is a prototype.");
     }
 
     /**
@@ -170,10 +170,10 @@ public class DataRestauranteTest {
     public void testSetLstImagen() {
         System.out.println("setLstImagen");
         ArrayList<String> lstImagen = null;
-        DataRestaurante instance = new DataRestaurante("nickname", "nombre", "j@j.com", "direccion", null, null);
+        DataRestaurante instance = new DataRestaurante("nickname", "nombre", "j@j.com", "direccion", null, null, null);
         instance.setLstImagen(lstImagen);
         // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
+        ////fail("The test case is a prototype.");
     }
 
     /**
@@ -182,12 +182,12 @@ public class DataRestauranteTest {
     @Test
     public void testGetLstImagen() {
         System.out.println("getLstImagen");
-        DataRestaurante instance = new DataRestaurante("nickname", "nombre", "j@j.com", "direccion", null, null);
+        DataRestaurante instance = new DataRestaurante("nickname", "nombre", "j@j.com", "direccion", null, null, null);
         ArrayList<String> expResult = null;
         ArrayList<String> result = instance.getLstImagen();
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
+        ////fail("The test case is a prototype.");
     }
 
     /**
@@ -197,10 +197,10 @@ public class DataRestauranteTest {
     public void testSetColCategoria() {
         System.out.println("setColCategoria");
         Map colCategoria = null;
-        DataRestaurante instance = new DataRestaurante("nickname", "nombre", "j@j.com", "direccion", null, null);
+        DataRestaurante instance = new DataRestaurante("nickname", "nombre", "j@j.com", "direccion", null, null, null);
         instance.setColCategoria(colCategoria);
         // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
+        ////fail("The test case is a prototype.");
     }
 
     /**
@@ -209,12 +209,12 @@ public class DataRestauranteTest {
     @Test
     public void testGetColCategoria() {
         System.out.println("getColCategoria");
-        DataRestaurante instance = new DataRestaurante("nickname", "nombre", "j@j.com", "direccion", null, null);
+        DataRestaurante instance = new DataRestaurante("nickname", "nombre", "j@j.com", "direccion", null, null, null);
         Map expResult = null;
         Map result = instance.getColCategoria();
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
+        ////fail("The test case is a prototype.");
     }
     
 }

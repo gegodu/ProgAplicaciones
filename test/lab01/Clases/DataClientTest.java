@@ -51,7 +51,7 @@ public class DataClientTest {
         String result = instance.getNickname();
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
+        ////fail("The test case is a prototype.");
     }
 
     /**
@@ -65,7 +65,7 @@ public class DataClientTest {
         String result = instance.getNombre();
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
+        ////fail("The test case is a prototype.");
     }
 
     /**
@@ -79,7 +79,7 @@ public class DataClientTest {
         Date result = instance.getfNac();
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
+        ////fail("The test case is a prototype.");
     }
 
     /**
@@ -93,7 +93,7 @@ public class DataClientTest {
         String result = instance.getApellido();
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
+        ////fail("The test case is a prototype.");
     }
 
     /**
@@ -107,7 +107,7 @@ public class DataClientTest {
         String result = instance.getDireccion();
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
+        ////fail("The test case is a prototype.");
     }
 
     /**
@@ -121,7 +121,7 @@ public class DataClientTest {
         String result = instance.getMail();
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
+        ////fail("The test case is a prototype.");
     }
 
     /**
@@ -135,7 +135,7 @@ public class DataClientTest {
         String result = instance.getImagen();
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
+        ////fail("The test case is a prototype.");
     }
 
     /**
@@ -148,7 +148,7 @@ public class DataClientTest {
         DataClient instance = new DataClient("nickname", "nombre", "apellido", null, "direccion", "j@j.com", "imagen");
         instance.setNickname(nickname);
         // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
+        ////fail("The test case is a prototype.");
     }
 
     /**
@@ -161,7 +161,7 @@ public class DataClientTest {
         DataClient instance = new DataClient("nickname", "nombre", "apellido", null, "direccion", "j@j.com", "imagen");
         instance.setNombre(nombre);
         // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
+        ////fail("The test case is a prototype.");
     }
 
     /**
@@ -174,7 +174,7 @@ public class DataClientTest {
         DataClient instance = new DataClient("nickname", "nombre", "apellido", null, "direccion", "j@j.com", "imagen");
         instance.setApellido(apellido);
         // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
+        ////fail("The test case is a prototype.");
     }
 
     /**
@@ -187,7 +187,7 @@ public class DataClientTest {
         DataClient instance = new DataClient("nickname", "nombre", "apellido", null, "direccion", "j@j.com", "imagen");
         instance.setfNac(fNac);
         // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
+        ////fail("The test case is a prototype.");
     }
 
     /**
@@ -200,7 +200,7 @@ public class DataClientTest {
         DataClient instance = new DataClient("nickname", "nombre", "apellido", null, "direccion", "j@j.com", "imagen");
         instance.setDireccion(direccion);
         // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
+        ////fail("The test case is a prototype.");
     }
 
     /**
@@ -213,7 +213,7 @@ public class DataClientTest {
         DataClient instance = new DataClient("nickname", "nombre", "apellido", null, "direccion", "j@j.com", "imagen");
         instance.setMail(mail);
         // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
+        ////fail("The test case is a prototype.");
     }
 
     /**
@@ -226,7 +226,7 @@ public class DataClientTest {
         DataClient instance = new DataClient("nickname", "nombre", "apellido", null, "direccion", "j@j.com", "imagen");
         instance.setImagen(imagen);
         // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
+        ////fail("The test case is a prototype.");
     }
     
 }

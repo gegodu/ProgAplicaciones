@@ -48,7 +48,7 @@ public class DataCant_IndividualTest {
         int result = instance.getCantidad();
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
+        ////fail("The test case is a prototype.");
     }
 
     /**
@@ -61,7 +61,7 @@ public class DataCant_IndividualTest {
         DataCant_Individual instance = new DataCant_Individual();
         instance.setCantidad(cantidad);
         // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
+        ////fail("The test case is a prototype.");
     }
     
 }

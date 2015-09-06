@@ -52,7 +52,7 @@ public class CtrlPedidoTest {
         CtrlPedido instance = new CtrlPedido();
         instance.setNickname(nick);
         // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
+        ////fail("The test case is a prototype.");
     }
 
     /**
@@ -66,7 +66,7 @@ public class CtrlPedidoTest {
         String result = instance.getNickname();
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
+        ////fail("The test case is a prototype.");
     }
 
     /**
@@ -79,7 +79,7 @@ public class CtrlPedidoTest {
         CtrlPedido instance = new CtrlPedido();
         instance.setCat(nombre);
         // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
+        ////fail("The test case is a prototype.");
     }
 
     /**
@@ -93,7 +93,7 @@ public class CtrlPedidoTest {
         String result = instance.getCat();
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
+        ////fail("The test case is a prototype.");
     }
 
     /**
@@ -107,7 +107,7 @@ public class CtrlPedidoTest {
         Map result = instance.getColDataCarrito();
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
+        ////fail("The test case is a prototype.");
     }
 
     /**
@@ -120,7 +120,7 @@ public class CtrlPedidoTest {
         CtrlPedido instance = new CtrlPedido();
         instance.setDataCarrito(dc);
         // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
+        ////fail("The test case is a prototype.");
     }
 
     /**
@@ -133,7 +133,7 @@ public class CtrlPedidoTest {
         CtrlPedido instance = new CtrlPedido();
         instance.setColDataCarrito(ColDataCarrito);
         // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
+        ////fail("The test case is a prototype.");
     }
 
     /**
@@ -147,7 +147,7 @@ public class CtrlPedidoTest {
         ArrayList<Producto_Stock> result = instance.getCarrito();
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
+        ////fail("The test case is a prototype.");
     }
 
     /**
@@ -160,7 +160,7 @@ public class CtrlPedidoTest {
         CtrlPedido instance = new CtrlPedido();
         instance.addCarrito(pd);
         // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
+        ////fail("The test case is a prototype.");
     }
 
     /**
@@ -173,7 +173,7 @@ public class CtrlPedidoTest {
         CtrlPedido instance = new CtrlPedido();
         instance.setCarrito(carrito);
         // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
+        ////fail("The test case is a prototype.");
     }
 
     /**
@@ -187,7 +187,7 @@ public class CtrlPedidoTest {
         Map result = instance.devListaDC();
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
+        ////fail("The test case is a prototype.");
     }
 
     /**
@@ -201,7 +201,7 @@ public class CtrlPedidoTest {
         Map result = instance.retColDCat();
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
+        ////fail("The test case is a prototype.");
     }
 
     /**
@@ -215,7 +215,7 @@ public class CtrlPedidoTest {
         Map result = instance.devListaDR();
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
+        ////fail("The test case is a prototype.");
     }
 
     /**
@@ -230,7 +230,7 @@ public class CtrlPedidoTest {
         boolean result = instance.setMemRestaurante(nickname);
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
+        ////fail("The test case is a prototype.");
     }
 
     /**
@@ -244,7 +244,7 @@ public class CtrlPedidoTest {
         DataProducto result = instance.devListaProductos();
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
+        ////fail("The test case is a prototype.");
     }
 
     /**
@@ -258,7 +258,7 @@ public class CtrlPedidoTest {
         CtrlPedido instance = new CtrlPedido();
         instance.selectProductos(nombre, cantidad);
         // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
+        ////fail("The test case is a prototype.");
     }
     
 }

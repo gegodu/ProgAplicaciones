@@ -32,7 +32,7 @@ public class PromocionalTest {
     
     @Before
     public void setUp() {
-        Promocional instance = new Promocional("nombre", "descripcion", 100.0, true, 20.0, null);
+        Promocional instance = new Promocional("nombre", "descripcion", true, 20.0, null, null);
     }
     
     @After
@@ -45,12 +45,12 @@ public class PromocionalTest {
     @Test
     public void testIsActiva() {
         System.out.println("isActiva");
-        Promocional instance = new Promocional("nombre", "descripcion", 100.0, true, 20.0, null);
+        Promocional instance = new Promocional("nombre", "descripcion", true, 20.0, null, null);
         boolean expResult = true;
         boolean result = instance.isActiva();
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
+        ////fail("The test case is a prototype.");
     }
 
     /**
@@ -60,10 +60,10 @@ public class PromocionalTest {
     public void testSetActiva() {
         System.out.println("setActiva");
         boolean activa = true;
-        Promocional instance = new Promocional("nombre", "descripcion", 100.0, true, 20.0, null);
+        Promocional instance = new Promocional("nombre", "descripcion", true, 20.0, null, null);
         instance.setActiva(activa);
         // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
+        ////fail("The test case is a prototype.");
     }
 
     /**
@@ -72,12 +72,12 @@ public class PromocionalTest {
     @Test
     public void testGetDescuento() {
         System.out.println("getDescuento");
-        Promocional instance = new Promocional("nombre", "descripcion", 100.0, true, 20.0, null);
+        Promocional instance = new Promocional("nombre", "descripcion", true, 20.0, null, null);
         double expResult = 20.0;
         double result = instance.getDescuento();
         assertEquals(expResult, result, 0.0);
         // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
+        ////fail("The test case is a prototype.");
     }
 
     /**
@@ -87,10 +87,10 @@ public class PromocionalTest {
     public void testSetDescuento() {
         System.out.println("setDescuento");
         double descuento = 20.0;
-        Promocional instance = new Promocional("nombre", "descripcion", 100.0, true, 20.0, null);
+        Promocional instance = new Promocional("nombre", "descripcion", true, 20.0, null, null);
         instance.setDescuento(descuento);
         // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
+        ////fail("The test case is a prototype.");
     }
 
     /**
@@ -99,12 +99,12 @@ public class PromocionalTest {
     @Test
     public void testGetDataPromo() {
         System.out.println("getDataPromo");
-        Promocional instance = new Promocional("nombre", "descripcion", 100.0, true, 20.0, null);
+        Promocional instance = new Promocional("nombre", "descripcion", true, 20.0, null, null);
         DataPromocional expResult = null;
         DataPromocional result = instance.getDataPromo();
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
+        ////fail("The test case is a prototype.");
     }
 
     /**
@@ -113,12 +113,12 @@ public class PromocionalTest {
     @Test
     public void testGetColCantIndividual() {
         System.out.println("getColCantIndividual");
-        Promocional instance = new Promocional("nombre", "descripcion", 100.0, true, 20.0, null);
+        Promocional instance = new Promocional("nombre", "descripcion", true, 20.0, null, null);
         ArrayList<Cantidad_Individual> expResult = null;
         ArrayList<Cantidad_Individual> result = instance.getColCantIndividual();
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
+        ////fail("The test case is a prototype.");
     }
 
     /**
@@ -128,10 +128,10 @@ public class PromocionalTest {
     public void testSetCantIndividual() {
         System.out.println("setCantIndividual");
         Cantidad_Individual cantInd = null;
-        Promocional instance = new Promocional("nombre", "descripcion", 100.0, true, 20.0, null);
+        Promocional instance = new Promocional("nombre", "descripcion", true, 20.0, null, null);
         instance.setCantIndividual(cantInd);
         // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
+        ////fail("The test case is a prototype.");
     }
 
     /**
@@ -141,10 +141,10 @@ public class PromocionalTest {
     public void testSetColCantIndividual() {
         System.out.println("setColCantIndividual");
         ArrayList<Cantidad_Individual> ColCantIndividual = null;
-        Promocional instance = new Promocional("nombre", "descripcion", 100.0, true, 20.0, null);
+        Promocional instance = new Promocional("nombre", "descripcion", true, 20.0, null, null);
         instance.setColCantIndividual(ColCantIndividual);
         // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
+        ////fail("The test case is a prototype.");
     }
 
     /**
@@ -154,12 +154,12 @@ public class PromocionalTest {
     public void testGetDataCarrito() {
         System.out.println("getDataCarrito");
         int cantidad = 0;
-        Promocional instance = new Promocional("nombre", "descripcion", 100.0, true, 20.0, null);
+        Promocional instance = new Promocional("nombre", "descripcion", true, 20.0, null, null);
         DataCarrito expResult = null;
         DataCarrito result = instance.getDataCarrito(cantidad);
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
+        ////fail("The test case is a prototype.");
     }
     
 }

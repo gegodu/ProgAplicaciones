@@ -32,6 +32,7 @@ public class SeleccionarRestaurante extends javax.swing.JInternalFrame {
     //DefaultTreeModel modelo;
     public SeleccionarRestaurante() {
         initComponents();
+        this.setTitle("Seleccionar restaurante");
         Fabrica fabrica = Fabrica.getInstance();
         ICU = fabrica.getICtrlUsuario();
         //modelo = (DefaultTreeModel) treeCat.getModel();

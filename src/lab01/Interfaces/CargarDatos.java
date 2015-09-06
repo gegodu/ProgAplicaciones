@@ -6,13 +6,18 @@
 package lab01.Interfaces;
 
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import lab01.Handlers.Fabrica;
 import lab01.Clases.DataCliente;
 import lab01.Clases.Cliente;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
+import lab01.Clases.DataIndividual;
+import lab01.Clases.DataPedido;
+import lab01.Clases.DataPromocional;
 import lab01.Clases.DataRestaurante;
+import lab01.Clases.Individual;
 
 /**
  *
@@ -67,19 +72,19 @@ public class CargarDatos extends javax.swing.JFrame {
       //CLIENTES
       
       ICU.ingresarDatos("costas", "gcostas@gmail.com","Gerardo",  "Av. Italia 2078");
-      ICU.registrarCliente("Costas", "/home/martin/NetBeansProjects/ProgAplicaciones/images/costas.jpeg", "15/11/1983");
+      ICU.registrarCliente("Costas", "/home/martin/NetBeansProjects/ProgAplicaciones/images/clientes/costas.jpeg", "15/11/1983");
       
       ICU.ingresarDatos("roro", "rcotelo@yahoo.com","Rodrigo", "Pdte. Berro 1548");
-      ICU.registrarCliente("Cotelo", "/home/martin/NetBeansProjects/ProgAplicaciones/images/roro.jpeg", "02/08/1975");
+      ICU.registrarCliente("Cotelo", "/home/martin/NetBeansProjects/ProgAplicaciones/images/clientes/roro.jpeg", "02/08/1975");
 
       ICU.ingresarDatos("chechi", "cgarrido@hotmail.com","Cecilia", "Gral. Urquiza 1548");
-      ICU.registrarCliente("Garrido", "/home/martin/NetBeansProjects/ProgAplicaciones/images/chechi.jpeg", "12/09/1987");
+      ICU.registrarCliente("Garrido", "/home/martin/NetBeansProjects/ProgAplicaciones/images/clientes/chechi.jpeg", "12/09/1987");
       
       ICU.ingresarDatos("andy", "agarcia@gmail.com","Andrea", "Dr. Manuel Albo 4512");
-      ICU.registrarCliente("García", "/home/martin/NetBeansProjects/ProgAplicaciones/images/andy.jpeg", "28/07/1951");
+      ICU.registrarCliente("García", "/home/martin/NetBeansProjects/ProgAplicaciones/images/clientes/andy.jpeg", "28/07/1951");
 
       ICU.ingresarDatos("weiss", "aweiss@gmail.com","Adrián", "Monte Caseros 5615");
-      ICU.registrarCliente("Weiss", "/home/martin/NetBeansProjects/ProgAplicaciones/images/generico.jpeg", "23/12/1978");
+      ICU.registrarCliente("Weiss", "/home/martin/NetBeansProjects/ProgAplicaciones/images/clientes/generico.jpeg", "23/12/1978");
   
       //CATEGORÍAS
       
@@ -100,10 +105,7 @@ public class CargarDatos extends javax.swing.JFrame {
       ICU.registrarCat("Sushi");
       
       //RESTAURANTES
-      
-      ICU.ingresarDatos("mera", "mera@hotmail.com", "Pizzería Mera", "Av 8 de octubre 2704");
-
-      
+  
       Map Categorias1 = new HashMap();
       Categorias1.put("Chivitos", ICU.retColCat().get("Chivitos"));
       Categorias1.put("Minutas", ICU.retColCat().get("Minutas"));
@@ -159,6 +161,66 @@ public class CargarDatos extends javax.swing.JFrame {
       res4.setNickname("winb");
       res4.setNombre("Wok in Box");
       ICU.registrarRestaurante(res4);
+      
+      //PRODUCTOS INDIVIDUALES
+      
+      DataIndividual di1 = new DataIndividual("Asado", "Asado a la parrilla", 225.0, null, 3);
+      ICProd.registrarProducto(di1, "mera", false);
+      
+      DataIndividual di2 = new DataIndividual("Milanesa de Carne", "Con lechuga, tomate, mayonesa y fritas", 180.0, "/home/martin/NetBeansProjects/ProgAplicaciones/images/productos/milanesa-de-carne.jpg", 0);
+      ICProd.registrarProducto(di2, "mera", false);
+      
+      DataIndividual di3 = new DataIndividual("Chivito canadiense", "Lomito, jamón, muzza, tomate, aceitunas, panceta, huevo, morrón y fritas", 305.0, "/home/martin/NetBeansProjects/ProgAplicaciones/images/productos/chivito-canadiense.jpg", 4);
+      ICProd.registrarProducto(di3, "mera", false);
+      
+      DataIndividual di4 = new DataIndividual("Pizza 2 gustos", "Pizza con dos gustos a elección", 130.0, null, 0);
+      ICProd.registrarProducto(di4, "mera", false);
+
+      DataIndividual di5 = new DataIndividual("Chivito al plato", "Ensalada rusa, mixta, huevo, jamón, muzza, panceta, aceitunas y fritas", 324.0, null, 0);
+      ICProd.registrarProducto(di5, "rossell", false);
+      
+      DataIndividual di6 = new DataIndividual("Milanesa a caballo", "Milanesa con dos huevos fritos acompañado de fritas", 270.0, "/home/martin/NetBeansProjects/ProgAplicaciones/images/productos/milanesa-a-caballo.jpg", 0);
+      ICProd.registrarProducto(di6, "rossell", false);
+      
+      DataIndividual di7 = new DataIndividual("Pizza 2 gustos", "Pizza con dos gustos a elección", 103.0, null, 0);
+      ICProd.registrarProducto(di7, "rossell", false);
+      
+      DataIndividual di8 = new DataIndividual("Agnolotis", "Agnolotis de jamón y queso", 225.0, "/home/martin/NetBeansProjects/ProgAplicaciones/images/productos/agnolotis.jpg", 1);
+      ICProd.registrarProducto(di8, "rossell", false);
+      
+      DataIndividual di9 = new DataIndividual("Empanada de carne", "Carne, aceitunas, huevo duro, condimentos", 44.0, "/home/martin/NetBeansProjects/ProgAplicaciones/images/productos/empanada-de-carne.jpg", 1);
+      ICProd.registrarProducto(di9, "bocatti", false);      
+
+      DataIndividual di10 = new DataIndividual("Empanada Americana", "Carne, panceta y huevo duro", 44.0, null, 2);
+      ICProd.registrarProducto(di10, "bocatti", false);
+      
+      DataIndividual di11 = new DataIndividual("Empanada QyC", "Empanada de Queso y Cebolla", 44.0, "/home/martin/NetBeansProjects/ProgAplicaciones/images/productos/empanada-qyc.jpg", 2);
+      ICProd.registrarProducto(di11, "bocatti", false);
+      
+      DataIndividual di12 = new DataIndividual("Empanada Capresse", "Queso, tomate y albahaca", 44.0, "/home/martin/NetBeansProjects/ProgAplicaciones/images/productos/empanada-capresse.jpg", 0);
+      ICProd.registrarProducto(di12, "bocatti", false);      
+      
+      DataIndividual di13 = new DataIndividual("Thai wok", "Cerdo, calamares, sweet chili, salsa de ostras, maní y jugo de lima, acompañado de tallarines o arroz.", 240.0, "/home/martin/NetBeansProjects/ProgAplicaciones/images/productos/tahi-wok.jpg", 2);
+      ICProd.registrarProducto(di13, "winb", false);
+      
+      DataIndividual di14 = new DataIndividual("China wok", "Tempura de cerdo, vegetales mixtos, almendras, salsa de soja y naranja, acompañado de tallarines o arroz.", 240.0, null, 3);
+      ICProd.registrarProducto(di14, "winb", false);  
+      
+      DataIndividual di15 = new DataIndividual("Classic wok de pollo", "Pollo, vegetales mixtos, salsa agridulce, salsa de soja y cebollita de verdeo, acompañado de tallarines o arroz.", 230.0, "/home/martin/NetBeansProjects/ProgAplicaciones/images/productos/classic-wok-de-pollo.jpg", 0);
+      ICProd.registrarProducto(di15, "winb", false);
+      
+      DataIndividual di16 = new DataIndividual("Classic wok de cerdo", "Cerdo, vegetales mixtos, jengibre, salsa de ostras y ralladura de lima, acompañado de tallarines o arroz.", 230.0, null, 0);
+      ICProd.registrarProducto(di16, "winb", false);
+      
+      //PRODUCTOS INDIVIDUALES
+
+      Map Individuales1 = new HashMap();
+      Individuales1.put(di3, di4);
+      DataPromocional dp1 = new DataPromocional(true, 20.0, "ChiviPizza", "Chivito y Pizza", WIDTH, null, null);
+      
+      //PEDIDOS
+      
+     
     }
     
     public static void main(String args[]) {

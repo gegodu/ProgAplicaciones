@@ -49,7 +49,7 @@ public class DataPromocionalTest {
         DataPromocional instance = new DataPromocional(true, 20.0, "nombre", "descripcion", 125.0, "imagen", null);
         instance.setActiva(activa);
         // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
+        ////fail("The test case is a prototype.");
     }
 
     /**
@@ -63,7 +63,7 @@ public class DataPromocionalTest {
         boolean result = instance.getActiva();
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
+        ////fail("The test case is a prototype.");
     }
 
     /**
@@ -77,7 +77,7 @@ public class DataPromocionalTest {
         String result = instance.getDataNombre();
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
+        ////fail("The test case is a prototype.");
     }
 
     /**
@@ -90,7 +90,7 @@ public class DataPromocionalTest {
         DataPromocional instance = new DataPromocional(true, 20.0, "nombre", "descripcion", 125.0, "imagen", null);
         instance.setDataNombre(DataNombre);
         // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
+        ////fail("The test case is a prototype.");
     }
 
     /**
@@ -104,7 +104,7 @@ public class DataPromocionalTest {
         String result = instance.getDataDescripcion();
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
+        ////fail("The test case is a prototype.");
     }
 
     /**
@@ -117,7 +117,7 @@ public class DataPromocionalTest {
         DataPromocional instance = new DataPromocional(true, 20.0, "nombre", "descripcion", 125.0, "imagen", null);
         instance.setDataDescripcion(DataDescripcion);
         // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
+        ////fail("The test case is a prototype.");
     }
 
     /**
@@ -131,7 +131,7 @@ public class DataPromocionalTest {
         double result = instance.getDataPrecio();
         assertEquals(expResult, result, 125.0);
         // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
+        ////fail("The test case is a prototype.");
     }
 
     /**
@@ -144,7 +144,7 @@ public class DataPromocionalTest {
         DataPromocional instance = new DataPromocional(true, 20.0, "nombre", "descripcion", 125.0, "imagen", null);
         instance.setDataPrecio(DataPrecio);
         // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
+        ////fail("The test case is a prototype.");
     }
 
     /**
@@ -158,7 +158,7 @@ public class DataPromocionalTest {
         String result = instance.getDataImagen();
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
+        ////fail("The test case is a prototype.");
     }
 
     /**
@@ -171,7 +171,7 @@ public class DataPromocionalTest {
         DataPromocional instance = new DataPromocional(true, 20.0, "nombre", "descripcion", 125.0, "imagen", null);
         instance.setDataImagen(DataImagen);
         // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
+        ////fail("The test case is a prototype.");
     }
 
     /**
@@ -184,7 +184,7 @@ public class DataPromocionalTest {
         DataPromocional instance = new DataPromocional(true, 20.0, "nombre", "descripcion", 125.0, "imagen", null);
         instance.setDescuento(descuento);
         // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
+        ////fail("The test case is a prototype.");
     }
 
     /**
@@ -198,7 +198,7 @@ public class DataPromocionalTest {
         double result = instance.getDescuento();
         assertEquals(expResult, result, 20.0);
         // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
+        ////fail("The test case is a prototype.");
     }
 
     /**
@@ -212,7 +212,7 @@ public class DataPromocionalTest {
         Map result = instance.getColDatIndividual();
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
+        ////fail("The test case is a prototype.");
     }
 
     /**
@@ -225,7 +225,7 @@ public class DataPromocionalTest {
         DataPromocional instance = new DataPromocional(true, 20.0, "nombre", "descripcion", 125.0, "imagen", null);
         instance.setDatIndividual(di);
         // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
+        ////fail("The test case is a prototype.");
     }
 
     /**
@@ -238,7 +238,7 @@ public class DataPromocionalTest {
         DataPromocional instance = new DataPromocional(true, 20.0, "nombre", "descripcion", 125.0, "imagen", null);
         instance.setColDataIndividual(ColDatIndividual);
         // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
+        ////fail("The test case is a prototype.");
     }
     
 }

@@ -14,8 +14,12 @@ import javax.swing.JScrollPane;
 import javax.swing.tree.DefaultMutableTreeNode;
 import javax.swing.tree.DefaultTreeModel;
 import javax.swing.JTree;
+import lab01.Clases.DataRestaurante;
 import lab01.Clases.Restaurante;
+import lab01.Clases.Usuario;
 import lab01.Handlers.Fabrica;
+import lab01.Clases.Categoria;
+import lab01.Clases.DataCategoria;
 
 /**
  *
@@ -26,79 +30,54 @@ public class SeleccionarRestaurante extends javax.swing.JInternalFrame {
         
     
     //DefaultTreeModel modelo;
-<span class="nc" id="L29">    public SeleccionarRestaurante() {</span>
-<span class="nc" id="L30">        initComponents();</span>
-<span class="nc" id="L31">        Fabrica fabrica = Fabrica.getInstance();</span>
-<span class="nc" id="L32">        ICU = fabrica.getICtrlUsuario();</span>
+<span class="nc" id="L33">    public SeleccionarRestaurante() {</span>
+<span class="nc" id="L34">        initComponents();</span>
+<span class="nc" id="L35">        this.setTitle(&quot;Seleccionar restaurante&quot;);</span>
+<span class="nc" id="L36">        Fabrica fabrica = Fabrica.getInstance();</span>
+<span class="nc" id="L37">        ICU = fabrica.getICtrlUsuario();</span>
         //modelo = (DefaultTreeModel) treeCat.getModel();
-<span class="nc" id="L34">        modelRest = new DefaultListModel();</span>
-<span class="nc" id="L35">        this.cargarTree();</span>
-<span class="nc" id="L36">        this.cargarRestaurantesTree();</span>
-<span class="nc" id="L37">    }</span>
+<span class="nc" id="L39">        modelRest = new DefaultListModel();</span>
+<span class="nc" id="L40">        Raiz = new DefaultMutableTreeNode(&quot;Restaurantes&quot;);</span>
+<span class="nc" id="L41">        modelo = new DefaultTreeModel(Raiz);</span>
+<span class="nc" id="L42">        JTree tree = new JTree(modelo);</span>
+<span class="nc" id="L43">        this.cargarTree();</span>
+        //this.cargarRestaurantesTree();
+<span class="nc" id="L45">    }</span>
     DefaultListModel modelRest;
+    DefaultMutableTreeNode Raiz;// = new DefaultMutableTreeNode(&quot;Restaurantes&quot;);
+    DefaultTreeModel modelo; //= new DefaultTreeModel(Raiz);
+
 
     
     public void cargarTree(){
-        Map cats; 
-<span class="nc" id="L43">        cats=ICU.retColCat();</span>
-<span class="nc" id="L44">        DefaultMutableTreeNode raiz = new DefaultMutableTreeNode(&quot;Categorias&quot;);</span>
-        //raiz = (DefaultMutableTreeNode)treeCat.getLastSelectedPathComponent();
-<span class="nc bnc" id="L46" title="All 2 branches missed.">        if (raiz != null){</span>
-<span class="nc" id="L47">            Iterator it = cats.entrySet().iterator();</span>
-<span class="nc bnc" id="L48" title="All 2 branches missed.">            while(it.hasNext()){</span>
-<span class="nc" id="L49">                Map.Entry map = (Map.Entry) it.next();</span>
-                //raiz.insert(new DefaultMutableTreeNode(map.getKey().toString()), 0);
-<span class="nc" id="L51">                DefaultMutableTreeNode nodo = new DefaultMutableTreeNode(map.getKey().toString());</span>
-<span class="nc" id="L52">                raiz.add(nodo);</span>
-<span class="nc" id="L53">            }  </span>
-<span class="nc" id="L54">            DefaultTreeModel model = new DefaultTreeModel(raiz);</span>
-<span class="nc" id="L55">            this.treeCat.setModel(model);</span>
-//            modelo.reload(raiz);
+<span class="nc" id="L53">        Map Ccat=ICU.retColCat();    </span>
+<span class="nc bnc" id="L54" title="All 2 branches missed.">        if (Raiz != null){</span>
+<span class="nc" id="L55">            Iterator itC = Ccat.entrySet().iterator();</span>
+<span class="nc bnc" id="L56" title="All 2 branches missed.">            while(itC.hasNext()){</span>
+<span class="nc" id="L57">                Map.Entry mapC = (Map.Entry) itC.next();</span>
+<span class="nc" id="L58">                DataCategoria cat= (DataCategoria)mapC.getValue();</span>
+<span class="nc" id="L59">                DefaultMutableTreeNode nodo = new DefaultMutableTreeNode(cat.getNombre());</span>
+<span class="nc" id="L60">                modelo.insertNodeInto(nodo, Raiz, 0);</span>
+<span class="nc" id="L61">                Map Crest = ICU.listaUsuPorCategoria(cat.getNombre());</span>
+<span class="nc bnc" id="L62" title="All 2 branches missed.">                if(Crest.isEmpty()){</span>
+<span class="nc" id="L63">                    DefaultMutableTreeNode vacio = new DefaultMutableTreeNode(&quot;Sin restaurantes&quot;);</span>
+<span class="nc" id="L64">                    modelo.insertNodeInto(vacio, nodo, 0);</span>
+<span class="nc" id="L65">                    }</span>
+                else{
+<span class="nc" id="L67">                    Iterator itR = Crest.entrySet().iterator();</span>
+<span class="nc bnc" id="L68" title="All 2 branches missed.">                    while(itR.hasNext()){</span>
+<span class="nc" id="L69">                        Map.Entry mapR = (Map.Entry) itR.next();</span>
+<span class="nc" id="L70">                        String c= (String)mapR.getKey();</span>
+<span class="nc" id="L71">                        DefaultMutableTreeNode Res = new DefaultMutableTreeNode(c);</span>
+<span class="nc" id="L72">                        modelo.insertNodeInto(Res, nodo, 0);</span>
+<span class="nc" id="L73">                    }</span>
+                }
+<span class="nc" id="L75">            }  </span>
+<span class="nc" id="L76">            this.treeCat.setModel(modelo);</span>
         }
-//        DefaultMutableTreeNode raiz = new DefaultMutableTreeNode(&quot;Categorias&quot;);
-//        DefaultTreeModel modelo = new DefaultTreeModel(raiz);
-//        
-//        Iterator it = cats.entrySet().iterator();
-//        while(it.hasNext()){
-//            Map.Entry map = (Map.Entry) it.next();
-//        }
-<span class="nc" id="L65">    }</span>
+<span class="nc" id="L78">    }</span>
     
-    public void cargarRestaurantesTree(){
-<span class="nc" id="L68">        Fabrica fabrica = Fabrica.getInstance();</span>
-<span class="nc" id="L69">        ICU = fabrica.getICtrlUsuario();</span>
-<span class="nc" id="L70">        Map lstRest = ICU.listaDataRestaurantes();   </span>
-                
-//String cli = this.cliente.getText();
-<span class="nc" id="L73">        Iterator rest = lstRest.entrySet().iterator();</span>
-<span class="nc bnc" id="L74" title="All 2 branches missed.">        while(rest.hasNext()){</span>
-<span class="nc" id="L75">            Map.Entry mapRest = (Map.Entry) rest.next();</span>
-<span class="nc" id="L76">            Restaurante r = ICU.getRestauranteByNickname(mapRest.getKey().toString());</span>
-<span class="nc" id="L77">            Map catsRest = r.obtenerColeccion();</span>
-<span class="nc" id="L78">            Iterator itCatRest = catsRest.entrySet().iterator();</span>
-        //Iterator itret = ret.entrySet().iterator();
-            Map cats;
-<span class="nc" id="L81">            cats=ICU.retColCat();</span>
-<span class="nc bnc" id="L82" title="All 2 branches missed.">            while(itCatRest.hasNext()){</span>
-<span class="nc" id="L83">                Iterator it = cats.entrySet().iterator();</span>
-<span class="nc bnc" id="L84" title="All 2 branches missed.">                while(it.hasNext()){</span>
-<span class="nc" id="L85">                    Map.Entry mapCats = (Map.Entry) it.next();</span>
-<span class="nc bnc" id="L86" title="All 2 branches missed.">                    if (itCatRest.hasNext()){</span>
-<span class="nc" id="L87">                        Map.Entry mapCatRest = (Map.Entry) itCatRest.next();</span>
-<span class="nc bnc" id="L88" title="All 2 branches missed.">                    if (mapCatRest.getKey() == mapCats.getKey()){</span>
-<span class="nc" id="L89">                        DefaultMutableTreeNode raiz = new DefaultMutableTreeNode(mapCats.getKey().toString());</span>
-<span class="nc" id="L90">                        DefaultMutableTreeNode nodoRes = new DefaultMutableTreeNode(mapCatRest.getKey().toString());</span>
-<span class="nc" id="L91">                        raiz.add(nodoRes);</span>
-<span class="nc" id="L92">                        DefaultTreeModel model = new DefaultTreeModel(raiz);</span>
-<span class="nc" id="L93">                        this.treeCat.setModel(model);</span>
-                    }
-
-                    }
-<span class="nc" id="L97">                }</span>
-           
-<span class="nc" id="L99">            }</span>
-<span class="nc" id="L100">        }</span>
-<span class="nc" id="L101">    }</span>
+    
     
     
     
@@ -106,43 +85,62 @@ public class SeleccionarRestaurante extends javax.swing.JInternalFrame {
     // &lt;editor-fold defaultstate=&quot;collapsed&quot; desc=&quot;Generated Code&quot;&gt;//GEN-BEGIN:initComponents
     private void initComponents() {
 
-<span class="nc" id="L109">        jPanel1 = new javax.swing.JPanel();</span>
-<span class="nc" id="L110">        jScrollPane1 = new javax.swing.JScrollPane();</span>
-<span class="nc" id="L111">        treeCat = new javax.swing.JTree();</span>
+<span class="nc" id="L88">        jPanel1 = new javax.swing.JPanel();</span>
+<span class="nc" id="L89">        jScrollPane1 = new javax.swing.JScrollPane();</span>
+<span class="nc" id="L90">        treeCat = new javax.swing.JTree();</span>
 
-<span class="nc" id="L113">        javax.swing.tree.DefaultMutableTreeNode treeNode1 = new javax.swing.tree.DefaultMutableTreeNode(&quot;Categorias&quot;);</span>
-<span class="nc" id="L114">        treeCat.setModel(new javax.swing.tree.DefaultTreeModel(treeNode1));</span>
-<span class="nc" id="L115">        jScrollPane1.setViewportView(treeCat);</span>
+<span class="nc" id="L92">        setClosable(true);</span>
+<span class="nc" id="L93">        setIconifiable(true);</span>
+<span class="nc" id="L94">        setMaximizable(true);</span>
+<span class="nc" id="L95">        setResizable(true);</span>
 
-<span class="nc" id="L117">        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);</span>
-<span class="nc" id="L118">        jPanel1.setLayout(jPanel1Layout);</span>
-<span class="nc" id="L119">        jPanel1Layout.setHorizontalGroup(</span>
+<span class="nc" id="L97">        javax.swing.tree.DefaultMutableTreeNode treeNode1 = new javax.swing.tree.DefaultMutableTreeNode(&quot;Categorias&quot;);</span>
+<span class="nc" id="L98">        treeCat.setModel(new javax.swing.tree.DefaultTreeModel(treeNode1));</span>
+<span class="nc" id="L99">        treeCat.addTreeSelectionListener(new javax.swing.event.TreeSelectionListener() {</span>
+            public void valueChanged(javax.swing.event.TreeSelectionEvent evt) {
+<span class="nc" id="L101">                treeCatValueChanged(evt);</span>
+<span class="nc" id="L102">            }</span>
+        });
+<span class="nc" id="L104">        jScrollPane1.setViewportView(treeCat);</span>
+
+<span class="nc" id="L106">        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);</span>
+<span class="nc" id="L107">        jPanel1.setLayout(jPanel1Layout);</span>
+<span class="nc" id="L108">        jPanel1Layout.setHorizontalGroup(</span>
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(75, 75, 75)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 172, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(147, Short.MAX_VALUE))
+                .addContainerGap(152, Short.MAX_VALUE))
         );
-<span class="nc" id="L126">        jPanel1Layout.setVerticalGroup(</span>
+<span class="nc" id="L115">        jPanel1Layout.setVerticalGroup(</span>
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 282, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+                .addGap(0, 47, Short.MAX_VALUE))
         );
 
-<span class="nc" id="L133">        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());</span>
-<span class="nc" id="L134">        getContentPane().setLayout(layout);</span>
-<span class="nc" id="L135">        layout.setHorizontalGroup(</span>
+<span class="nc" id="L122">        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());</span>
+<span class="nc" id="L123">        getContentPane().setLayout(layout);</span>
+<span class="nc" id="L124">        layout.setHorizontalGroup(</span>
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
-<span class="nc" id="L139">        layout.setVerticalGroup(</span>
+<span class="nc" id="L128">        layout.setVerticalGroup(</span>
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
-<span class="nc" id="L144">        pack();</span>
-<span class="nc" id="L145">    }// &lt;/editor-fold&gt;//GEN-END:initComponents</span>
+<span class="nc" id="L133">        pack();</span>
+<span class="nc" id="L134">    }// &lt;/editor-fold&gt;//GEN-END:initComponents</span>
+
+    private void treeCatValueChanged(javax.swing.event.TreeSelectionEvent evt) {//GEN-FIRST:event_treeCatValueChanged
+        // TODO add your handling code here:
+<span class="nc" id="L138">        DefaultMutableTreeNode sel = (DefaultMutableTreeNode)treeCat.getLastSelectedPathComponent();</span>
+<span class="nc" id="L139">        String rest = (String)sel.getUserObject(); </span>
+<span class="nc" id="L140">        VerRestaurante verR = new VerRestaurante(rest);</span>
+<span class="nc" id="L141">            Console.EscritorioMenu.add(verR);</span>
+<span class="nc" id="L142">            verR.show();</span>
+<span class="nc" id="L143">    }//GEN-LAST:event_treeCatValueChanged</span>
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

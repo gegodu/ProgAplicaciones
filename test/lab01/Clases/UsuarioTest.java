@@ -48,7 +48,7 @@ public class UsuarioTest {
         String result = instance.getNickname();
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
+        ////fail("The test case is a prototype.");
     }
 
     /**
@@ -62,7 +62,7 @@ public class UsuarioTest {
         String result = instance.getNombre();
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
+        ////fail("The test case is a prototype.");
     }
 
     /**
@@ -76,7 +76,7 @@ public class UsuarioTest {
         String result = instance.getMail();
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
+        ////fail("The test case is a prototype.");
     }
 
     /**
@@ -90,7 +90,7 @@ public class UsuarioTest {
         String result = instance.getDireccion();
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
+        ////fail("The test case is a prototype.");
     }
 
     /**
@@ -103,7 +103,7 @@ public class UsuarioTest {
         Usuario instance = new UsuarioImpl();
         instance.getTipoUsuario(tu);
         // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
+        ////fail("The test case is a prototype.");
     }
 
     /**
@@ -116,7 +116,7 @@ public class UsuarioTest {
         Usuario instance = new UsuarioImpl();
         instance.setNickname(nickname);
         // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
+        ////fail("The test case is a prototype.");
     }
 
     /**
@@ -129,7 +129,7 @@ public class UsuarioTest {
         Usuario instance = new UsuarioImpl();
         instance.setNombre(nombre);
         // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
+        ////fail("The test case is a prototype.");
     }
 
     /**
@@ -142,7 +142,7 @@ public class UsuarioTest {
         Usuario instance = new UsuarioImpl();
         instance.setMail(mail);
         // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
+        ////fail("The test case is a prototype.");
     }
 
     /**
@@ -155,7 +155,7 @@ public class UsuarioTest {
         Usuario instance = new UsuarioImpl();
         instance.setDireccion(direccion);
         // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
+        ////fail("The test case is a prototype.");
     }
 
     /**
@@ -168,7 +168,7 @@ public class UsuarioTest {
         Usuario instance = new UsuarioImpl();
         instance.setImagen(imagen);
         // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
+        ////fail("The test case is a prototype.");
     }
 
     /**
@@ -182,7 +182,7 @@ public class UsuarioTest {
         String result = instance.getImagen();
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
+        ////fail("The test case is a prototype.");
     }
 
     public class UsuarioImpl extends Usuario {

@@ -15,8 +15,8 @@ public class Individual extends Producto {
 //        super();
 //        // crear con los campos de los tb
 //    }
-    public Individual(String nombre, String descripcion, double precio, int cantidad) {
-        super(nombre,descripcion,cantidad);
+    public Individual(String nombre, String descripcion, double precio, int cantidad, String img) {
+        super(nombre,descripcion,cantidad, img);
         this.setPrecio(precio);
         /*this.setNombre(nombre);
         this.setDescripcion(descripcion);

@@ -51,7 +51,7 @@ public class ClienteTest {
         String result = instancia.getApellido();
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
+        ////fail("The test case is a prototype.");
     }
 
     /**
@@ -65,7 +65,7 @@ public class ClienteTest {
         String result = instancia.getImagen();
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
+        ////fail("The test case is a prototype.");
     }
 
     /**
@@ -78,7 +78,7 @@ public class ClienteTest {
         Cliente instancia = new Cliente("nickname", "Juan", "j@j.com", "Calle", "Perez", "hola", "1/1/2000");
         instancia.setApellido(apellido);
         // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
+        ////fail("The test case is a prototype.");
     }
 
     /**
@@ -91,7 +91,7 @@ public class ClienteTest {
         Cliente instancia = new Cliente("nickname", "Juan", "j@j.com", "Calle", "Perez", "hola", "1/1/2000");
         instancia.setImagen(img);
         // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
+        ////fail("The test case is a prototype.");
     }
 
     /**
@@ -105,7 +105,7 @@ public class ClienteTest {
         String result = instancia.getFecha();
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
+        ////fail("The test case is a prototype.");
     }
 
     /**
@@ -118,7 +118,7 @@ public class ClienteTest {
         Cliente instancia = new Cliente("nickname", "Juan", "j@j.com", "Calle", "Perez", "hola", "1/1/2000");
         instancia.setFecha(fecha);
         // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
+        ////fail("The test case is a prototype.");
     }
 
     /**
@@ -132,7 +132,7 @@ public class ClienteTest {
         String result = instancia.getMail();
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
+        ////fail("The test case is a prototype.");
     }
 
     /**
@@ -146,7 +146,7 @@ public class ClienteTest {
         String result = instancia.getNickname();
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
+        ////fail("The test case is a prototype.");
     }
 
     /**
@@ -160,7 +160,7 @@ public class ClienteTest {
         DataCliente result = instance.ClienteADC();
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
+        ////fail("The test case is a prototype.");
     }
     
 }

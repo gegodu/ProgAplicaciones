@@ -49,40 +49,43 @@ public class ListarClientesVer extends javax.swing.JInternalFrame {
 <span class="nc" id="L49">        jScrollPane1 = new javax.swing.JScrollPane();</span>
 <span class="nc" id="L50">        jtabla = new javax.swing.JTable();</span>
 
-<span class="nc" id="L52">        setResizable(true);</span>
-<span class="nc" id="L53">        setTitle(&quot;Seleccione el Cliente que desea ver&quot;);</span>
-<span class="nc" id="L54">        setPreferredSize(new java.awt.Dimension(500, 500));</span>
+<span class="nc" id="L52">        setClosable(true);</span>
+<span class="nc" id="L53">        setIconifiable(true);</span>
+<span class="nc" id="L54">        setMaximizable(true);</span>
+<span class="nc" id="L55">        setResizable(true);</span>
+<span class="nc" id="L56">        setTitle(&quot;Seleccione el Cliente que desea ver&quot;);</span>
+<span class="nc" id="L57">        setPreferredSize(new java.awt.Dimension(500, 500));</span>
 
-<span class="nc" id="L56">        jSeleccione.setText(&quot;Seleccione un cliente:&quot;);</span>
+<span class="nc" id="L59">        jSeleccione.setText(&quot;Seleccione un cliente:&quot;);</span>
 
-<span class="nc" id="L58">        jbListo.setText(&quot;Listo&quot;);</span>
-<span class="nc" id="L59">        jbListo.addActionListener(new java.awt.event.ActionListener() {</span>
+<span class="nc" id="L61">        jbListo.setText(&quot;Listo&quot;);</span>
+<span class="nc" id="L62">        jbListo.addActionListener(new java.awt.event.ActionListener() {</span>
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-<span class="nc" id="L61">                jbListoActionPerformed(evt);</span>
-<span class="nc" id="L62">            }</span>
+<span class="nc" id="L64">                jbListoActionPerformed(evt);</span>
+<span class="nc" id="L65">            }</span>
         });
 
-<span class="nc" id="L65">        jtabla.setModel(new javax.swing.table.DefaultTableModel(</span>
+<span class="nc" id="L68">        jtabla.setModel(new javax.swing.table.DefaultTableModel(</span>
             new Object [][] {
 
             },
             new String [] {
                 &quot;Email&quot;, &quot;Nickname&quot;
             }
-<span class="nc" id="L72">        ) {</span>
-<span class="nc" id="L73">            Class[] types = new Class [] {</span>
+<span class="nc" id="L75">        ) {</span>
+<span class="nc" id="L76">            Class[] types = new Class [] {</span>
                 java.lang.String.class, java.lang.String.class
             };
 
             public Class getColumnClass(int columnIndex) {
-<span class="nc" id="L78">                return types [columnIndex];</span>
+<span class="nc" id="L81">                return types [columnIndex];</span>
             }
         });
-<span class="nc" id="L81">        jScrollPane1.setViewportView(jtabla);</span>
+<span class="nc" id="L84">        jScrollPane1.setViewportView(jtabla);</span>
 
-<span class="nc" id="L83">        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());</span>
-<span class="nc" id="L84">        getContentPane().setLayout(layout);</span>
-<span class="nc" id="L85">        layout.setHorizontalGroup(</span>
+<span class="nc" id="L86">        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());</span>
+<span class="nc" id="L87">        getContentPane().setLayout(layout);</span>
+<span class="nc" id="L88">        layout.setHorizontalGroup(</span>
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
@@ -93,7 +96,7 @@ public class ListarClientesVer extends javax.swing.JInternalFrame {
                 .addComponent(jbListo)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
-<span class="nc" id="L96">        layout.setVerticalGroup(</span>
+<span class="nc" id="L99">        layout.setVerticalGroup(</span>
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(62, 62, 62)
@@ -109,33 +112,33 @@ public class ListarClientesVer extends javax.swing.JInternalFrame {
                 .addContainerGap())
         );
 
-<span class="nc" id="L112">        pack();</span>
-<span class="nc" id="L113">    }// &lt;/editor-fold&gt;//GEN-END:initComponents</span>
+<span class="nc" id="L115">        pack();</span>
+<span class="nc" id="L116">    }// &lt;/editor-fold&gt;//GEN-END:initComponents</span>
 
     private void jbListoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbListoActionPerformed
-<span class="nc" id="L116">        String nick=String.valueOf(modelo.getValueAt(jtabla.getSelectedRow(),1));</span>
-<span class="nc" id="L117">        ICU.setNickname(nick);</span>
-<span class="nc" id="L118">        this.dispose();</span>
+<span class="nc" id="L119">        String nick=String.valueOf(modelo.getValueAt(jtabla.getSelectedRow(),1));</span>
+<span class="nc" id="L120">        ICU.setNickname(nick);</span>
+<span class="nc" id="L121">        this.dispose();</span>
         //nueva pantalla seleccionar Categoria
-<span class="nc" id="L120">        VerCliente ver = new VerCliente();</span>
-<span class="nc" id="L121">        Console.EscritorioMenu.add(ver);</span>
-<span class="nc" id="L122">        ver.show();</span>
-<span class="nc" id="L123">    }//GEN-LAST:event_jbListoActionPerformed</span>
+<span class="nc" id="L123">        VerCliente ver = new VerCliente();</span>
+<span class="nc" id="L124">        Console.EscritorioMenu.add(ver);</span>
+<span class="nc" id="L125">        ver.show();</span>
+<span class="nc" id="L126">    }//GEN-LAST:event_jbListoActionPerformed</span>
 
     private void cargarTabla(){
     Map Datas; 
-<span class="nc" id="L127">        Datas=ICU.devListaDC();</span>
-<span class="nc" id="L128">        Iterator it = Datas.entrySet().iterator();</span>
-<span class="nc" id="L129">        String lista[]=new String[2];</span>
-<span class="nc bnc" id="L130" title="All 2 branches missed.">        while(it.hasNext()){</span>
-<span class="nc" id="L131">            Map.Entry map = (Map.Entry) it.next();</span>
-<span class="nc" id="L132">            DataCliente dc = (DataCliente) map.getValue();</span>
+<span class="nc" id="L130">        Datas=ICU.devListaDC();</span>
+<span class="nc" id="L131">        Iterator it = Datas.entrySet().iterator();</span>
+<span class="nc" id="L132">        String lista[]=new String[2];</span>
+<span class="nc bnc" id="L133" title="All 2 branches missed.">        while(it.hasNext()){</span>
+<span class="nc" id="L134">            Map.Entry map = (Map.Entry) it.next();</span>
+<span class="nc" id="L135">            DataCliente dc = (DataCliente) map.getValue();</span>
             //lista[0]=model.getSize()-1;
-<span class="nc" id="L134">            lista[0]=dc.getMail();</span>
-<span class="nc" id="L135">            lista[1]=dc.getNickname();</span>
-<span class="nc" id="L136">            modelo.insertRow((int)jtabla.getRowCount(), lista);</span>
-<span class="nc" id="L137">        }</span>
-<span class="nc" id="L138">    }</span>
+<span class="nc" id="L137">            lista[0]=dc.getMail();</span>
+<span class="nc" id="L138">            lista[1]=dc.getNickname();</span>
+<span class="nc" id="L139">            modelo.insertRow((int)jtabla.getRowCount(), lista);</span>
+<span class="nc" id="L140">        }</span>
+<span class="nc" id="L141">    }</span>
     
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

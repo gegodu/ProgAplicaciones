@@ -30,13 +30,15 @@ public class VerProducto extends javax.swing.JInternalFrame {
      * Creates new form VerProducto
      */
     ICtrlUsuario ICU;
-<span class="nc" id="L33">    public VerProducto() {</span>
-<span class="nc" id="L34">        initComponents();</span>
-<span class="nc" id="L35">        Fabrica fabrica = Fabrica.getInstance();</span>
-<span class="nc" id="L36">        ICU = fabrica.getICtrlUsuario();</span>
-<span class="nc" id="L37">        modelo = (DefaultTableModel)jTabla.getModel();</span>
-<span class="nc" id="L38">        cargarTabla();</span>
-<span class="nc" id="L39">    }</span>
+<span class="nc" id="L33">    int fila = 0;</span>
+<span class="nc" id="L34">    public VerProducto() {</span>
+<span class="nc" id="L35">        initComponents();</span>
+<span class="nc" id="L36">        Fabrica fabrica = Fabrica.getInstance();</span>
+<span class="nc" id="L37">        ICU = fabrica.getICtrlUsuario();</span>
+<span class="nc" id="L38">        modelo = (DefaultTableModel)jTabla.getModel();</span>
+        
+<span class="nc" id="L40">        cargarTabla();</span>
+<span class="nc" id="L41">    }</span>
     DefaultTableModel modelo;
     /**
      * This method is called from within the constructor to initialize the form.
@@ -47,12 +49,17 @@ public class VerProducto extends javax.swing.JInternalFrame {
     // &lt;editor-fold defaultstate=&quot;collapsed&quot; desc=&quot;Generated Code&quot;&gt;//GEN-BEGIN:initComponents
     private void initComponents() {
 
-<span class="nc" id="L50">        jScrollPane1 = new javax.swing.JScrollPane();</span>
-<span class="nc" id="L51">        jTabla = new javax.swing.JTable();</span>
+<span class="nc" id="L52">        jScrollPane1 = new javax.swing.JScrollPane();</span>
+<span class="nc" id="L53">        jTabla = new javax.swing.JTable();</span>
 
-<span class="nc" id="L53">        jTabla.setModel(new javax.swing.table.DefaultTableModel(</span>
+<span class="nc" id="L55">        setClosable(true);</span>
+<span class="nc" id="L56">        setIconifiable(true);</span>
+<span class="nc" id="L57">        setMaximizable(true);</span>
+<span class="nc" id="L58">        setResizable(true);</span>
+
+<span class="nc" id="L60">        jTabla.setModel(new javax.swing.table.DefaultTableModel(</span>
             new Object [][] {
-                {&quot;martin&quot;, &quot;castro&quot;},
+                {&quot;&quot;, &quot;&quot;},
                 {null, null},
                 {null, null},
                 {null, null},
@@ -74,32 +81,32 @@ public class VerProducto extends javax.swing.JInternalFrame {
             new String [] {
                 &quot;Producto&quot;, &quot;Restaurante&quot;
             }
-<span class="nc" id="L77">        ) {</span>
-<span class="nc" id="L78">            Class[] types = new Class [] {</span>
+<span class="nc" id="L84">        ) {</span>
+<span class="nc" id="L85">            Class[] types = new Class [] {</span>
                 java.lang.String.class, java.lang.String.class
             };
 
             public Class getColumnClass(int columnIndex) {
-<span class="nc" id="L83">                return types [columnIndex];</span>
+<span class="nc" id="L90">                return types [columnIndex];</span>
             }
         });
-<span class="nc" id="L86">        jTabla.addMouseListener(new java.awt.event.MouseAdapter() {</span>
+<span class="nc" id="L93">        jTabla.addMouseListener(new java.awt.event.MouseAdapter() {</span>
             public void mousePressed(java.awt.event.MouseEvent evt) {
-<span class="nc" id="L88">                jTablaMousePressed(evt);</span>
-<span class="nc" id="L89">            }</span>
+<span class="nc" id="L95">                jTablaMousePressed(evt);</span>
+<span class="nc" id="L96">            }</span>
         });
-<span class="nc" id="L91">        jScrollPane1.setViewportView(jTabla);</span>
+<span class="nc" id="L98">        jScrollPane1.setViewportView(jTabla);</span>
 
-<span class="nc" id="L93">        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());</span>
-<span class="nc" id="L94">        getContentPane().setLayout(layout);</span>
-<span class="nc" id="L95">        layout.setHorizontalGroup(</span>
+<span class="nc" id="L100">        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());</span>
+<span class="nc" id="L101">        getContentPane().setLayout(layout);</span>
+<span class="nc" id="L102">        layout.setHorizontalGroup(</span>
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 235, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(31, Short.MAX_VALUE))
         );
-<span class="nc" id="L102">        layout.setVerticalGroup(</span>
+<span class="nc" id="L109">        layout.setVerticalGroup(</span>
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
@@ -107,42 +114,42 @@ public class VerProducto extends javax.swing.JInternalFrame {
                 .addContainerGap(28, Short.MAX_VALUE))
         );
 
-<span class="nc" id="L110">        pack();</span>
-<span class="nc" id="L111">    }// &lt;/editor-fold&gt;//GEN-END:initComponents</span>
+<span class="nc" id="L117">        pack();</span>
+<span class="nc" id="L118">    }// &lt;/editor-fold&gt;//GEN-END:initComponents</span>
 
     private void jTablaMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTablaMousePressed
         // TODO add your handling code here:
-<span class="nc" id="L115">        String nick = null;</span>
-<span class="nc" id="L116">        String nomProd = null;</span>
+<span class="nc" id="L122">        String nick = null;</span>
+<span class="nc" id="L123">        String nomProd = null;</span>
         DataRestaurante dr;
-<span class="nc" id="L118">        Restaurante res= null;</span>
-<span class="nc" id="L119">        Producto prod = null;</span>
-<span class="nc" id="L120">        Map colProd = null;</span>
+<span class="nc" id="L125">        Restaurante res= null;</span>
+<span class="nc" id="L126">        Producto prod = null;</span>
+<span class="nc" id="L127">        Map colProd = null;</span>
         DataProducto dp;
-<span class="nc" id="L122">        JTable tab = (JTable)evt.getSource();</span>
-<span class="nc" id="L123">        Point point = evt.getPoint();</span>
-<span class="nc" id="L124">        int fila = tab.rowAtPoint(point);</span>
-<span class="nc bnc" id="L125" title="All 2 branches missed.">        if(evt.getClickCount() == 1){</span>
-<span class="nc" id="L126">            nomProd = jTabla.getValueAt(fila,0).toString();</span>
-<span class="nc" id="L127">            nick = jTabla.getValueAt(fila, 1).toString();</span>
+<span class="nc" id="L129">        JTable tab = (JTable)evt.getSource();</span>
+<span class="nc" id="L130">        Point point = evt.getPoint();</span>
+<span class="nc" id="L131">        int fila = tab.rowAtPoint(point);</span>
+<span class="nc bnc" id="L132" title="All 2 branches missed.">        if(evt.getClickCount() == 1){</span>
+<span class="nc" id="L133">            nomProd = jTabla.getValueAt(fila,0).toString();</span>
+<span class="nc" id="L134">            nick = jTabla.getValueAt(fila, 1).toString();</span>
         }
         try{
-<span class="nc" id="L130">            res = ICU.getRestauranteByNickname(nick);</span>
+<span class="nc" id="L137">            res = ICU.getRestauranteByNickname(nick);</span>
              
-<span class="nc" id="L132">        }catch(Exception e){</span>
-<span class="nc" id="L133">            JOptionPane.showMessageDialog(null, &quot;El restaurante no está en el sistema&quot;,&quot;Error&quot;,JOptionPane.ERROR_MESSAGE);</span>
-<span class="nc" id="L134">        }</span>
+<span class="nc" id="L139">        }catch(Exception e){</span>
+<span class="nc" id="L140">            JOptionPane.showMessageDialog(null, &quot;El restaurante no está en el sistema&quot;,&quot;Error&quot;,JOptionPane.ERROR_MESSAGE);</span>
+<span class="nc" id="L141">        }</span>
         
-<span class="nc" id="L136">        prod = res.getProducto(nomProd);</span>
+<span class="nc" id="L143">        prod = res.getProducto(nomProd);</span>
         //dp = prod.ProductoADP();
         
-<span class="nc" id="L139">        VerInfoProd verinfop = new VerInfoProd(prod);</span>
-<span class="nc" id="L140">        verinfop.setVisible(true);</span>
+<span class="nc" id="L146">        VerInfoProd verinfop = new VerInfoProd(prod);</span>
+<span class="nc" id="L147">        verinfop.setVisible(true);</span>
         
         
         
         
-<span class="nc" id="L145">    }//GEN-LAST:event_jTablaMousePressed</span>
+<span class="nc" id="L152">    }//GEN-LAST:event_jTablaMousePressed</span>
 //
 //      try {
 //           int fila = jTabla.getSelectedRow();
@@ -155,27 +162,28 @@ public class VerProducto extends javax.swing.JInternalFrame {
 //       }
     
      private void cargarTabla(){
-<span class="nc" id="L158">        Map Datas = new HashMap(); </span>
-<span class="nc" id="L159">        Datas = ICU.listaDataRestaurantes();</span>
-<span class="nc" id="L160">        Iterator it = Datas.entrySet().iterator();</span>
-<span class="nc" id="L161">        String lista[]=new String[2];</span>
-<span class="nc bnc" id="L162" title="All 2 branches missed.">        while(it.hasNext()){</span>
-<span class="nc" id="L163">            Map.Entry map = (Map.Entry) it.next();</span>
-<span class="nc" id="L164">            DataRestaurante dr = (DataRestaurante) map.getValue();</span>
+<span class="nc" id="L165">        Map Datas = new HashMap(); </span>
+<span class="nc" id="L166">        Datas = ICU.listaDataRestaurantes();</span>
+<span class="nc" id="L167">        Iterator it = Datas.entrySet().iterator();</span>
+<span class="nc" id="L168">        String lista[]=new String[2];</span>
+<span class="nc bnc" id="L169" title="All 2 branches missed.">        while(it.hasNext()){</span>
+<span class="nc" id="L170">            Map.Entry map = (Map.Entry) it.next();</span>
+<span class="nc" id="L171">            DataRestaurante dr = (DataRestaurante) map.getValue();</span>
             //lista[0]=model.getSize()-1;
-<span class="nc" id="L166">            lista[1]=dr.getNickname();</span>
-<span class="nc" id="L167">            Map colProd = dr.getColProducto();</span>
-<span class="nc" id="L168">            Iterator it2 = colProd.entrySet().iterator();</span>
-<span class="nc bnc" id="L169" title="All 2 branches missed.">            while(it2.hasNext()){</span>
-<span class="nc" id="L170">                Map.Entry mapcol = (Map.Entry) it2.next();</span>
-<span class="nc" id="L171">                String nomProd = mapcol.getKey().toString();</span>
-<span class="nc" id="L172">                lista[0]=nomProd;</span>
-<span class="nc" id="L173">                modelo.insertRow((int)jTabla.getRowCount(), lista);</span>
+<span class="nc" id="L173">            lista[1]=dr.getNickname();</span>
+<span class="nc" id="L174">            Map colProd = dr.getColProducto();</span>
+<span class="nc" id="L175">            Iterator it2 = colProd.entrySet().iterator();</span>
+<span class="nc bnc" id="L176" title="All 2 branches missed.">            while(it2.hasNext()){</span>
+<span class="nc" id="L177">                Map.Entry mapcol = (Map.Entry) it2.next();</span>
+<span class="nc" id="L178">                String nomProd = mapcol.getKey().toString();</span>
+<span class="nc" id="L179">                lista[0]=nomProd;</span>
+<span class="nc" id="L180">                modelo.insertRow((int)fila, lista);</span>
+<span class="nc" id="L181">                fila++;</span>
                 
-<span class="nc" id="L175">            }</span>
+<span class="nc" id="L183">            }</span>
                         
-<span class="nc" id="L177">        }</span>
-<span class="nc" id="L178">    }</span>
+<span class="nc" id="L185">        }</span>
+<span class="nc" id="L186">    }</span>
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTabla;

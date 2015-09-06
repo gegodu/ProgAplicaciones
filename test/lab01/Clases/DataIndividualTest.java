@@ -48,7 +48,7 @@ public class DataIndividualTest {
         String result = instance.getDataNombre();
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
+        ////fail("The test case is a prototype.");
     }
 
     /**
@@ -61,7 +61,7 @@ public class DataIndividualTest {
         DataIndividual instance = new DataIndividual("pizza", "rica", 125, "hola", 8);
         instance.setDataNombre(nombre);
         // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
+        ////fail("The test case is a prototype.");
     }
 
     /**
@@ -75,7 +75,7 @@ public class DataIndividualTest {
         String result = instance.getDataDescripcion();
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
+        ////fail("The test case is a prototype.");
     }
 
     /**
@@ -88,7 +88,7 @@ public class DataIndividualTest {
         DataIndividual instance = new DataIndividual();
         instance.setDataDescripcion(descripcion);
         // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
+        ////fail("The test case is a prototype.");
     }
 
     /**
@@ -102,7 +102,7 @@ public class DataIndividualTest {
         double result = instance.getDataPrecio();
         assertEquals(expResult, result, 125.0);
         // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
+        ////fail("The test case is a prototype.");
     }
 
     /**
@@ -115,7 +115,7 @@ public class DataIndividualTest {
         DataIndividual instance = new DataIndividual();
         instance.setDataPrecio(precio);
         // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
+        ////fail("The test case is a prototype.");
     }
 
     /**
@@ -129,7 +129,7 @@ public class DataIndividualTest {
         String result = instance.getDataImagen();
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
+        ////fail("The test case is a prototype.");
     }
 
     /**
@@ -142,7 +142,7 @@ public class DataIndividualTest {
         DataIndividual instance = new DataIndividual("pizza", "rica", 125, "hola", 8);
         instance.setDataImagen(imagen);
         // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
+        ////fail("The test case is a prototype.");
     }
 
     /**
@@ -156,7 +156,7 @@ public class DataIndividualTest {
         int result = instance.getCantidad();
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
+        ////fail("The test case is a prototype.");
     }
 
     /**
@@ -169,7 +169,7 @@ public class DataIndividualTest {
         DataIndividual instance = new DataIndividual("pizza", "rica", 125, "hola", 8);
         instance.setCantidad(cantidad);
         // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
+        ////fail("The test case is a prototype.");
     }
     
 }

@@ -49,7 +49,7 @@ public class HCategoriaTest {
         HCategoria result = HCategoria.getinstance();
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
+        ////fail("The test case is a prototype.");
     }
 
     /**
@@ -62,7 +62,7 @@ public class HCategoriaTest {
         HCategoria instance = null;
         instance.addCategoria(c);
         // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
+        ////fail("The test case is a prototype.");
     }
 
     /**
@@ -77,7 +77,7 @@ public class HCategoriaTest {
         boolean result = instance.member(nombre);
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
+        ////fail("The test case is a prototype.");
     }
 
     /**
@@ -91,7 +91,7 @@ public class HCategoriaTest {
         Map result = instance.obtenerColeccion();
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
+        ////fail("The test case is a prototype.");
     }
     
 }

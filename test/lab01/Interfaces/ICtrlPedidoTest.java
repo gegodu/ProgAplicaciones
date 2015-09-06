@@ -51,7 +51,7 @@ public class ICtrlPedidoTest {
         ICtrlPedido instance = new ICtrlPedidoImpl();
         instance.setNickname(nick);
         // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
+        ////fail("The test case is a prototype.");
     }
 
     /**
@@ -64,7 +64,7 @@ public class ICtrlPedidoTest {
         ICtrlPedido instance = new ICtrlPedidoImpl();
         instance.setCat(nombre);
         // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
+        ////fail("The test case is a prototype.");
     }
 
     /**
@@ -78,7 +78,7 @@ public class ICtrlPedidoTest {
         String result = instance.getCat();
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
+        ////fail("The test case is a prototype.");
     }
 
     /**
@@ -92,7 +92,7 @@ public class ICtrlPedidoTest {
         String result = instance.getNickname();
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
+        ////fail("The test case is a prototype.");
     }
 
     /**
@@ -106,7 +106,7 @@ public class ICtrlPedidoTest {
         Map result = instance.devListaDC();
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
+        ////fail("The test case is a prototype.");
     }
 
     /**
@@ -120,7 +120,7 @@ public class ICtrlPedidoTest {
         Map result = instance.devListaDR();
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
+        ////fail("The test case is a prototype.");
     }
 
     /**
@@ -135,7 +135,7 @@ public class ICtrlPedidoTest {
         boolean result = instance.setMemRestaurante(nickname);
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
+        ////fail("The test case is a prototype.");
     }
 
     /**
@@ -149,7 +149,7 @@ public class ICtrlPedidoTest {
         Map result = instance.retColDCat();
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
+        ////fail("The test case is a prototype.");
     }
 
     /**
@@ -163,7 +163,7 @@ public class ICtrlPedidoTest {
         DataProducto result = instance.devListaProductos();
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
+        ////fail("The test case is a prototype.");
     }
 
     /**
@@ -178,7 +178,7 @@ public class ICtrlPedidoTest {
         ICtrlPedido instance = new ICtrlPedidoImpl();
         instance.selectProductos(nombre, cantidad);
         // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
+        ////fail("The test case is a prototype.");
     }
 
     
@@ -258,6 +258,11 @@ public class ICtrlPedidoTest {
 
         @Override
         public void actualizarEPedido(String nickname, double id, estados estado) throws Exception {
+            throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        }
+
+        @Override
+        public Map listDataPedidosPorProducto(String nomProd) {
             throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
         }
     }

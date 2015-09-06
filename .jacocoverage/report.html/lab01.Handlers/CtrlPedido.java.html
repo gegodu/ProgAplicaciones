@@ -245,5 +245,41 @@ public class CtrlPedido implements ICtrlPedido {
 <span class="nc" id="L245">        Cliente user = hu.obtenerUsuario(nickname);</span>
 <span class="nc" id="L246">        user.actualizarEstadoPedido(id, estado);</span>
 <span class="nc" id="L247">    }</span>
+    
+    @Override
+    public Map listDataPedidosPorProducto(String nomProd){
+<span class="nc" id="L251">        Map aux = new HashMap();</span>
+<span class="nc" id="L252">        HUsuario hu = HUsuario.getinstance();</span>
+<span class="nc" id="L253">        Iterator user = hu.obtenerColeccion().entrySet().iterator();</span>
+<span class="nc bnc" id="L254" title="All 2 branches missed.">        while(user.hasNext()){</span>
+<span class="nc" id="L255">            Map.Entry users = (Map.Entry) user.next();</span>
+<span class="nc bnc" id="L256" title="All 2 branches missed.">            if(users.getValue() instanceof Cliente){</span>
+<span class="nc" id="L257">                Cliente client = (Cliente)users.getValue();</span>
+<span class="nc" id="L258">                Iterator pedidos = client.getPedidos().entrySet().iterator();</span>
+<span class="nc bnc" id="L259" title="All 2 branches missed.">                while(pedidos.hasNext()){</span>
+<span class="nc" id="L260">                    Map.Entry p = (Map.Entry) pedidos.next();</span>
+<span class="nc" id="L261">                    Pedido ped = (Pedido)p.getValue();</span>
+<span class="nc" id="L262">                    Iterator DatCarritos = ped.getDataPedido().getColCarrito().entrySet().iterator();</span>
+<span class="nc" id="L263">                    Map.Entry DatCarrito = (Map.Entry) DatCarritos.next();</span>
+<span class="nc" id="L264">                    DataCarrito dc = (DataCarrito)DatCarrito.getValue();</span>
+<span class="nc bnc" id="L265" title="All 2 branches missed.">                    if(dc.getNomProd() == nomProd){</span>
+<span class="nc" id="L266">                        aux.put(ped.getDataPedido().getId(), ped.getDataPedido()); </span>
+                    }
+                    else{
+                        continue;
+                    }
+                    
+<span class="nc" id="L272">                }</span>
+            }
+<span class="nc" id="L274">        }</span>
+<span class="nc" id="L275">        return aux;</span>
+    }
+
+
+
+
+
+
+
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.5.201505241946</span></div></body></html>

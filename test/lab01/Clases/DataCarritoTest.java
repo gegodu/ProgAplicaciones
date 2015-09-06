@@ -49,7 +49,7 @@ public class DataCarritoTest {
         String result = instance.getNomProd();
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        //fail("The test case is a prototype.");
     }
 
     /**
@@ -62,7 +62,7 @@ public class DataCarritoTest {
         DataCarrito instance = new DataCarrito("nomProd", true, 8, 125.0);
         instance.setNomProd(nomProd);
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        //fail("The test case is a prototype.");
     }
 
     /**
@@ -76,7 +76,7 @@ public class DataCarritoTest {
         boolean result = instance.getPromo();
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        //fail("The test case is a prototype.");
     }
 
     /**
@@ -89,7 +89,7 @@ public class DataCarritoTest {
         DataCarrito instance = new DataCarrito("nomProd", true, 8, 125.0);
         instance.setPromo(promo);
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        //fail("The test case is a prototype.");
     }
 
     /**
@@ -103,7 +103,7 @@ public class DataCarritoTest {
         int result = instance.getCantidad();
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        //fail("The test case is a prototype.");
     }
 
     /**
@@ -116,7 +116,7 @@ public class DataCarritoTest {
         DataCarrito instance = new DataCarrito("nomProd", true, 8, 125.0);
         instance.setCantidad(cantidad);
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        //fail("The test case is a prototype.");
     }
 
     /**
@@ -130,7 +130,7 @@ public class DataCarritoTest {
         double result = instance.getPrecio();
         assertEquals(expResult, result, 0.0);
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        //fail("The test case is a prototype.");
     }
 
     /**
@@ -143,7 +143,7 @@ public class DataCarritoTest {
         DataCarrito instance = new DataCarrito("nomProd", true, 8, 125.0);
         instance.setPrecio(precio);
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        //fail("The test case is a prototype.");
     }
     
 }

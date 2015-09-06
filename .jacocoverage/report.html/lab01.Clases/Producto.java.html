@@ -9,17 +9,17 @@ package lab01.Clases;
  *
  * @author gera
  */
-public abstract class Producto {
+public abstract class  Producto {
     private String nombre;
     private String descripcion;
     //private double precio;
     private String imagen;
     private Producto_Stock prodStock;
 
-<span class="fc" id="L19">    public Producto(String nombre, String descripcion, double precio, int cantidad){</span>
+<span class="fc" id="L19">    public Producto(String nombre, String descripcion, /*double precio,*/ int cantidad){</span>
 <span class="fc" id="L20">        this.nombre=nombre;</span>
 <span class="fc" id="L21">        this.descripcion=descripcion;</span>
-<span class="fc" id="L22">        this.prodStock = new Producto_Stock(cantidad,precio);</span>
+<span class="fc" id="L22">        this.prodStock = new Producto_Stock(cantidad/*,precio*/);</span>
 <span class="fc" id="L23">    }</span>
 
     public String getNombre() {
@@ -57,9 +57,9 @@ public abstract class Producto {
     public double getPrecio(){
 <span class="fc" id="L58">         return this.prodStock.getPrecio();</span>
     }
-     
+    
     public void setPrecio(double precio){
-<span class="fc" id="L62">         this.prodStock.setPrecio(precio);</span>
+<span class="fc" id="L62">        this.getProdStock().setPrecio(precio);</span>
 <span class="fc" id="L63">    }</span>
      
     public Producto_Stock getProdStock(){

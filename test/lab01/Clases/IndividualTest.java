@@ -43,12 +43,12 @@ public class IndividualTest {
     @Test
     public void testGetDataIndividual() {
         System.out.println("getDataIndividual");
-        Individual instance = new Individual("pizza", "rica", 200.0, 8);
+        Individual instance = new Individual("pizza", "rica", 200.0, 8, null);
         DataIndividual expResult = new DataIndividual("pizza", "rica", 200.0, 8);
         DataIndividual result = instance.getDataIndividual();
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
+        ////fail("The test case is a prototype.");
     }
 
     /**
@@ -58,12 +58,12 @@ public class IndividualTest {
     public void testGetDataCarrito() {
         System.out.println("getDataCarrito");
         int cantidad = 0;
-        Individual instance = new Individual("pizza", "rica", 200.0, 8);
+        Individual instance = new Individual("pizza", "rica", 200.0, 8, null);
         DataCarrito expResult = null;
         DataCarrito result = instance.getDataCarrito(cantidad);
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
+        ////fail("The test case is a prototype.");
     }
     
 }

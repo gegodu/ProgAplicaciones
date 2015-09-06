@@ -12,26 +12,31 @@ package lab01.Clases;
 public class Producto_Stock {
     private int cantidad;
     private double precio;
+    private Producto prod;
 
-<span class="fc" id="L16">    public Producto_Stock(int cantidad, double precio) {</span>
-<span class="fc" id="L17">        this.cantidad = cantidad;</span>
-<span class="fc" id="L18">        this.precio = precio;</span>
-<span class="fc" id="L19">    }</span>
+    public Producto getProd() {
+<span class="nc" id="L18">        return prod;</span>
+    }
+
+<span class="fc" id="L21">    public Producto_Stock(int cantidad/*, double precio*/) {</span>
+<span class="fc" id="L22">        this.cantidad = cantidad;</span>
+        //this.precio = precio;
+<span class="fc" id="L24">    }</span>
 
     public int getCantidad() {
-<span class="fc" id="L22">        return cantidad;</span>
+<span class="fc" id="L27">        return cantidad;</span>
     }
 
     public void setCantidad(int cantidad) {
-<span class="fc" id="L26">        this.cantidad = cantidad;</span>
-<span class="fc" id="L27">    }</span>
+<span class="fc" id="L31">        this.cantidad = cantidad;</span>
+<span class="fc" id="L32">    }</span>
     
     public double getPrecio(){
-<span class="fc" id="L30">        return this.precio;</span>
+<span class="fc" id="L35">        return this.precio;</span>
     } 
     
     public void setPrecio(double precio){
-<span class="fc" id="L34">        this.precio = precio;</span>
-<span class="fc" id="L35">    }</span>
+<span class="fc" id="L39">        this.precio = precio;</span>
+<span class="fc" id="L40">    }</span>
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.5.201505241946</span></div></body></html>

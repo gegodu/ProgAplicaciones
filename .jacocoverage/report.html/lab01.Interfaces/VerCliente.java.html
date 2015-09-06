@@ -11,6 +11,7 @@ import lab01.Clases.Cliente;
 import lab01.Handlers.Fabrica;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
+import javax.swing.table.DefaultTableModel;
 import lab01.Clases.DataCliente;
 
 
@@ -19,15 +20,17 @@ import lab01.Clases.DataCliente;
  * @author gonzalo
  */
 public class VerCliente extends javax.swing.JInternalFrame {
-    private ICtrlUsuario ICU; 
+    private ICtrlUsuario ICU;
+    private ICtrlPedido ICPed;
     /**
      * Creates new form VerCliente
      */
-<span class="nc" id="L26">    public VerCliente() {</span>
-<span class="nc" id="L27">        initComponents();</span>
-<span class="nc" id="L28">        Fabrica fabrica = Fabrica.getInstance();</span>
-<span class="nc" id="L29">        ICU = fabrica.getICtrlUsuario();</span>
-<span class="nc" id="L30">        cargarDatos();</span>
+<span class="nc" id="L28">    public VerCliente() {</span>
+<span class="nc" id="L29">        initComponents();</span>
+<span class="nc" id="L30">        this.setTitle(&quot;Información del cliente&quot;);</span>
+<span class="nc" id="L31">        Fabrica fabrica = Fabrica.getInstance();</span>
+<span class="nc" id="L32">        ICU = fabrica.getICtrlUsuario();</span>
+<span class="nc" id="L33">        cargarDatos();</span>
        /*this.tbNickNameCliente.setVisible(false);
        this.tbapellidoClente.setVisible(false);
        this.tbdireccionCliente.setVisible(false);
@@ -40,7 +43,7 @@ public class VerCliente extends javax.swing.JInternalFrame {
        this.lblfechaNacCliente.setVisible(false);
        this.lblmailCliente.setVisible(false);
        this.lblnombreCliente.setVisible(false);*/
-<span class="nc" id="L43">    }</span>
+<span class="nc" id="L46">    }</span>
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -51,57 +54,63 @@ public class VerCliente extends javax.swing.JInternalFrame {
     // &lt;editor-fold defaultstate=&quot;collapsed&quot; desc=&quot;Generated Code&quot;&gt;//GEN-BEGIN:initComponents
     private void initComponents() {
 
-<span class="nc" id="L54">        jPanel2 = new javax.swing.JPanel();</span>
-<span class="nc" id="L55">        lblNicknameCliente = new javax.swing.JLabel();</span>
-<span class="nc" id="L56">        tbdireccionCliente = new javax.swing.JTextField();</span>
-<span class="nc" id="L57">        tbfechaDeNacCliente = new javax.swing.JTextField();</span>
-<span class="nc" id="L58">        lblapellidoCliente = new javax.swing.JLabel();</span>
-<span class="nc" id="L59">        lblmailCliente = new javax.swing.JLabel();</span>
-<span class="nc" id="L60">        lblnombreCliente = new javax.swing.JLabel();</span>
-<span class="nc" id="L61">        tbNickNameCliente = new javax.swing.JTextField();</span>
-<span class="nc" id="L62">        tbmailCliente = new javax.swing.JTextField();</span>
-<span class="nc" id="L63">        lblfechaNacCliente = new javax.swing.JLabel();</span>
-<span class="nc" id="L64">        tbapellidoClente = new javax.swing.JTextField();</span>
-<span class="nc" id="L65">        lbldireccionCliente = new javax.swing.JLabel();</span>
-<span class="nc" id="L66">        tbnombreCliente = new javax.swing.JTextField();</span>
-<span class="nc" id="L67">        jPanel1 = new javax.swing.JPanel();</span>
-<span class="nc" id="L68">        lblVerImagenUsr = new javax.swing.JLabel();</span>
+<span class="nc" id="L57">        jPanel2 = new javax.swing.JPanel();</span>
+<span class="nc" id="L58">        lblNicknameCliente = new javax.swing.JLabel();</span>
+<span class="nc" id="L59">        tbdireccionCliente = new javax.swing.JTextField();</span>
+<span class="nc" id="L60">        tbfechaDeNacCliente = new javax.swing.JTextField();</span>
+<span class="nc" id="L61">        lblapellidoCliente = new javax.swing.JLabel();</span>
+<span class="nc" id="L62">        lblmailCliente = new javax.swing.JLabel();</span>
+<span class="nc" id="L63">        lblnombreCliente = new javax.swing.JLabel();</span>
+<span class="nc" id="L64">        tbNickNameCliente = new javax.swing.JTextField();</span>
+<span class="nc" id="L65">        tbmailCliente = new javax.swing.JTextField();</span>
+<span class="nc" id="L66">        lblfechaNacCliente = new javax.swing.JLabel();</span>
+<span class="nc" id="L67">        tbapellidoClente = new javax.swing.JTextField();</span>
+<span class="nc" id="L68">        lbldireccionCliente = new javax.swing.JLabel();</span>
+<span class="nc" id="L69">        tbnombreCliente = new javax.swing.JTextField();</span>
+<span class="nc" id="L70">        jPanel1 = new javax.swing.JPanel();</span>
+<span class="nc" id="L71">        lblVerImagenUsr = new javax.swing.JLabel();</span>
 
-<span class="nc" id="L70">        setClosable(true);</span>
-<span class="nc" id="L71">        setIconifiable(true);</span>
-<span class="nc" id="L72">        setMaximizable(true);</span>
-<span class="nc" id="L73">        setResizable(true);</span>
-<span class="nc" id="L74">        setPreferredSize(new java.awt.Dimension(500, 500));</span>
+<span class="nc" id="L73">        setClosable(true);</span>
+<span class="nc" id="L74">        setIconifiable(true);</span>
+<span class="nc" id="L75">        setMaximizable(true);</span>
+<span class="nc" id="L76">        setResizable(true);</span>
+<span class="nc" id="L77">        setPreferredSize(new java.awt.Dimension(642, 515));</span>
+        try {
+<span class="nc" id="L79">            setSelected(true);</span>
+<span class="nc" id="L80">        } catch (java.beans.PropertyVetoException e1) {</span>
+<span class="nc" id="L81">            e1.printStackTrace();</span>
+<span class="nc" id="L82">        }</span>
+<span class="nc" id="L83">        setVisible(true);</span>
 
-<span class="nc" id="L76">        jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder(&quot;Datos del cliente&quot;));</span>
+<span class="nc" id="L85">        jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder(&quot;Datos del cliente&quot;));</span>
 
-<span class="nc" id="L78">        lblNicknameCliente.setText(&quot;NickName:&quot;);</span>
+<span class="nc" id="L87">        lblNicknameCliente.setText(&quot;NickName:&quot;);</span>
 
-<span class="nc" id="L80">        tbdireccionCliente.setEditable(false);</span>
+<span class="nc" id="L89">        tbdireccionCliente.setEditable(false);</span>
 
-<span class="nc" id="L82">        tbfechaDeNacCliente.setEditable(false);</span>
+<span class="nc" id="L91">        tbfechaDeNacCliente.setEditable(false);</span>
 
-<span class="nc" id="L84">        lblapellidoCliente.setText(&quot;Apellido:&quot;);</span>
+<span class="nc" id="L93">        lblapellidoCliente.setText(&quot;Apellido:&quot;);</span>
 
-<span class="nc" id="L86">        lblmailCliente.setText(&quot;Correo electronico:&quot;);</span>
+<span class="nc" id="L95">        lblmailCliente.setText(&quot;Correo electronico:&quot;);</span>
 
-<span class="nc" id="L88">        lblnombreCliente.setText(&quot;Nombre:&quot;);</span>
+<span class="nc" id="L97">        lblnombreCliente.setText(&quot;Nombre:&quot;);</span>
 
-<span class="nc" id="L90">        tbNickNameCliente.setEditable(false);</span>
+<span class="nc" id="L99">        tbNickNameCliente.setEditable(false);</span>
 
-<span class="nc" id="L92">        tbmailCliente.setEditable(false);</span>
+<span class="nc" id="L101">        tbmailCliente.setEditable(false);</span>
 
-<span class="nc" id="L94">        lblfechaNacCliente.setText(&quot;Fecha de nacimiento:&quot;);</span>
+<span class="nc" id="L103">        lblfechaNacCliente.setText(&quot;Fecha de nacimiento:&quot;);</span>
 
-<span class="nc" id="L96">        tbapellidoClente.setEditable(false);</span>
+<span class="nc" id="L105">        tbapellidoClente.setEditable(false);</span>
 
-<span class="nc" id="L98">        lbldireccionCliente.setText(&quot;Direccion:&quot;);</span>
+<span class="nc" id="L107">        lbldireccionCliente.setText(&quot;Direccion:&quot;);</span>
 
-<span class="nc" id="L100">        tbnombreCliente.setEditable(false);</span>
+<span class="nc" id="L109">        tbnombreCliente.setEditable(false);</span>
 
-<span class="nc" id="L102">        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);</span>
-<span class="nc" id="L103">        jPanel2.setLayout(jPanel2Layout);</span>
-<span class="nc" id="L104">        jPanel2Layout.setHorizontalGroup(</span>
+<span class="nc" id="L111">        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);</span>
+<span class="nc" id="L112">        jPanel2.setLayout(jPanel2Layout);</span>
+<span class="nc" id="L113">        jPanel2Layout.setHorizontalGroup(</span>
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -124,7 +133,7 @@ public class VerCliente extends javax.swing.JInternalFrame {
                     .addComponent(tbdireccionCliente, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(34, 34, 34))
         );
-<span class="nc" id="L127">        jPanel2Layout.setVerticalGroup(</span>
+<span class="nc" id="L136">        jPanel2Layout.setVerticalGroup(</span>
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addContainerGap()
@@ -154,15 +163,15 @@ public class VerCliente extends javax.swing.JInternalFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-<span class="nc" id="L157">        jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(&quot;&quot;));</span>
+<span class="nc" id="L166">        jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(&quot;&quot;));</span>
 
-<span class="nc" id="L159">        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);</span>
-<span class="nc" id="L160">        jPanel1.setLayout(jPanel1Layout);</span>
-<span class="nc" id="L161">        jPanel1Layout.setHorizontalGroup(</span>
+<span class="nc" id="L168">        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);</span>
+<span class="nc" id="L169">        jPanel1.setLayout(jPanel1Layout);</span>
+<span class="nc" id="L170">        jPanel1Layout.setHorizontalGroup(</span>
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(lblVerImagenUsr, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 174, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
-<span class="nc" id="L165">        jPanel1Layout.setVerticalGroup(</span>
+<span class="nc" id="L174">        jPanel1Layout.setVerticalGroup(</span>
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
@@ -170,53 +179,53 @@ public class VerCliente extends javax.swing.JInternalFrame {
                 .addContainerGap())
         );
 
-<span class="nc" id="L173">        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());</span>
-<span class="nc" id="L174">        getContentPane().setLayout(layout);</span>
-<span class="nc" id="L175">        layout.setHorizontalGroup(</span>
+<span class="nc" id="L182">        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());</span>
+<span class="nc" id="L183">        getContentPane().setLayout(layout);</span>
+<span class="nc" id="L184">        layout.setHorizontalGroup(</span>
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(87, Short.MAX_VALUE))
+                .addContainerGap(187, Short.MAX_VALUE))
         );
-<span class="nc" id="L184">        layout.setVerticalGroup(</span>
+<span class="nc" id="L193">        layout.setVerticalGroup(</span>
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(107, 107, 107)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(125, Short.MAX_VALUE))
+                .addContainerGap(176, Short.MAX_VALUE))
         );
 
-<span class="nc" id="L194">        pack();</span>
-<span class="nc" id="L195">    }// &lt;/editor-fold&gt;//GEN-END:initComponents</span>
+<span class="nc" id="L203">        pack();</span>
+<span class="nc" id="L204">    }// &lt;/editor-fold&gt;//GEN-END:initComponents</span>
     private void cargarDatos(){
-<span class="nc" id="L197">       DataCliente c = ICU.getUsuarioByNickname(ICU.getNickname());</span>
-<span class="nc" id="L198">       this.tbNickNameCliente.setVisible(true);</span>
-<span class="nc" id="L199">       this.tbNickNameCliente.setText(c.getNickname());</span>
-<span class="nc" id="L200">       this.tbapellidoClente.setVisible(true);</span>
-<span class="nc" id="L201">       this.tbapellidoClente.setText(c.getApellido());</span>
-<span class="nc" id="L202">       this.tbdireccionCliente.setVisible(true);</span>
-<span class="nc" id="L203">       this.tbdireccionCliente.setText(c.getDireccion());</span>
-<span class="nc" id="L204">       this.tbfechaDeNacCliente.setVisible(true);</span>
-<span class="nc" id="L205">       this.tbfechaDeNacCliente.setText(c.getFNac());</span>
-<span class="nc" id="L206">       this.tbmailCliente.setVisible(true);</span>
-<span class="nc" id="L207">       this.tbmailCliente.setText(c.getMail());</span>
-<span class="nc" id="L208">       this.tbnombreCliente.setVisible(true);</span>
-<span class="nc" id="L209">       this.tbnombreCliente.setText(c.getNombre());</span>
-<span class="nc" id="L210">       this.lblNicknameCliente.setVisible(true);</span>
-<span class="nc" id="L211">       this.lblapellidoCliente.setVisible(true);</span>
-<span class="nc" id="L212">       this.lbldireccionCliente.setVisible(true);</span>
-<span class="nc" id="L213">       this.lblfechaNacCliente.setVisible(true);</span>
-<span class="nc" id="L214">       this.lblmailCliente.setVisible(true);</span>
-<span class="nc" id="L215">       this.lblnombreCliente.setVisible(true);</span>
-<span class="nc" id="L216">       ImageIcon icon = new ImageIcon(c.getImagen());</span>
-<span class="nc" id="L217">       lblVerImagenUsr.setIcon(icon);</span>
-<span class="nc" id="L218">       this.lblVerImagenUsr.setVisible(true);</span>
-<span class="nc" id="L219">    }                                   </span>
+<span class="nc" id="L206">       DataCliente c = ICU.getUsuarioByNickname(ICU.getNickname());</span>
+<span class="nc" id="L207">       this.tbNickNameCliente.setVisible(true);</span>
+<span class="nc" id="L208">       this.tbNickNameCliente.setText(c.getNickname());</span>
+<span class="nc" id="L209">       this.tbapellidoClente.setVisible(true);</span>
+<span class="nc" id="L210">       this.tbapellidoClente.setText(c.getApellido());</span>
+<span class="nc" id="L211">       this.tbdireccionCliente.setVisible(true);</span>
+<span class="nc" id="L212">       this.tbdireccionCliente.setText(c.getDireccion());</span>
+<span class="nc" id="L213">       this.tbfechaDeNacCliente.setVisible(true);</span>
+<span class="nc" id="L214">       this.tbfechaDeNacCliente.setText(c.getFNac());</span>
+<span class="nc" id="L215">       this.tbmailCliente.setVisible(true);</span>
+<span class="nc" id="L216">       this.tbmailCliente.setText(c.getMail());</span>
+<span class="nc" id="L217">       this.tbnombreCliente.setVisible(true);</span>
+<span class="nc" id="L218">       this.tbnombreCliente.setText(c.getNombre());</span>
+<span class="nc" id="L219">       this.lblNicknameCliente.setVisible(true);</span>
+<span class="nc" id="L220">       this.lblapellidoCliente.setVisible(true);</span>
+<span class="nc" id="L221">       this.lbldireccionCliente.setVisible(true);</span>
+<span class="nc" id="L222">       this.lblfechaNacCliente.setVisible(true);</span>
+<span class="nc" id="L223">       this.lblmailCliente.setVisible(true);</span>
+<span class="nc" id="L224">       this.lblnombreCliente.setVisible(true);</span>
+<span class="nc" id="L225">       ImageIcon icon = new ImageIcon(c.getImagen());</span>
+<span class="nc" id="L226">       lblVerImagenUsr.setIcon(icon);</span>
+<span class="nc" id="L227">       this.lblVerImagenUsr.setVisible(true);</span>
+<span class="nc" id="L228">    }                                   </span>
     
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

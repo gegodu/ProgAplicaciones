@@ -156,6 +156,12 @@ private ICtrlUsuario ICU;
 
         lblNickname.setText("Nickname:");
 
+        tbSelImagen.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tbSelImagenActionPerformed(evt);
+            }
+        });
+
         lblNombre.setText("Nombre:");
 
         tbNombre.addActionListener(new java.awt.event.ActionListener() {
@@ -396,6 +402,10 @@ private ICtrlUsuario ICU;
         this.tbAnio.setVisible(false);
         this.lblFechaNacimiento.setVisible(false);
     }//GEN-LAST:event_rbRestauranteMouseClicked
+
+    private void tbSelImagenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tbSelImagenActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_tbSelImagenActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

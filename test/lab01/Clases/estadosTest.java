@@ -47,7 +47,7 @@ public class estadosTest {
         estados[] result = estados.values();
         assertArrayEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
+        ////fail("The test case is a prototype.");
     }
 
     /**
@@ -67,7 +67,7 @@ public class estadosTest {
         estados resu = estados.RECIBIDO;
         assertEquals(expResu, resu);
         // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
+        ////fail("The test case is a prototype.");
     }
     
     

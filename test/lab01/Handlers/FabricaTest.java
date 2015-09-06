@@ -50,7 +50,7 @@ public class FabricaTest {
         Fabrica result = Fabrica.getInstance();
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
+        ////fail("The test case is a prototype.");
     }
 
     /**
@@ -64,7 +64,7 @@ public class FabricaTest {
         ICtrlUsuario result = instance.getICtrlUsuario();
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
+        ////fail("The test case is a prototype.");
     }
 
     /**
@@ -78,7 +78,7 @@ public class FabricaTest {
         ICtrlProducto result = instance.getICtrlProducto();
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
+        ////fail("The test case is a prototype.");
     }
 
     /**
@@ -92,7 +92,7 @@ public class FabricaTest {
         ICtrlPedido result = instance.getICtrlPedido();
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
+        ////fail("The test case is a prototype.");
     }
     
 }

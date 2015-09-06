@@ -8,6 +8,7 @@ import javax.swing.AbstractButton;
 import javax.swing.ButtonGroup;
 import javax.swing.JRadioButton;
 import java.io.File;
+import java.util.ArrayList;
 import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
 import lab01.Clases.Categoria;
@@ -24,11 +25,11 @@ private ICtrlUsuario ICU;
     /**
      * Creates new form RegCliente
      */
-<span class="nc" id="L27">    public RegUsuario() {</span>
-<span class="nc" id="L28">        initComponents();</span>
-<span class="nc" id="L29">        Fabrica fabrica = Fabrica.getInstance();</span>
-<span class="nc" id="L30">        ICU = fabrica.getICtrlUsuario();</span>
-<span class="nc" id="L31">    }</span>
+<span class="nc" id="L28">    public RegUsuario() {</span>
+<span class="nc" id="L29">        initComponents();</span>
+<span class="nc" id="L30">        Fabrica fabrica = Fabrica.getInstance();</span>
+<span class="nc" id="L31">        ICU = fabrica.getICtrlUsuario();</span>
+<span class="nc" id="L32">    }</span>
     
     //ButtonGroup buttonGroup1 = new ButtonGroup();
     //JRadioButton rbCliente= new JRadioButton();   
@@ -44,72 +45,72 @@ private ICtrlUsuario ICU;
     // &lt;editor-fold defaultstate=&quot;collapsed&quot; desc=&quot;Generated Code&quot;&gt;//GEN-BEGIN:initComponents
     private void initComponents() {
 
-<span class="nc" id="L47">        btngUsuarios = new javax.swing.ButtonGroup();</span>
-<span class="nc" id="L48">        btnCancelar = new javax.swing.JButton();</span>
-<span class="nc" id="L49">        btnRegistrar = new javax.swing.JButton();</span>
-<span class="nc" id="L50">        jPanel1 = new javax.swing.JPanel();</span>
-<span class="nc" id="L51">        rbCliente = new javax.swing.JRadioButton();</span>
-<span class="nc" id="L52">        rbRestaurante = new javax.swing.JRadioButton();</span>
-<span class="nc" id="L53">        jPanel2 = new javax.swing.JPanel();</span>
-<span class="nc" id="L54">        tbMes = new com.toedter.calendar.JMonthChooser();</span>
-<span class="nc" id="L55">        tbDia = new com.toedter.components.JSpinField();</span>
-<span class="nc" id="L56">        jbSelCategoria = new javax.swing.JButton();</span>
-<span class="nc" id="L57">        tbAnio = new com.toedter.calendar.JYearChooser();</span>
-<span class="nc" id="L58">        lblFechaNacimiento = new javax.swing.JLabel();</span>
-<span class="nc" id="L59">        btnSelImagen = new javax.swing.JButton();</span>
-<span class="nc" id="L60">        lblApellido = new javax.swing.JLabel();</span>
-<span class="nc" id="L61">        lblDireccion = new javax.swing.JLabel();</span>
-<span class="nc" id="L62">        lblNickname = new javax.swing.JLabel();</span>
-<span class="nc" id="L63">        tbSelImagen = new javax.swing.JTextField();</span>
-<span class="nc" id="L64">        lblNombre = new javax.swing.JLabel();</span>
-<span class="nc" id="L65">        tbApellido = new javax.swing.JTextField();</span>
-<span class="nc" id="L66">        tbNombre = new javax.swing.JTextField();</span>
-<span class="nc" id="L67">        tbMail = new javax.swing.JTextField();</span>
-<span class="nc" id="L68">        tbNickname = new javax.swing.JTextField();</span>
-<span class="nc" id="L69">        lblMail = new javax.swing.JLabel();</span>
-<span class="nc" id="L70">        tbDireccion = new javax.swing.JTextField();</span>
+<span class="nc" id="L48">        btngUsuarios = new javax.swing.ButtonGroup();</span>
+<span class="nc" id="L49">        btnCancelar = new javax.swing.JButton();</span>
+<span class="nc" id="L50">        btnRegistrar = new javax.swing.JButton();</span>
+<span class="nc" id="L51">        jPanel1 = new javax.swing.JPanel();</span>
+<span class="nc" id="L52">        rbCliente = new javax.swing.JRadioButton();</span>
+<span class="nc" id="L53">        rbRestaurante = new javax.swing.JRadioButton();</span>
+<span class="nc" id="L54">        jPanel2 = new javax.swing.JPanel();</span>
+<span class="nc" id="L55">        tbMes = new com.toedter.calendar.JMonthChooser();</span>
+<span class="nc" id="L56">        tbDia = new com.toedter.components.JSpinField();</span>
+<span class="nc" id="L57">        jbSelCategoria = new javax.swing.JButton();</span>
+<span class="nc" id="L58">        tbAnio = new com.toedter.calendar.JYearChooser();</span>
+<span class="nc" id="L59">        lblFechaNacimiento = new javax.swing.JLabel();</span>
+<span class="nc" id="L60">        btnSelImagen = new javax.swing.JButton();</span>
+<span class="nc" id="L61">        lblApellido = new javax.swing.JLabel();</span>
+<span class="nc" id="L62">        lblDireccion = new javax.swing.JLabel();</span>
+<span class="nc" id="L63">        lblNickname = new javax.swing.JLabel();</span>
+<span class="nc" id="L64">        tbSelImagen = new javax.swing.JTextField();</span>
+<span class="nc" id="L65">        lblNombre = new javax.swing.JLabel();</span>
+<span class="nc" id="L66">        tbApellido = new javax.swing.JTextField();</span>
+<span class="nc" id="L67">        tbNombre = new javax.swing.JTextField();</span>
+<span class="nc" id="L68">        tbMail = new javax.swing.JTextField();</span>
+<span class="nc" id="L69">        tbNickname = new javax.swing.JTextField();</span>
+<span class="nc" id="L70">        lblMail = new javax.swing.JLabel();</span>
+<span class="nc" id="L71">        tbDireccion = new javax.swing.JTextField();</span>
 
-<span class="nc" id="L72">        setClosable(true);</span>
-<span class="nc" id="L73">        setIconifiable(true);</span>
-<span class="nc" id="L74">        setMaximizable(true);</span>
-<span class="nc" id="L75">        setResizable(true);</span>
-<span class="nc" id="L76">        setTitle(&quot;Registrar Usuario&quot;);</span>
+<span class="nc" id="L73">        setClosable(true);</span>
+<span class="nc" id="L74">        setIconifiable(true);</span>
+<span class="nc" id="L75">        setMaximizable(true);</span>
+<span class="nc" id="L76">        setResizable(true);</span>
+<span class="nc" id="L77">        setTitle(&quot;Registrar Usuario&quot;);</span>
 
-<span class="nc" id="L78">        btnCancelar.setText(&quot;Cancelar&quot;);</span>
+<span class="nc" id="L79">        btnCancelar.setText(&quot;Cancelar&quot;);</span>
 
-<span class="nc" id="L80">        btnRegistrar.setText(&quot;Registrar&quot;);</span>
-<span class="nc" id="L81">        btnRegistrar.addActionListener(new java.awt.event.ActionListener() {</span>
+<span class="nc" id="L81">        btnRegistrar.setText(&quot;Registrar&quot;);</span>
+<span class="nc" id="L82">        btnRegistrar.addActionListener(new java.awt.event.ActionListener() {</span>
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-<span class="nc" id="L83">                btnRegistrarActionPerformed(evt);</span>
-<span class="nc" id="L84">            }</span>
+<span class="nc" id="L84">                btnRegistrarActionPerformed(evt);</span>
+<span class="nc" id="L85">            }</span>
         });
 
-<span class="nc" id="L87">        jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(&quot;Ingrese el tipo de Usuario&quot;));</span>
+<span class="nc" id="L88">        jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(&quot;Ingrese el tipo de Usuario&quot;));</span>
 
-<span class="nc" id="L89">        btngUsuarios.add(rbCliente);</span>
-<span class="nc" id="L90">        rbCliente.setText(&quot;Cliente&quot;);</span>
-<span class="nc" id="L91">        rbCliente.addMouseListener(new java.awt.event.MouseAdapter() {</span>
+<span class="nc" id="L90">        btngUsuarios.add(rbCliente);</span>
+<span class="nc" id="L91">        rbCliente.setText(&quot;Cliente&quot;);</span>
+<span class="nc" id="L92">        rbCliente.addMouseListener(new java.awt.event.MouseAdapter() {</span>
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-<span class="nc" id="L93">                rbClienteMouseClicked(evt);</span>
-<span class="nc" id="L94">            }</span>
+<span class="nc" id="L94">                rbClienteMouseClicked(evt);</span>
+<span class="nc" id="L95">            }</span>
         });
 
-<span class="nc" id="L97">        btngUsuarios.add(rbRestaurante);</span>
-<span class="nc" id="L98">        rbRestaurante.setText(&quot;Restaurante&quot;);</span>
-<span class="nc" id="L99">        rbRestaurante.addMouseListener(new java.awt.event.MouseAdapter() {</span>
+<span class="nc" id="L98">        btngUsuarios.add(rbRestaurante);</span>
+<span class="nc" id="L99">        rbRestaurante.setText(&quot;Restaurante&quot;);</span>
+<span class="nc" id="L100">        rbRestaurante.addMouseListener(new java.awt.event.MouseAdapter() {</span>
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-<span class="nc" id="L101">                rbRestauranteMouseClicked(evt);</span>
-<span class="nc" id="L102">            }</span>
+<span class="nc" id="L102">                rbRestauranteMouseClicked(evt);</span>
+<span class="nc" id="L103">            }</span>
         });
-<span class="nc" id="L104">        rbRestaurante.addActionListener(new java.awt.event.ActionListener() {</span>
+<span class="nc" id="L105">        rbRestaurante.addActionListener(new java.awt.event.ActionListener() {</span>
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-<span class="nc" id="L106">                rbRestauranteActionPerformed(evt);</span>
-<span class="nc" id="L107">            }</span>
+<span class="nc" id="L107">                rbRestauranteActionPerformed(evt);</span>
+<span class="nc" id="L108">            }</span>
         });
 
-<span class="nc" id="L110">        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);</span>
-<span class="nc" id="L111">        jPanel1.setLayout(jPanel1Layout);</span>
-<span class="nc" id="L112">        jPanel1Layout.setHorizontalGroup(</span>
+<span class="nc" id="L111">        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);</span>
+<span class="nc" id="L112">        jPanel1.setLayout(jPanel1Layout);</span>
+<span class="nc" id="L113">        jPanel1Layout.setHorizontalGroup(</span>
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
@@ -118,7 +119,7 @@ private ICtrlUsuario ICU;
                 .addComponent(rbRestaurante)
                 .addContainerGap())
         );
-<span class="nc" id="L121">        jPanel1Layout.setVerticalGroup(</span>
+<span class="nc" id="L122">        jPanel1Layout.setVerticalGroup(</span>
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
@@ -128,58 +129,58 @@ private ICtrlUsuario ICU;
                 .addGap(0, 16, Short.MAX_VALUE))
         );
 
-<span class="nc" id="L131">        jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder(&quot;Ingrese los siguientes datos&quot;));</span>
+<span class="nc" id="L132">        jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder(&quot;Ingrese los siguientes datos&quot;));</span>
 
-<span class="nc" id="L133">        tbDia.setValue(1);</span>
+<span class="nc" id="L134">        tbDia.setValue(1);</span>
 
-<span class="nc" id="L135">        jbSelCategoria.setText(&quot;Seleccionar Categoria&quot;);</span>
-<span class="nc" id="L136">        jbSelCategoria.setVisible(false);</span>
-<span class="nc" id="L137">        jbSelCategoria.addActionListener(new java.awt.event.ActionListener() {</span>
+<span class="nc" id="L136">        jbSelCategoria.setText(&quot;Seleccionar Categoria&quot;);</span>
+<span class="nc" id="L137">        jbSelCategoria.setVisible(false);</span>
+<span class="nc" id="L138">        jbSelCategoria.addActionListener(new java.awt.event.ActionListener() {</span>
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-<span class="nc" id="L139">                jbSelCategoriaActionPerformed(evt);</span>
-<span class="nc" id="L140">            }</span>
+<span class="nc" id="L140">                jbSelCategoriaActionPerformed(evt);</span>
+<span class="nc" id="L141">            }</span>
         });
 
-<span class="nc" id="L143">        lblFechaNacimiento.setText(&quot;Fecha de Nacimiento:&quot;);</span>
+<span class="nc" id="L144">        lblFechaNacimiento.setText(&quot;Fecha de Nacimiento:&quot;);</span>
 
-<span class="nc" id="L145">        btnSelImagen.setText(&quot;Seleccionar imagen&quot;);</span>
-<span class="nc" id="L146">        btnSelImagen.addActionListener(new java.awt.event.ActionListener() {</span>
+<span class="nc" id="L146">        btnSelImagen.setText(&quot;Seleccionar imagen&quot;);</span>
+<span class="nc" id="L147">        btnSelImagen.addActionListener(new java.awt.event.ActionListener() {</span>
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-<span class="nc" id="L148">                btnSelImagenActionPerformed(evt);</span>
-<span class="nc" id="L149">            }</span>
+<span class="nc" id="L149">                btnSelImagenActionPerformed(evt);</span>
+<span class="nc" id="L150">            }</span>
         });
 
-<span class="nc" id="L152">        lblApellido.setText(&quot;Apellido:&quot;);</span>
+<span class="nc" id="L153">        lblApellido.setText(&quot;Apellido:&quot;);</span>
 
-<span class="nc" id="L154">        lblDireccion.setText(&quot;Direccion:&quot;);</span>
+<span class="nc" id="L155">        lblDireccion.setText(&quot;Direccion:&quot;);</span>
 
-<span class="nc" id="L156">        lblNickname.setText(&quot;Nickname:&quot;);</span>
+<span class="nc" id="L157">        lblNickname.setText(&quot;Nickname:&quot;);</span>
 
-<span class="nc" id="L158">        lblNombre.setText(&quot;Nombre:&quot;);</span>
+<span class="nc" id="L159">        lblNombre.setText(&quot;Nombre:&quot;);</span>
 
-<span class="nc" id="L160">        tbNombre.addActionListener(new java.awt.event.ActionListener() {</span>
+<span class="nc" id="L161">        tbNombre.addActionListener(new java.awt.event.ActionListener() {</span>
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-<span class="nc" id="L162">                tbNombreActionPerformed(evt);</span>
-<span class="nc" id="L163">            }</span>
+<span class="nc" id="L163">                tbNombreActionPerformed(evt);</span>
+<span class="nc" id="L164">            }</span>
         });
 
-<span class="nc" id="L166">        tbMail.addActionListener(new java.awt.event.ActionListener() {</span>
+<span class="nc" id="L167">        tbMail.addActionListener(new java.awt.event.ActionListener() {</span>
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-<span class="nc" id="L168">                tbMailActionPerformed(evt);</span>
-<span class="nc" id="L169">            }</span>
+<span class="nc" id="L169">                tbMailActionPerformed(evt);</span>
+<span class="nc" id="L170">            }</span>
         });
 
-<span class="nc" id="L172">        tbNickname.addActionListener(new java.awt.event.ActionListener() {</span>
+<span class="nc" id="L173">        tbNickname.addActionListener(new java.awt.event.ActionListener() {</span>
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-<span class="nc" id="L174">                tbNicknameActionPerformed(evt);</span>
-<span class="nc" id="L175">            }</span>
+<span class="nc" id="L175">                tbNicknameActionPerformed(evt);</span>
+<span class="nc" id="L176">            }</span>
         });
 
-<span class="nc" id="L178">        lblMail.setText(&quot;Correo electronico:&quot;);</span>
+<span class="nc" id="L179">        lblMail.setText(&quot;Correo electronico:&quot;);</span>
 
-<span class="nc" id="L180">        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);</span>
-<span class="nc" id="L181">        jPanel2.setLayout(jPanel2Layout);</span>
-<span class="nc" id="L182">        jPanel2Layout.setHorizontalGroup(</span>
+<span class="nc" id="L181">        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);</span>
+<span class="nc" id="L182">        jPanel2.setLayout(jPanel2Layout);</span>
+<span class="nc" id="L183">        jPanel2Layout.setHorizontalGroup(</span>
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addContainerGap()
@@ -215,7 +216,7 @@ private ICtrlUsuario ICU;
                     .addComponent(jbSelCategoria))
                 .addContainerGap(17, Short.MAX_VALUE))
         );
-<span class="nc" id="L218">        jPanel2Layout.setVerticalGroup(</span>
+<span class="nc" id="L219">        jPanel2Layout.setVerticalGroup(</span>
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addContainerGap()
@@ -260,9 +261,9 @@ private ICtrlUsuario ICU;
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-<span class="nc" id="L263">        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());</span>
-<span class="nc" id="L264">        getContentPane().setLayout(layout);</span>
-<span class="nc" id="L265">        layout.setHorizontalGroup(</span>
+<span class="nc" id="L264">        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());</span>
+<span class="nc" id="L265">        getContentPane().setLayout(layout);</span>
+<span class="nc" id="L266">        layout.setHorizontalGroup(</span>
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(28, 28, 28)
@@ -278,7 +279,7 @@ private ICtrlUsuario ICU;
                             .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addGap(0, 27, Short.MAX_VALUE))))
         );
-<span class="nc" id="L281">        layout.setVerticalGroup(</span>
+<span class="nc" id="L282">        layout.setVerticalGroup(</span>
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(27, 27, 27)
@@ -292,106 +293,109 @@ private ICtrlUsuario ICU;
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-<span class="nc" id="L295">        pack();</span>
-<span class="nc" id="L296">    }// &lt;/editor-fold&gt;//GEN-END:initComponents</span>
+<span class="nc" id="L296">        pack();</span>
+<span class="nc" id="L297">    }// &lt;/editor-fold&gt;//GEN-END:initComponents</span>
 
     private void tbNombreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tbNombreActionPerformed
         // TODO add your handling code here:
-<span class="nc" id="L300">    }//GEN-LAST:event_tbNombreActionPerformed</span>
+<span class="nc" id="L301">    }//GEN-LAST:event_tbNombreActionPerformed</span>
 
     private void btnRegistrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegistrarActionPerformed
         // TODO add your handling code here:
-<span class="nc" id="L304">        String nickname = this.tbNickname.getText();</span>
-<span class="nc" id="L305">        String mail = this.tbMail.getText();</span>
-<span class="nc" id="L306">        String nombre = this.tbNombre.getText();</span>
-<span class="nc" id="L307">        String apellido = this.tbApellido.getText();</span>
-<span class="nc" id="L308">        String direccion = this.tbDireccion.getText();</span>
-<span class="nc" id="L309">        String img = this.tbSelImagen.getText();</span>
-<span class="nc" id="L310">        int dia = this.tbDia.getValue();</span>
-<span class="nc" id="L311">        int mes = this.tbMes.getMonth() + 1;</span>
-<span class="nc" id="L312">        int anio = this.tbAnio.getValue();</span>
-<span class="nc" id="L313">        String fecha = dia + &quot;/&quot; + mes + &quot;/&quot; + anio;</span>
+<span class="nc" id="L305">        String nickname = this.tbNickname.getText();</span>
+<span class="nc" id="L306">        String mail = this.tbMail.getText();</span>
+<span class="nc" id="L307">        String nombre = this.tbNombre.getText();</span>
+<span class="nc" id="L308">        String apellido = this.tbApellido.getText();</span>
+<span class="nc" id="L309">        String direccion = this.tbDireccion.getText();</span>
+<span class="nc" id="L310">        String img = this.tbSelImagen.getText();</span>
+<span class="nc" id="L311">        int dia = this.tbDia.getValue();</span>
+<span class="nc" id="L312">        int mes = this.tbMes.getMonth() + 1;</span>
+<span class="nc" id="L313">        int anio = this.tbAnio.getValue();</span>
+<span class="nc" id="L314">        String fecha = dia + &quot;/&quot; + mes + &quot;/&quot; + anio;</span>
+<span class="nc" id="L315">        ArrayList&lt;String&gt; lstImagen = null;</span>
         
-<span class="nc" id="L315">        DataRestaurante dt = new DataRestaurante(nickname, nombre, mail, direccion, null, null);</span>
-<span class="nc bnc" id="L316" title="All 10 branches missed.">        if(nickname.isEmpty()||mail.isEmpty()||nombre.isEmpty()||apellido.isEmpty()||direccion.isEmpty())</span>
-<span class="nc" id="L317">            JOptionPane.showMessageDialog(null, &quot;No debe haber campos vacios&quot;,&quot;ERROR&quot;,JOptionPane.ERROR_MESSAGE);</span>
+        
+<span class="nc" id="L318">        DataRestaurante dt = new DataRestaurante(nickname, nombre, mail, direccion, lstImagen, null,ICU.getLstCat());</span>
+<span class="nc bnc" id="L319" title="All 10 branches missed.">        if(nickname.isEmpty()||mail.isEmpty()||nombre.isEmpty()||apellido.isEmpty()||direccion.isEmpty())</span>
+<span class="nc" id="L320">            JOptionPane.showMessageDialog(null, &quot;No debe haber campos vacios&quot;,&quot;ERROR&quot;,JOptionPane.ERROR_MESSAGE);</span>
         else
-<span class="nc bnc" id="L319" title="All 2 branches missed.">            if(ICU.ingresarDatos(nickname,nombre,mail,direccion)){</span>
-<span class="nc bnc" id="L320" title="All 2 branches missed.">                if(rbCliente.isSelected()){</span>
+<span class="nc bnc" id="L322" title="All 2 branches missed.">            if(ICU.ingresarDatos(nickname,nombre,mail,direccion)){</span>
+<span class="nc bnc" id="L323" title="All 2 branches missed.">                if(rbCliente.isSelected()){</span>
                     
-<span class="nc" id="L322">                    ICU.registrarCliente(apellido, img, fecha);</span>
-<span class="nc" id="L323">                    JOptionPane.showMessageDialog(null, &quot;El cliente ha sido registrado&quot;,&quot;Exito&quot;,JOptionPane.INFORMATION_MESSAGE);</span>
+<span class="nc" id="L325">                    ICU.registrarCliente(apellido, img, fecha);</span>
+<span class="nc" id="L326">                    JOptionPane.showMessageDialog(null, &quot;El cliente ha sido registrado&quot;,&quot;Exito&quot;,JOptionPane.INFORMATION_MESSAGE);</span>
                 }
                 else
-<span class="nc bnc" id="L326" title="All 2 branches missed.">                    if(rbRestaurante.isSelected()){</span>
-<span class="nc" id="L327">                        ICU.registrarRestaurante(dt);</span>
-<span class="nc" id="L328">                        JOptionPane.showMessageDialog(null, &quot;El restaurante ha sido registrado&quot;,&quot;Exito&quot;,JOptionPane.INFORMATION_MESSAGE);</span>
+<span class="nc bnc" id="L329" title="All 2 branches missed.">                    if(rbRestaurante.isSelected()){</span>
+                        //dt.setColCategoria(ICU.getLstCat());
+<span class="nc" id="L331">                        ICU.registrarRestaurante(dt);</span>
+<span class="nc" id="L332">                        JOptionPane.showMessageDialog(null, &quot;El restaurante ha sido registrado&quot;,&quot;Exito&quot;,JOptionPane.INFORMATION_MESSAGE);</span>
                     }
                     else
-<span class="nc" id="L331">                        JOptionPane.showMessageDialog(null, &quot;Seleccione Cliente o Restaurante&quot;,&quot;ERROR&quot;,JOptionPane.ERROR_MESSAGE);</span>
+<span class="nc" id="L335">                        JOptionPane.showMessageDialog(null, &quot;Seleccione Cliente o Restaurante&quot;,&quot;ERROR&quot;,JOptionPane.ERROR_MESSAGE);</span>
             }
             else
-<span class="nc" id="L334">                JOptionPane.showMessageDialog(null, &quot;El Nickname y/o el E-Mail ya existen.&quot;,&quot;ERROR&quot;,JOptionPane.ERROR_MESSAGE);</span>
+<span class="nc" id="L338">                JOptionPane.showMessageDialog(null, &quot;El Nickname y/o el E-Mail ya existen.&quot;,&quot;ERROR&quot;,JOptionPane.ERROR_MESSAGE);</span>
 
-<span class="nc" id="L336">        this.tbNickname.setText(&quot;&quot;);</span>
-<span class="nc" id="L337">        this.tbMail.setText(&quot;&quot;);</span>
-<span class="nc" id="L338">        this.tbNombre.setText(&quot;&quot;);</span>
-<span class="nc" id="L339">        this.tbApellido.setText(&quot;&quot;);</span>
-<span class="nc" id="L340">        this.tbDireccion.setText(&quot;&quot;);</span>
-<span class="nc" id="L341">        this.tbSelImagen.setText(&quot;&quot;);</span>
-<span class="nc" id="L342">    }//GEN-LAST:event_btnRegistrarActionPerformed</span>
+<span class="nc" id="L340">        this.tbNickname.setText(&quot;&quot;);</span>
+<span class="nc" id="L341">        this.tbMail.setText(&quot;&quot;);</span>
+<span class="nc" id="L342">        this.tbNombre.setText(&quot;&quot;);</span>
+<span class="nc" id="L343">        this.tbApellido.setText(&quot;&quot;);</span>
+<span class="nc" id="L344">        this.tbDireccion.setText(&quot;&quot;);</span>
+<span class="nc" id="L345">        this.tbSelImagen.setText(&quot;&quot;);</span>
+<span class="nc" id="L346">    }//GEN-LAST:event_btnRegistrarActionPerformed</span>
 
     private void btnSelImagenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSelImagenActionPerformed
-<span class="nc" id="L345">        JFileChooser selector = new JFileChooser();</span>
-<span class="nc" id="L346">        selector.showOpenDialog(null);</span>
-<span class="nc" id="L347">        File archivo = selector.getSelectedFile();</span>
-<span class="nc" id="L348">        String filename = archivo.getAbsolutePath();</span>
-<span class="nc" id="L349">        tbSelImagen.setText(filename);</span>
-<span class="nc" id="L350">    }//GEN-LAST:event_btnSelImagenActionPerformed</span>
+<span class="nc" id="L349">        JFileChooser selector = new JFileChooser();</span>
+<span class="nc" id="L350">        selector.showOpenDialog(null);</span>
+<span class="nc" id="L351">        File archivo = selector.getSelectedFile();</span>
+<span class="nc" id="L352">        String filename = archivo.getAbsolutePath();</span>
+<span class="nc" id="L353">        tbSelImagen.setText(filename);</span>
+<span class="nc" id="L354">    }//GEN-LAST:event_btnSelImagenActionPerformed</span>
 
     private void tbNicknameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tbNicknameActionPerformed
         // TODO add your handling code here:
-<span class="nc" id="L354">    }//GEN-LAST:event_tbNicknameActionPerformed</span>
+<span class="nc" id="L358">    }//GEN-LAST:event_tbNicknameActionPerformed</span>
 
     private void rbRestauranteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rbRestauranteActionPerformed
-<span class="nc" id="L357">       this.jbSelCategoria.setVisible(true);</span>
+<span class="nc" id="L361">       this.jbSelCategoria.setVisible(true);</span>
     //TODO add your handling code here:
-<span class="nc" id="L359">    }//GEN-LAST:event_rbRestauranteActionPerformed</span>
+<span class="nc" id="L363">    }//GEN-LAST:event_rbRestauranteActionPerformed</span>
 
     private void rbClienteActionPerformed(java.awt.event.ActionEvent evt) {                                              
     // TODO add your handling code here:
-<span class="nc" id="L363">        this.jbSelCategoria.setVisible(false);</span>
-<span class="nc" id="L364">    }                                             </span>
+<span class="nc" id="L367">        this.jbSelCategoria.setVisible(false);</span>
+<span class="nc" id="L368">    }                                             </span>
     
     private void tbMailActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tbMailActionPerformed
         // TODO add your handling code here:
-<span class="nc" id="L368">    }//GEN-LAST:event_tbMailActionPerformed</span>
+<span class="nc" id="L372">    }//GEN-LAST:event_tbMailActionPerformed</span>
 
     private void rbClienteMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_rbClienteMouseClicked
         // TODO add your handling code here:
-<span class="nc" id="L372">        this.jbSelCategoria.setVisible(false);</span>
-<span class="nc" id="L373">        this.tbDia.setVisible(true);</span>
-<span class="nc" id="L374">        this.tbMes.setVisible(true);</span>
-<span class="nc" id="L375">        this.tbAnio.setVisible(true);</span>
-<span class="nc" id="L376">        this.lblFechaNacimiento.setVisible(true);</span>
-<span class="nc" id="L377">    }//GEN-LAST:event_rbClienteMouseClicked</span>
+<span class="nc" id="L376">        this.jbSelCategoria.setVisible(false);</span>
+<span class="nc" id="L377">        this.tbDia.setVisible(true);</span>
+<span class="nc" id="L378">        this.tbMes.setVisible(true);</span>
+<span class="nc" id="L379">        this.tbAnio.setVisible(true);</span>
+<span class="nc" id="L380">        this.lblFechaNacimiento.setVisible(true);</span>
+<span class="nc" id="L381">    }//GEN-LAST:event_rbClienteMouseClicked</span>
  
     private void jbSelCategoriaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbSelCategoriaActionPerformed
-<span class="nc" id="L380">    SeleccionarCatReg selCat = new SeleccionarCatReg();</span>
-<span class="nc" id="L381">    Console.EscritorioMenu.add(selCat);</span>
-<span class="nc" id="L382">    selCat.toFront();</span>
-<span class="nc" id="L383">    selCat.show();</span>
+<span class="nc" id="L384">    SeleccionarCatReg selCat = new SeleccionarCatReg();</span>
+<span class="nc" id="L385">    Console.EscritorioMenu.add(selCat);</span>
+<span class="nc" id="L386">    selCat.toFront();</span>
+<span class="nc" id="L387">    selCat.show();</span>
         
 // TODO add your handling code here:
-<span class="nc" id="L386">    }//GEN-LAST:event_jbSelCategoriaActionPerformed</span>
+<span class="nc" id="L390">    }//GEN-LAST:event_jbSelCategoriaActionPerformed</span>
 
     private void rbRestauranteMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_rbRestauranteMouseClicked
         // TODO add your handling code here:
-<span class="nc" id="L390">        this.tbDia.setVisible(false);</span>
-<span class="nc" id="L391">        this.tbMes.setVisible(false);</span>
-<span class="nc" id="L392">        this.tbAnio.setVisible(false);</span>
-<span class="nc" id="L393">        this.lblFechaNacimiento.setVisible(false);</span>
-<span class="nc" id="L394">    }//GEN-LAST:event_rbRestauranteMouseClicked</span>
+<span class="nc" id="L394">        this.tbDia.setVisible(false);</span>
+<span class="nc" id="L395">        this.tbMes.setVisible(false);</span>
+<span class="nc" id="L396">        this.tbAnio.setVisible(false);</span>
+<span class="nc" id="L397">        this.lblFechaNacimiento.setVisible(false);</span>
+<span class="nc" id="L398">    }//GEN-LAST:event_rbRestauranteMouseClicked</span>
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

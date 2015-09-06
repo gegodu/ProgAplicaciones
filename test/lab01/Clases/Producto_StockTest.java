@@ -31,7 +31,7 @@ public class Producto_StockTest {
     
     @Before
     public void setUp() {
-        Producto_Stock instance = new Producto_Stock(2, 20.0);
+        Producto_Stock instance = new Producto_Stock(2);
     }
     
     @After
@@ -44,12 +44,12 @@ public class Producto_StockTest {
     @Test
     public void testGetCantidad() {
         System.out.println("getCantidad");
-        Producto_Stock instance = new Producto_Stock(2, 20.0);
+        Producto_Stock instance = new Producto_Stock(2);
         int expResult = 2;
         int result = instance.getCantidad();
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
+        ////fail("The test case is a prototype.");
     }
 
     /**
@@ -59,10 +59,10 @@ public class Producto_StockTest {
     public void testSetCantidad() {
         System.out.println("setCantidad");
         int cantidad = 2;
-        Producto_Stock instance = new Producto_Stock(2, 20.0);
+        Producto_Stock instance = new Producto_Stock(2);
         instance.setCantidad(cantidad);
         // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
+        ////fail("The test case is a prototype.");
     }
 
     /**
@@ -71,12 +71,12 @@ public class Producto_StockTest {
     @Test
     public void testGetPrecio() {
         System.out.println("getPrecio");
-        Producto_Stock instance = new Producto_Stock(2, 20.0);
+        Producto_Stock instance = new Producto_Stock(2);
         double expResult = 20.0;
         double result = instance.getPrecio();
         assertEquals(expResult, result, 20.0);
         // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
+        ////fail("The test case is a prototype.");
     }
 
     /**
@@ -86,10 +86,10 @@ public class Producto_StockTest {
     public void testSetPrecio() {
         System.out.println("setPrecio");
         double precio = 20.0;
-        Producto_Stock instance = new Producto_Stock(2, 20.0);
+        Producto_Stock instance = new Producto_Stock(2);
         instance.setPrecio(precio);
         // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
+        ////fail("The test case is a prototype.");
     }
     
 }

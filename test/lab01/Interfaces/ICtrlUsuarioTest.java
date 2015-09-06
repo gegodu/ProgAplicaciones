@@ -51,7 +51,7 @@ public class ICtrlUsuarioTest {
         ICtrlUsuario instance = new ICtrlUsuarioImpl();
         instance.setNickname(nick);
         // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
+        ////fail("The test case is a prototype.");
     }
 
     /**
@@ -65,7 +65,7 @@ public class ICtrlUsuarioTest {
         String result = instance.getNickname();
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
+        ////fail("The test case is a prototype.");
     }
 
     /**
@@ -83,7 +83,7 @@ public class ICtrlUsuarioTest {
         boolean result = instance.ingresarDatos(nickname, email, nombre, direccion);
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
+        ////fail("The test case is a prototype.");
     }
 
     /**
@@ -98,7 +98,7 @@ public class ICtrlUsuarioTest {
         ICtrlUsuario instance = new ICtrlUsuarioImpl();
         instance.registrarCliente(apellido, imagen, fecha);
         // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
+        ////fail("The test case is a prototype.");
     }
 
     /**
@@ -110,7 +110,7 @@ public class ICtrlUsuarioTest {
         ICtrlUsuario instance = new ICtrlUsuarioImpl();
         instance.registrarRestaurante(null);
         // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
+        ////fail("The test case is a prototype.");
     }
 
     /**
@@ -123,7 +123,7 @@ public class ICtrlUsuarioTest {
         ICtrlUsuario instance = new ICtrlUsuarioImpl();
         instance.datosAdicionales(apellido);
         // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
+        ////fail("The test case is a prototype.");
     }
 
     /**
@@ -138,7 +138,7 @@ public class ICtrlUsuarioTest {
         DataCliente result = instance.getUsuarioByNickname(nickname);
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
+        ////fail("The test case is a prototype.");
     }
 
     /**
@@ -153,7 +153,7 @@ public class ICtrlUsuarioTest {
         Restaurante result = instance.getRestauranteByNickname(nickname);
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
+        ////fail("The test case is a prototype.");
     }
 
     /**
@@ -167,7 +167,7 @@ public class ICtrlUsuarioTest {
         Map result = instance.devListaDC();
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
+        ////fail("The test case is a prototype.");
     }
 
     /**
@@ -180,7 +180,7 @@ public class ICtrlUsuarioTest {
         ICtrlUsuario instance = new ICtrlUsuarioImpl();
         instance.registrarCat(nombre);
         // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
+        ////fail("The test case is a prototype.");
     }
 
     /**
@@ -194,7 +194,7 @@ public class ICtrlUsuarioTest {
         Map result = instance.retColCat();
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
+        ////fail("The test case is a prototype.");
     }
 
     /**
@@ -207,7 +207,7 @@ public class ICtrlUsuarioTest {
         ICtrlUsuario instance = new ICtrlUsuarioImpl();
         instance.setCat(cate);
         // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
+        ////fail("The test case is a prototype.");
     }
 
     public class ICtrlUsuarioImpl implements ICtrlUsuario {
@@ -276,6 +276,16 @@ public class ICtrlUsuarioTest {
 
         @Override
         public void registrarRestaurante(DataRestaurante dt) {
+            throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        }
+
+        @Override
+        public Map listaUsuPorCategoria(String cate) {
+            throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        }
+
+        @Override
+        public Map getLstCat() {
             throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
         }
     }

@@ -51,7 +51,7 @@ public class HUsuarioTest {
         HUsuario result = HUsuario.getinstance();
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
+        ////fail("The test case is a prototype.");
     }
 
     /**
@@ -64,7 +64,7 @@ public class HUsuarioTest {
         HUsuario instance = null;
         instance.addUsuario(usu);
         // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
+        ////fail("The test case is a prototype.");
     }
 
     /**
@@ -78,7 +78,7 @@ public class HUsuarioTest {
         Map result = instance.obtenerColeccion();
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
+        ////fail("The test case is a prototype.");
     }
 
     /**
@@ -93,7 +93,7 @@ public class HUsuarioTest {
         Cliente result = instance.obtenerUsuario(nickname);
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
+        ////fail("The test case is a prototype.");
     }
 
     /**
@@ -108,7 +108,7 @@ public class HUsuarioTest {
         Restaurante result = instance.obtenerRestaurante(nickname);
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
+        ////fail("The test case is a prototype.");
     }
 
     /**
@@ -124,7 +124,7 @@ public class HUsuarioTest {
         boolean result = instance.find(nickname, email);
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
+        ////fail("The test case is a prototype.");
     }
 
     /**
@@ -139,7 +139,7 @@ public class HUsuarioTest {
         boolean result = instance.exists(nickname);
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
+        ////fail("The test case is a prototype.");
     }
     
 }

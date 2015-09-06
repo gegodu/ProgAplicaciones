@@ -50,7 +50,7 @@ public class CtrlUsuarioTest {
         CtrlUsuario instance = new CtrlUsuario();
         instance.setCat(cate);
         // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
+        ////fail("The test case is a prototype.");
     }
 
     /**
@@ -63,7 +63,7 @@ public class CtrlUsuarioTest {
         CtrlUsuario instance = new CtrlUsuario();
         instance.setNickname(nick);
         // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
+        ////fail("The test case is a prototype.");
     }
 
     /**
@@ -77,7 +77,7 @@ public class CtrlUsuarioTest {
         String result = instance.getNickname();
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
+        ////fail("The test case is a prototype.");
     }
 
     /**
@@ -95,7 +95,7 @@ public class CtrlUsuarioTest {
         boolean result = instance.ingresarDatos(nickname, nombre, email, direccion);
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
+        ////fail("The test case is a prototype.");
     }
 
     /**
@@ -110,7 +110,7 @@ public class CtrlUsuarioTest {
         CtrlUsuario instance = new CtrlUsuario();
         instance.registrarCliente(apellido, img, fecha);
         // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
+        ////fail("The test case is a prototype.");
     }
 
     /**
@@ -122,7 +122,7 @@ public class CtrlUsuarioTest {
         CtrlUsuario instance = new CtrlUsuario();
         instance.registrarRestaurante(null);
         // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
+        ////fail("The test case is a prototype.");
     }
 
     /**
@@ -136,7 +136,7 @@ public class CtrlUsuarioTest {
         CtrlUsuario instance = new CtrlUsuario();
         instance.datosAdicionales(apellido, img);
         // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
+        ////fail("The test case is a prototype.");
     }
 
     /**
@@ -151,7 +151,7 @@ public class CtrlUsuarioTest {
         DataCliente result = instance.getUsuarioByNickname(nickname);
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
+        ////fail("The test case is a prototype.");
     }
 
     /**
@@ -166,7 +166,7 @@ public class CtrlUsuarioTest {
         Restaurante result = instance.getRestauranteByNickname(nickname);
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
+        ////fail("The test case is a prototype.");
     }
 
     /**
@@ -180,7 +180,7 @@ public class CtrlUsuarioTest {
         Map result = instance.devListaDC();
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
+        ////fail("The test case is a prototype.");
     }
 
     /**
@@ -193,7 +193,7 @@ public class CtrlUsuarioTest {
         CtrlUsuario instance = new CtrlUsuario();
         instance.registrarCat(nombre);
         // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
+        ////fail("The test case is a prototype.");
     }
 
     /**
@@ -207,7 +207,7 @@ public class CtrlUsuarioTest {
         Map result = instance.retColCat();
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
+        ////fail("The test case is a prototype.");
     }
 
     /**
@@ -220,7 +220,7 @@ public class CtrlUsuarioTest {
         CtrlUsuario instance = new CtrlUsuario();
         instance.datosAdicionales(apellido);
         // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
+        ////fail("The test case is a prototype.");
     }
     
 }

@@ -48,7 +48,7 @@ public class ProductoTest {
         String result = instance.getNombre();
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
+        ////fail("The test case is a prototype.");
     }
 
     /**
@@ -61,7 +61,7 @@ public class ProductoTest {
         Producto instance = new ProductoImpl("nombre", "descripcion", 125.0, 8);
         instance.setNombre(nombre);
         // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
+        ////fail("The test case is a prototype.");
     }
 
     /**
@@ -75,7 +75,7 @@ public class ProductoTest {
         String result = instance.getDescripcion();
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
+        ////fail("The test case is a prototype.");
     }
 
     /**
@@ -88,7 +88,7 @@ public class ProductoTest {
         Producto instance = new ProductoImpl("nombre", "descripcion", 125.0, 8);
         instance.setDescripcion(descripcion);
         // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
+        ////fail("The test case is a prototype.");
     }
 
     /**
@@ -102,7 +102,7 @@ public class ProductoTest {
         double result = instance.getPrecio();
         assertEquals(expResult, result, 0.0);
         // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
+        ////fail("The test case is a prototype.");
     }
 
     /**
@@ -115,7 +115,7 @@ public class ProductoTest {
         Producto instance = new ProductoImpl("nombre", "descripcion", 125.0, 8);
         instance.setPrecio(precio);
         // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
+        ////fail("The test case is a prototype.");
     }
 
     /**
@@ -129,7 +129,7 @@ public class ProductoTest {
         String result = instance.getImagen();
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
+        ////fail("The test case is a prototype.");
     }
 
     /**
@@ -142,7 +142,7 @@ public class ProductoTest {
         Producto instance = new ProductoImpl("nombre", "descripcion", 125.0, 8);
         instance.setImagen(imagen);
         // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
+        ////fail("The test case is a prototype.");
     }
 
     /**
@@ -151,7 +151,7 @@ public class ProductoTest {
     public class ProductoImpl extends Producto {
 
         public ProductoImpl(String nombre, String descripcion, double precio, int cantidad) {
-            super(nombre, descripcion, precio, cantidad);
+            super(nombre, descripcion, cantidad, null);
         }
 
         @Override
@@ -181,7 +181,7 @@ public class ProductoTest {
         int result = instance.getCantidad();
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
+        ////fail("The test case is a prototype.");
     }
 
     /**
@@ -194,7 +194,7 @@ public class ProductoTest {
         Producto instance = new ProductoImpl("nombre", "descripcion", 125.0, 8);
         instance.setCantidad(cant);
         // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
+        ////fail("The test case is a prototype.");
     }
 
     /**
@@ -208,7 +208,7 @@ public class ProductoTest {
         Producto_Stock result = instance.getProdStock();
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
+        ////fail("The test case is a prototype.");
     }
 
     /**
@@ -221,7 +221,7 @@ public class ProductoTest {
         Producto instance = new ProductoImpl("nombre", "descripcion", 125.0, 8);
         instance.setProdStock(prodStock);
         // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
+        ////fail("The test case is a prototype.");
     }
 
     /**
@@ -236,7 +236,7 @@ public class ProductoTest {
         boolean result = instance.prodDisponible(cantidad);
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
+        ////fail("The test case is a prototype.");
     }
 
     /**
@@ -251,6 +251,6 @@ public class ProductoTest {
         DataCarrito result = instance.getDataCarrito(cantidad);
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
+        ////fail("The test case is a prototype.");
     }
 }

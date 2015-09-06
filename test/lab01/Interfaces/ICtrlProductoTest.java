@@ -51,7 +51,7 @@ public class ICtrlProductoTest {
         ICtrlProducto instance = new ICtrlProductoImpl();
         instance.registrarProducto(di, nomRest, promocional);
         // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
+        ////fail("The test case is a prototype.");
     }
 
     /**
@@ -66,7 +66,7 @@ public class ICtrlProductoTest {
         boolean result = instance.existeRestaurante(nomRest);
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
+        ////fail("The test case is a prototype.");
     }
 
     /**
@@ -81,7 +81,7 @@ public class ICtrlProductoTest {
         Map result = instance.listarIndividuales(nomRest);
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
+        ////fail("The test case is a prototype.");
     }
 
     public class ICtrlProductoImpl implements ICtrlProducto {

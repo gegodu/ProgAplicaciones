@@ -41,52 +41,44 @@ public class SeleccionarCatReg extends javax.swing.JInternalFrame {
     private void initComponents() {
 
 <span class="fc" id="L43">        jcbSelect = new javax.swing.JComboBox();</span>
-<span class="fc" id="L44">        jbSelect = new javax.swing.JButton();</span>
-<span class="fc" id="L45">        jScrollPane1 = new javax.swing.JScrollPane();</span>
-<span class="fc" id="L46">        jLista = new javax.swing.JList();</span>
-<span class="fc" id="L47">        jbListo = new javax.swing.JButton();</span>
-<span class="fc" id="L48">        jLabel1 = new javax.swing.JLabel();</span>
+<span class="fc" id="L44">        jScrollPane1 = new javax.swing.JScrollPane();</span>
+<span class="fc" id="L45">        jLista = new javax.swing.JList();</span>
+<span class="fc" id="L46">        jbListo = new javax.swing.JButton();</span>
+<span class="fc" id="L47">        jLabel1 = new javax.swing.JLabel();</span>
 
-<span class="fc" id="L50">        setTitle(&quot;Seleccione las Categorias del Restaurante&quot;);</span>
+<span class="fc" id="L49">        setTitle(&quot;Seleccione las Categorias del Restaurante&quot;);</span>
 
-<span class="fc" id="L52">        jcbSelect.setModel(new javax.swing.DefaultComboBoxModel(new String[] { &quot;Select...&quot; }));</span>
-<span class="fc" id="L53">        jcbSelect.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {</span>
+<span class="fc" id="L51">        jcbSelect.setModel(new javax.swing.DefaultComboBoxModel(new String[] { &quot;Select...&quot; }));</span>
+<span class="fc" id="L52">        jcbSelect.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {</span>
             public void mouseDragged(java.awt.event.MouseEvent evt) {
-<span class="nc" id="L55">                jcbSelectMouseDragged(evt);</span>
-<span class="nc" id="L56">            }</span>
+<span class="nc" id="L54">                jcbSelectMouseDragged(evt);</span>
+<span class="nc" id="L55">            }</span>
         });
-<span class="fc" id="L58">        jcbSelect.addItemListener(new java.awt.event.ItemListener() {</span>
+<span class="fc" id="L57">        jcbSelect.addItemListener(new java.awt.event.ItemListener() {</span>
             public void itemStateChanged(java.awt.event.ItemEvent evt) {
-<span class="nc" id="L60">                jcbSelectItemStateChanged(evt);</span>
-<span class="nc" id="L61">            }</span>
+<span class="nc" id="L59">                jcbSelectItemStateChanged(evt);</span>
+<span class="nc" id="L60">            }</span>
         });
-<span class="fc" id="L63">        jcbSelect.addActionListener(new java.awt.event.ActionListener() {</span>
+<span class="fc" id="L62">        jcbSelect.addActionListener(new java.awt.event.ActionListener() {</span>
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-<span class="nc" id="L65">                jcbSelectActionPerformed(evt);</span>
-<span class="nc" id="L66">            }</span>
+<span class="nc" id="L64">                jcbSelectActionPerformed(evt);</span>
+<span class="nc" id="L65">            }</span>
         });
 
-<span class="fc" id="L69">        jbSelect.setText(&quot;&gt;&quot;);</span>
-<span class="fc" id="L70">        jbSelect.addActionListener(new java.awt.event.ActionListener() {</span>
+<span class="fc" id="L68">        jScrollPane1.setViewportView(jLista);</span>
+
+<span class="fc" id="L70">        jbListo.setText(&quot;Listo&quot;);</span>
+<span class="fc" id="L71">        jbListo.addActionListener(new java.awt.event.ActionListener() {</span>
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-<span class="nc" id="L72">                jbSelectActionPerformed(evt);</span>
-<span class="nc" id="L73">            }</span>
+<span class="nc" id="L73">                jbListoActionPerformed(evt);</span>
+<span class="nc" id="L74">            }</span>
         });
 
-<span class="fc" id="L76">        jScrollPane1.setViewportView(jLista);</span>
+<span class="fc" id="L77">        jLabel1.setText(&quot;Seleccione las Categorias del Restaurante&quot;);</span>
 
-<span class="fc" id="L78">        jbListo.setText(&quot;Listo&quot;);</span>
-<span class="fc" id="L79">        jbListo.addActionListener(new java.awt.event.ActionListener() {</span>
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-<span class="nc" id="L81">                jbListoActionPerformed(evt);</span>
-<span class="nc" id="L82">            }</span>
-        });
-
-<span class="fc" id="L85">        jLabel1.setText(&quot;Seleccione las Categorias del Restaurante&quot;);</span>
-
-<span class="fc" id="L87">        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());</span>
-<span class="fc" id="L88">        getContentPane().setLayout(layout);</span>
-<span class="fc" id="L89">        layout.setHorizontalGroup(</span>
+<span class="fc" id="L79">        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());</span>
+<span class="fc" id="L80">        getContentPane().setLayout(layout);</span>
+<span class="fc" id="L81">        layout.setHorizontalGroup(</span>
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
@@ -98,49 +90,39 @@ public class SeleccionarCatReg extends javax.swing.JInternalFrame {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(jcbSelect, javax.swing.GroupLayout.PREFERRED_SIZE, 192, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jbSelect, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
+                                .addGap(62, 62, 62)
                                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 191, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(jLabel1))
                         .addGap(0, 54, Short.MAX_VALUE)))
                 .addContainerGap())
         );
-<span class="fc" id="L109">        layout.setVerticalGroup(</span>
+<span class="fc" id="L99">        layout.setVerticalGroup(</span>
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(32, 32, 32)
                 .addComponent(jLabel1)
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(jcbSelect, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jbSelect))
+                    .addComponent(jcbSelect, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 297, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addComponent(jbListo)
-                .addContainerGap(21, Short.MAX_VALUE))
+                .addContainerGap(24, Short.MAX_VALUE))
         );
 
-<span class="fc" id="L125">        pack();</span>
-<span class="fc" id="L126">    }// &lt;/editor-fold&gt;//GEN-END:initComponents</span>
-
-    private void jbSelectActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbSelectActionPerformed
-        //jLista.setModel(model);
-
-// TODO add your handling code here:
-<span class="nc" id="L132">    }//GEN-LAST:event_jbSelectActionPerformed</span>
+<span class="fc" id="L113">        pack();</span>
+<span class="fc" id="L114">    }// &lt;/editor-fold&gt;//GEN-END:initComponents</span>
 
     private void jcbSelectItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_jcbSelectItemStateChanged
-<span class="nc bnc" id="L135" title="All 2 branches missed.">        if(evt.getStateChange()==ItemEvent.SELECTED)</span>
-<span class="nc" id="L136">            model.addElement(evt.getItem().toString());</span>
+<span class="nc bnc" id="L117" title="All 2 branches missed.">        if(evt.getStateChange()==ItemEvent.SELECTED)</span>
+<span class="nc" id="L118">            model.addElement(evt.getItem().toString());</span>
             //jcbSelect.removeItem(evt.getItem());
-<span class="nc" id="L138">        jLista.setModel(model);</span>
+<span class="nc" id="L120">        jLista.setModel(model);</span>
         
 
 //String s = (String) jcbSelect.getSelectedItem();
 // TODO add your handling code here:
-<span class="nc" id="L143">    }//GEN-LAST:event_jcbSelectItemStateChanged</span>
+<span class="nc" id="L125">    }//GEN-LAST:event_jcbSelectItemStateChanged</span>
 
     private void jcbSelectMouseDragged(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jcbSelectMouseDragged
 
@@ -148,49 +130,48 @@ public class SeleccionarCatReg extends javax.swing.JInternalFrame {
 
 
 // TODO add your handling code here:
-<span class="nc" id="L151">    }//GEN-LAST:event_jcbSelectMouseDragged</span>
+<span class="nc" id="L133">    }//GEN-LAST:event_jcbSelectMouseDragged</span>
 
     private void jbListoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbListoActionPerformed
-<span class="nc bnc" id="L154" title="All 2 branches missed.">          if (model.isEmpty()) {</span>
-<span class="nc" id="L155">            JOptionPane.showMessageDialog(null, &quot;Debe ingresar al menos una categoria.&quot;, &quot;ERROR&quot;, JOptionPane.ERROR_MESSAGE);</span>
+<span class="nc bnc" id="L136" title="All 2 branches missed.">          if (model.isEmpty()) {</span>
+<span class="nc" id="L137">            JOptionPane.showMessageDialog(null, &quot;Debe ingresar al menos una categoria.&quot;, &quot;ERROR&quot;, JOptionPane.ERROR_MESSAGE);</span>
         } else {
-<span class="nc" id="L157">            Map ret = new HashMap();</span>
-<span class="nc" id="L158">            int i = 0;</span>
-<span class="nc bnc" id="L159" title="All 2 branches missed.">            while (i &lt; model.size()) {</span>
-<span class="nc" id="L160">                ret.put(model.getElementAt(i), model.getElementAt(i));</span>
-<span class="nc" id="L161">                i++;</span>
+<span class="nc" id="L139">            Map ret = new HashMap();</span>
+<span class="nc" id="L140">            int i = 0;</span>
+<span class="nc bnc" id="L141" title="All 2 branches missed.">            while (i &lt; model.size()) {</span>
+<span class="nc" id="L142">                ret.put(model.getElementAt(i), model.getElementAt(i));</span>
+<span class="nc" id="L143">                i++;</span>
             }
-<span class="nc" id="L163">            ICU.setCat(ret);</span>
+<span class="nc" id="L145">            ICU.setCat(ret);</span>
             
         }
-<span class="nc" id="L166">        this.dispose();</span>
+<span class="nc" id="L148">        this.dispose();</span>
         
 
 
 // TODO add your handling code here:
-<span class="nc" id="L171">    }//GEN-LAST:event_jbListoActionPerformed</span>
+<span class="nc" id="L153">    }//GEN-LAST:event_jbListoActionPerformed</span>
 
     private void jcbSelectActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jcbSelectActionPerformed
         // TODO add your handling code here:
-<span class="nc" id="L175">    }//GEN-LAST:event_jcbSelectActionPerformed</span>
+<span class="nc" id="L157">    }//GEN-LAST:event_jcbSelectActionPerformed</span>
     public void cargarCBbox(){
         Map cats; 
-<span class="fc" id="L178">        cats=ICU.retColCat();</span>
-<span class="fc" id="L179">        Iterator it = cats.entrySet().iterator();</span>
-<span class="pc bpc" id="L180" title="1 of 2 branches missed.">        while(it.hasNext()){</span>
-<span class="nc" id="L181">            Map.Entry map = (Map.Entry) it.next();</span>
-<span class="nc" id="L182">            jcbSelect.addItem(map.getKey().toString());</span>
-<span class="nc" id="L183">        }</span>
+<span class="fc" id="L160">        cats=ICU.retColCat();</span>
+<span class="fc" id="L161">        Iterator it = cats.entrySet().iterator();</span>
+<span class="pc bpc" id="L162" title="1 of 2 branches missed.">        while(it.hasNext()){</span>
+<span class="nc" id="L163">            Map.Entry map = (Map.Entry) it.next();</span>
+<span class="nc" id="L164">            jcbSelect.addItem(map.getKey().toString());</span>
+<span class="nc" id="L165">        }</span>
     
         
-<span class="fc" id="L186">    }</span>
+<span class="fc" id="L168">    }</span>
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel jLabel1;
     private javax.swing.JList jLista;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JButton jbListo;
-    private javax.swing.JButton jbSelect;
     private javax.swing.JComboBox jcbSelect;
     // End of variables declaration//GEN-END:variables
 }

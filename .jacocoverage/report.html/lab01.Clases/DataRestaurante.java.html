@@ -24,75 +24,83 @@ public class DataRestaurante {
     
 <span class="fc" id="L25">    public DataRestaurante(){}</span>
     
-<span class="fc" id="L27">    public DataRestaurante(String nickname, String nombre, String mail, String direccion, ArrayList&lt;String&gt;lstImagen, Map colProd){</span>
+<span class="fc" id="L27">    public DataRestaurante(String nickname, String nombre, String mail, String direccion, ArrayList&lt;String&gt;lstImagen, Map colProd, Map colCategoria){</span>
 <span class="fc" id="L28">        this.nickname=nickname;</span>
 <span class="fc" id="L29">        this.nombre=nombre;</span>
 <span class="fc" id="L30">        this.email=mail;</span>
 <span class="fc" id="L31">        this.direccion=direccion;</span>
 <span class="fc" id="L32">        this.lstImagen=lstImagen;</span>
 <span class="fc" id="L33">        this.ColProducto=colProd;</span>
-<span class="fc" id="L34">    }</span>
+<span class="fc" id="L34">        this.ColCategoria=colCategoria;</span>
+<span class="fc" id="L35">    }</span>
 
     public Usuario dataResAres(){
-<span class="fc" id="L37">        Usuario r = new Restaurante(this.nickname, this.nombre, this.email, this.direccion,this.ColCategoria, this.ColProducto);</span>
-<span class="fc" id="L38">        return r;</span>
+<span class="fc" id="L38">        Usuario r = new Restaurante(this.nickname, this.nombre, this.email, this.direccion, this.lstImagen, this.ColProducto, this.ColCategoria);</span>
+<span class="fc" id="L39">        return r;</span>
+    }
+    public boolean member(String nombre){
+<span class="nc" id="L42">        return ColCategoria.containsKey(nombre);</span>
     }
     
     public void setNickname(String nickname){
-<span class="fc" id="L42">        this.nickname = nickname;</span>
-<span class="fc" id="L43">    }</span>
+<span class="fc" id="L46">        this.nickname = nickname;</span>
+<span class="fc" id="L47">    }</span>
     
     public String getNickname(){
-<span class="fc" id="L46">        return this.nickname;</span>
+<span class="fc" id="L50">        return this.nickname;</span>
     }
     
     public void setNombre(String nombre){
-<span class="fc" id="L50">        this.nombre = nombre;</span>
-<span class="fc" id="L51">    }</span>
+<span class="fc" id="L54">        this.nombre = nombre;</span>
+<span class="fc" id="L55">    }</span>
     
     public String getNombre(){
-<span class="fc" id="L54">        return this.nombre;</span>
+<span class="fc" id="L58">        return this.nombre;</span>
     }
     
     public void setEmail(String mail){
-<span class="fc" id="L58">        this.email = mail;</span>
-<span class="fc" id="L59">    }</span>
+<span class="fc" id="L62">        this.email = mail;</span>
+<span class="fc" id="L63">    }</span>
     
     public String getEmail(){
-<span class="fc" id="L62">        return this.email;</span>
+<span class="fc" id="L66">        return this.email;</span>
     }
     
     public void setDireccion(String direccion){
-<span class="fc" id="L66">        this.direccion = direccion;</span>
-<span class="fc" id="L67">    }</span>
+<span class="fc" id="L70">        this.direccion = direccion;</span>
+<span class="fc" id="L71">    }</span>
     
     public String getDireccion(){
-<span class="fc" id="L70">        return this.direccion;</span>
+<span class="fc" id="L74">        return this.direccion;</span>
     }
     
     public void setLstImagen(ArrayList&lt;String&gt; lstImagen){
-<span class="fc" id="L74">        this.lstImagen = lstImagen;</span>
-<span class="fc" id="L75">    }</span>
+<span class="fc" id="L78">        this.lstImagen = lstImagen;</span>
+<span class="fc" id="L79">    }</span>
     
     public ArrayList&lt;String&gt; getLstImagen(){
-<span class="fc" id="L78">        return this.lstImagen;</span>
+<span class="fc" id="L82">        return this.lstImagen;</span>
     }
     
     public void setColCategoria(Map colCategoria){
-<span class="fc" id="L82">        this.ColCategoria = colCategoria;</span>
-<span class="fc" id="L83">    }</span>
+<span class="fc" id="L86">        this.ColCategoria = colCategoria;</span>
+<span class="fc" id="L87">    }</span>
     
     public Map getColCategoria(){
-<span class="fc" id="L86">        return this.ColCategoria;</span>
+<span class="fc" id="L90">        return this.ColCategoria;</span>
     }
     
     public Map getColProducto(){
-<span class="nc" id="L90">        return this.ColProducto;</span>
+<span class="nc" id="L94">        return this.ColProducto;</span>
     }
     
     public void setColProducto(Map colProd){
-<span class="nc" id="L94">        this.ColProducto = colProd;</span>
+<span class="nc" id="L98">        this.ColProducto = colProd;</span>
         
-<span class="nc" id="L96">    }</span>
+<span class="nc" id="L100">    }</span>
+    
+    public Map listarCategorias(){
+<span class="nc" id="L103">        return this.ColCategoria;</span>
+    }
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.5.201505241946</span></div></body></html>

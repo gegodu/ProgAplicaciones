@@ -20,7 +20,7 @@ public class Restaurante extends Usuario{
     private Map ColCategoria;
     private Map ColProducto;
 
-    public Restaurante(String nickname, String nombre, String email, String direccion, Map categorias, Map colProd) {
+    public Restaurante(String nickname, String nombre, String email, String direccion, ArrayList&lt;String&gt; lstImagenes, Map colProd, Map categorias) {
 <span class="fc" id="L24">        super(nickname,nombre,email,direccion);</span>
 <span class="fc" id="L25">        ColCategoria = categorias;</span>
 <span class="fc" id="L26">        ColProducto = new HashMap();</span>
@@ -31,60 +31,63 @@ public class Restaurante extends Usuario{
 <span class="nc" id="L31">        ColCategoria.put(c.getNombre(), c);</span>
 <span class="nc" id="L32">    }</span>
     public boolean member(String nombre){
-<span class="nc" id="L34">        return ColCategoria.containsKey(nombre);</span>
+<span class="nc bnc" id="L34" title="All 2 branches missed.">        if(ColCategoria.isEmpty())</span>
+<span class="nc" id="L35">            return false;</span>
+        else
+<span class="nc" id="L37">            return ColCategoria.containsKey(nombre);</span>
     }
     
     public void addProducto(Producto p){
-<span class="nc" id="L38">        ColProducto.put(p.getNombre(), p);</span>
+<span class="nc" id="L41">        ColProducto.put(p.getNombre(), p);</span>
         
-<span class="nc" id="L40">    }</span>
+<span class="nc" id="L43">    }</span>
     
     public Producto getProducto(String nombre){
-<span class="fc" id="L43">        return (Producto)this.ColProducto.get(nombre);</span>
+<span class="fc" id="L46">        return (Producto)this.ColProducto.get(nombre);</span>
     }
     
     public Map obtenerColeccion(){
-<span class="fc" id="L47">        Map ret = new HashMap();</span>
-<span class="nc" id="L48">        Iterator it = ColCategoria.entrySet().iterator();</span>
+<span class="fc" id="L50">        Map ret = new HashMap();</span>
+<span class="nc" id="L51">        Iterator it = ColCategoria.entrySet().iterator();</span>
         //Iterator itret = ret.entrySet().iterator();
-<span class="nc bnc" id="L50" title="All 2 branches missed.">        while(it.hasNext()){</span>
-<span class="nc" id="L51">            Map.Entry map = (Map.Entry) it.next();</span>
-<span class="nc" id="L52">            ret.put(map.getKey(), map.getKey());        </span>
-<span class="nc" id="L53">        }</span>
-<span class="nc" id="L54">        return ret;</span>
+<span class="nc bnc" id="L53" title="All 2 branches missed.">        while(it.hasNext()){</span>
+<span class="nc" id="L54">            Map.Entry map = (Map.Entry) it.next();</span>
+<span class="nc" id="L55">            ret.put(map.getKey(), map.getKey());        </span>
+<span class="nc" id="L56">        }</span>
+<span class="nc" id="L57">        return ret;</span>
     }
     public DataRestaurante RestauranteADR(){
-<span class="fc" id="L57">        DataRestaurante DR = new DataRestaurante(this.nickname, this.nombre, this.mail, this.direccion, this.lstImagen, this.ColProducto);</span>
-<span class="fc" id="L58">        return DR;</span>
+<span class="fc" id="L60">        DataRestaurante DR = new DataRestaurante(this.nickname, this.nombre, this.mail, this.direccion, this.lstImagen, this.ColProducto, this.ColCategoria);</span>
+<span class="fc" id="L61">        return DR;</span>
     }
     
     public Map obtenerColProductos(){
-<span class="fc" id="L62">        Map ret = new HashMap();</span>
-<span class="fc" id="L63">        Iterator it = ColProducto.entrySet().iterator();</span>
-<span class="pc bpc" id="L64" title="1 of 2 branches missed.">        while(it.hasNext()){</span>
-<span class="nc" id="L65">            Map.Entry map = (Map.Entry) it.next();</span>
-<span class="nc" id="L66">            ret.put(map.getKey(), map.getKey());</span>
-<span class="nc" id="L67">        }</span>
-<span class="fc" id="L68">        return ret;</span>
+<span class="fc" id="L65">        Map ret = new HashMap();</span>
+<span class="fc" id="L66">        Iterator it = ColProducto.entrySet().iterator();</span>
+<span class="pc bpc" id="L67" title="1 of 2 branches missed.">        while(it.hasNext()){</span>
+<span class="nc" id="L68">            Map.Entry map = (Map.Entry) it.next();</span>
+<span class="nc" id="L69">            ret.put(map.getKey(), map.getKey());</span>
+<span class="nc" id="L70">        }</span>
+<span class="fc" id="L71">        return ret;</span>
     }
     
     public Map obtenerListaProductos(){
-<span class="fc" id="L72">        return this.ColProducto;</span>
+<span class="fc" id="L75">        return this.ColProducto;</span>
     }
     
     public DataCarrito agregarProducto(String nombre, int cantidad) throws Exception{
-<span class="fc" id="L76">        Producto prod = this.getProducto(nombre);</span>
-<span class="nc bnc" id="L77" title="All 2 branches missed.">        if(prod.prodDisponible(cantidad)){</span>
-<span class="nc" id="L78">            DataCarrito dc = prod.getDataCarrito(cantidad);</span>
-<span class="nc" id="L79">            prod.restarStock(cantidad);</span>
-<span class="nc" id="L80">            return dc;</span>
+<span class="fc" id="L79">        Producto prod = this.getProducto(nombre);</span>
+<span class="nc bnc" id="L80" title="All 2 branches missed.">        if(prod.prodDisponible(cantidad)){</span>
+<span class="nc" id="L81">            DataCarrito dc = prod.getDataCarrito(cantidad);</span>
+<span class="nc" id="L82">            prod.restarStock(cantidad);</span>
+<span class="nc" id="L83">            return dc;</span>
         }
-<span class="nc" id="L82">        throw new Exception(&quot;No hay stock&quot;);</span>
+<span class="nc" id="L85">        throw new Exception(&quot;No hay stock&quot;);</span>
     }
     
     public Producto_Stock getProdCarrito(String nombre){
-<span class="fc" id="L86">        Producto prod = this.getProducto(nombre);</span>
-<span class="nc" id="L87">        return prod.getProdStock();</span>
+<span class="fc" id="L89">        Producto prod = this.getProducto(nombre);</span>
+<span class="nc" id="L90">        return prod.getProdStock();</span>
     }
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.5.201505241946</span></div></body></html>

@@ -20,80 +20,97 @@ public class Promocional extends Producto {
     private double descuento; //ver como se hace JoacoP(me imagino yo que seria un entero % y lo q se hace despues es a precio_total calcularsele ese descuento)
     private ArrayList&lt;Cantidad_Individual&gt; ColCantIndividual;
     
-    public Promocional(String nombre, String descripcion, double precio, boolean activa, double descuento, ArrayList&lt;Cantidad_Individual&gt; ColCantIndividual) {
-<span class="fc" id="L24">        super(nombre, descripcion, precio,1);</span>
+    public Promocional(String nombre, String descripcion, /*double precio,*/ boolean activa, double descuento, ArrayList&lt;Cantidad_Individual&gt; ColCantIndividual) {
+<span class="fc" id="L24">        super(nombre, descripcion, /*precio,*/1);</span>
 <span class="fc" id="L25">        this.activa = activa;</span>
 <span class="fc" id="L26">        this.descuento = descuento;</span>
 <span class="fc" id="L27">        this.ColCantIndividual = ColCantIndividual;</span>
-<span class="fc" id="L28">    }//ver como se hace</span>
+        //this.setPrecioPromo(descuento); hay que llamar a esta operacion una vez creado el promocional...
+<span class="fc" id="L29">    }//ver como se hace</span>
 
     public boolean isActiva() {
-<span class="fc" id="L31">        return activa;</span>
+<span class="fc" id="L32">        return activa;</span>
     }
 
     public void setActiva(boolean activa) {
-<span class="fc" id="L35">        this.activa = activa;</span>
-<span class="fc" id="L36">    }</span>
+<span class="fc" id="L36">        this.activa = activa;</span>
+<span class="fc" id="L37">    }</span>
 
     public double getDescuento() {
-<span class="fc" id="L39">        return descuento;</span>
+<span class="fc" id="L40">        return descuento;</span>
     }
 
     public void setDescuento(double descuento) {
-<span class="fc" id="L43">        this.descuento = descuento;</span>
-<span class="fc" id="L44">    }</span>
+<span class="fc" id="L44">        this.descuento = descuento;</span>
+<span class="fc" id="L45">    }</span>
 
     public ArrayList&lt;Cantidad_Individual&gt; getColCantIndividual(){
-<span class="fc" id="L47">        return this.ColCantIndividual;</span>
+<span class="fc" id="L48">        return this.ColCantIndividual;</span>
     }
     
     public void setCantIndividual(Cantidad_Individual cantInd){
-<span class="nc" id="L51">        this.ColCantIndividual.add(cantInd);</span>
-<span class="nc" id="L52">    }</span>
+<span class="nc" id="L52">        this.ColCantIndividual.add(cantInd);</span>
+<span class="nc" id="L53">    }</span>
     
     public void setColCantIndividual(ArrayList&lt;Cantidad_Individual&gt; ColCantIndividual){
-<span class="fc" id="L55">        this.ColCantIndividual = ColCantIndividual;</span>
-<span class="fc" id="L56">    }</span>
+<span class="fc" id="L56">        this.ColCantIndividual = ColCantIndividual;</span>
+<span class="fc" id="L57">    }</span>
+    
+    public void setPrecioPromo(double descuento){
+<span class="nc" id="L60">        double aux = 0;</span>
+        double aux2;
+<span class="nc bnc" id="L62" title="All 2 branches missed.">        for(Cantidad_Individual ci: ColCantIndividual){</span>
+<span class="nc bnc" id="L63" title="All 2 branches missed.">            if(ci.getCantidad() &gt; 1){</span>
+<span class="nc" id="L64">                aux = aux + (ci.getProdIndividual().getPrecio() * ci.getCantidad());</span>
+            }
+            else{
+<span class="nc" id="L67">                aux = aux + ci.getProdIndividual().getPrecio();</span>
+            }
+<span class="nc" id="L69">        }</span>
+<span class="nc" id="L70">        aux2 = (aux * descuento) / 100;</span>
+<span class="nc" id="L71">        aux = aux - aux2;</span>
+<span class="nc" id="L72">        this.setPrecio(aux);</span>
+<span class="nc" id="L73">    }</span>
     
     public DataPromocional getDataPromo(){
-<span class="fc" id="L59">        Map ColDatIndividual = new HashMap();</span>
-<span class="nc bnc" id="L60" title="All 2 branches missed.">        for(Cantidad_Individual ci: ColCantIndividual){</span>
-<span class="nc" id="L61">            DataIndividual di = ci.getProdIndividual().getDataIndividual();</span>
-<span class="nc" id="L62">            ColDatIndividual.put(di.getDataNombre(), di);</span>
-<span class="nc" id="L63">        }</span>
-<span class="nc" id="L64">        DataPromocional dPromo = new DataPromocional(this.isActiva(), this.getDescuento(), this.getDescripcion(), this.getNombre(), this.getPrecio(), this.getImagen(), ColDatIndividual);</span>
-<span class="nc" id="L65">        return dPromo;</span>
+<span class="fc" id="L76">        Map ColDatIndividual = new HashMap();</span>
+<span class="nc bnc" id="L77" title="All 2 branches missed.">        for(Cantidad_Individual ci: ColCantIndividual){</span>
+<span class="nc" id="L78">            DataIndividual di = ci.getProdIndividual().getDataIndividual();</span>
+<span class="nc" id="L79">            ColDatIndividual.put(di.getDataNombre(), di);</span>
+<span class="nc" id="L80">        }</span>
+<span class="nc" id="L81">        DataPromocional dPromo = new DataPromocional(this.isActiva(), this.getDescuento(), this.getDescripcion(), this.getNombre(), this.getPrecio(), this.getImagen(), ColDatIndividual);</span>
+<span class="nc" id="L82">        return dPromo;</span>
     }
     
     @Override
     public DataCarrito getDataCarrito(int cantidad){
-<span class="fc" id="L70">        DataCarrito dc = new DataCarrito(this.getNombre(), true, cantidad, this.getPrecio());</span>
-<span class="fc" id="L71">        return dc;</span>
+<span class="fc" id="L87">        DataCarrito dc = new DataCarrito(this.getNombre(), true, cantidad, this.getPrecio());</span>
+<span class="fc" id="L88">        return dc;</span>
     }
     
     @Override
     public boolean prodDisponible(int cantidad){
-<span class="nc bnc" id="L76" title="All 2 branches missed.">        for(Cantidad_Individual ci: ColCantIndividual){</span>
-<span class="nc" id="L77">            int aux = ci.getProdIndividual().getProdStock().getCantidad() * cantidad;</span>
-<span class="nc bnc" id="L78" title="All 2 branches missed.">            if(ci.getProdIndividual().prodDisponible(aux)){</span>
-<span class="nc" id="L79">                continue;</span>
+<span class="nc bnc" id="L93" title="All 2 branches missed.">        for(Cantidad_Individual ci: ColCantIndividual){</span>
+<span class="nc" id="L94">            int aux = ci.getProdIndividual().getProdStock().getCantidad() * cantidad;</span>
+<span class="nc bnc" id="L95" title="All 2 branches missed.">            if(ci.getProdIndividual().prodDisponible(aux)){</span>
+<span class="nc" id="L96">                continue;</span>
             }
             try {
-<span class="nc" id="L82">                throw new Exception(&quot;Stock Insuficiente...&quot;);</span>
-<span class="nc" id="L83">            } catch (Exception ex) {</span>
-<span class="nc" id="L84">                Logger.getLogger(Promocional.class.getName()).log(Level.SEVERE, null, ex);</span>
+<span class="nc" id="L99">                throw new Exception(&quot;Stock Insuficiente...&quot;);</span>
+<span class="nc" id="L100">            } catch (Exception ex) {</span>
+<span class="nc" id="L101">                Logger.getLogger(Promocional.class.getName()).log(Level.SEVERE, null, ex);</span>
             }
-<span class="nc" id="L86">        }</span>
-<span class="nc" id="L87">        return true;</span>
+<span class="nc" id="L103">        }</span>
+<span class="nc" id="L104">        return true;</span>
     }
     
     @Override
     public void restarStock(int cantidad){
-<span class="nc bnc" id="L92" title="All 2 branches missed.">        for(Cantidad_Individual ci: ColCantIndividual){</span>
-<span class="nc" id="L93">            int aux = ci.getProdIndividual().getProdStock().getCantidad() * cantidad;</span>
-<span class="nc" id="L94">            int aux2 = ci.getProdIndividual().getProdStock().getCantidad() - aux;</span>
-<span class="nc" id="L95">            ci.getProdIndividual().getProdStock().setCantidad(aux2);</span>
-<span class="nc" id="L96">        }</span>
-<span class="nc" id="L97">    }</span>
+<span class="nc bnc" id="L109" title="All 2 branches missed.">        for(Cantidad_Individual ci: ColCantIndividual){</span>
+<span class="nc" id="L110">            int aux = ci.getProdIndividual().getProdStock().getCantidad() * cantidad;</span>
+<span class="nc" id="L111">            int aux2 = ci.getProdIndividual().getProdStock().getCantidad() - aux;</span>
+<span class="nc" id="L112">            ci.getProdIndividual().getProdStock().setCantidad(aux2);</span>
+<span class="nc" id="L113">        }</span>
+<span class="nc" id="L114">    }</span>
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.5.201505241946</span></div></body></html>

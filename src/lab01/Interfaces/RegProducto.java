@@ -5,9 +5,11 @@
  */
 package lab01.Interfaces;
 
+import java.io.File;
 import java.util.Map;
 import java.util.HashMap;
 import java.util.Iterator;
+import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
 import lab01.Clases.Cliente;
 import lab01.Clases.DataCant_Individual;
@@ -51,7 +53,8 @@ public class RegProducto extends javax.swing.JInternalFrame {
         rbIndividual = new javax.swing.JRadioButton();
         rbPromocional = new javax.swing.JRadioButton();
         jp2 = new javax.swing.JPanel();
-        lblExaminar = new javax.swing.JLabel();
+        btnSelecImg = new javax.swing.JButton();
+        txtImagen = new javax.swing.JTextField();
         tbCantidad = new javax.swing.JTextField();
         lblDesc1 = new javax.swing.JLabel();
         btnNuevo = new javax.swing.JButton();
@@ -99,23 +102,38 @@ public class RegProducto extends javax.swing.JInternalFrame {
 
         jp2.setBorder(javax.swing.BorderFactory.createTitledBorder("Cargar Imagen"));
 
-        lblExaminar.setText("Examinar: ");
+        btnSelecImg.setText("Seleccionar imagen");
+        btnSelecImg.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSelecImgActionPerformed(evt);
+            }
+        });
+
+        txtImagen.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtImagenActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jp2Layout = new javax.swing.GroupLayout(jp2);
         jp2.setLayout(jp2Layout);
         jp2Layout.setHorizontalGroup(
             jp2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jp2Layout.createSequentialGroup()
-                .addGap(21, 21, 21)
-                .addComponent(lblExaminar)
+                .addContainerGap()
+                .addComponent(btnSelecImg)
+                .addGap(35, 35, 35)
+                .addComponent(txtImagen, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jp2Layout.setVerticalGroup(
             jp2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jp2Layout.createSequentialGroup()
-                .addGap(44, 44, 44)
-                .addComponent(lblExaminar)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap()
+                .addGroup(jp2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnSelecImg)
+                    .addComponent(txtImagen, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(32, Short.MAX_VALUE))
         );
 
         tbCantidad.setEnabled(false);
@@ -219,7 +237,7 @@ public class RegProducto extends javax.swing.JInternalFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGap(21, 21, 21)
                 .addComponent(jp1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 44, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 70, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnNuevo)
                     .addComponent(btnRegistro)
@@ -241,7 +259,7 @@ public class RegProducto extends javax.swing.JInternalFrame {
         String p;
         double precio;
         int cantidad;
-        
+       // String img;
 
         if (evt.getSource() == btnRegistro) {
             if (CP.existeRestaurante(tbRest.getText())) { // si el restaurante se encuentra registrado
@@ -249,7 +267,7 @@ public class RegProducto extends javax.swing.JInternalFrame {
                     p = JOptionPane.showInputDialog(null, "Ingrese el precio", "Ingreso de precio", JOptionPane.INFORMATION_MESSAGE);
                     precio = Double.parseDouble(p);    // ingreso el precio                
                     cantidad = Integer.parseInt(tbCantidad.getText()); // me guardo la cantidad de productos para ese producto particular
-                    DataIndividual di = new DataIndividual(tbNombre.getText(), tbDesc.getText(), precio, cantidad); // me guardo los datos en el dataproducto
+                    DataIndividual di = new DataIndividual(tbNombre.getText(), tbDesc.getText(), precio, txtImagen.getText(), cantidad); // me guardo los datos en el dataproducto
                     
                    
                     CP.registrarProducto(di, tbRest.getText(), Promocional); // registro producto
@@ -290,6 +308,19 @@ public class RegProducto extends javax.swing.JInternalFrame {
         
     }//GEN-LAST:event_rbPromocionalActionPerformed
 
+    private void txtImagenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtImagenActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtImagenActionPerformed
+
+    private void btnSelecImgActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSelecImgActionPerformed
+        JFileChooser selector = new JFileChooser();
+        selector.showOpenDialog(null);
+        File archivo = selector.getSelectedFile();
+        String filename = archivo.getAbsolutePath();
+        txtImagen.setText(filename);       
+
+    }//GEN-LAST:event_btnSelecImgActionPerformed
+
     public void habilitarCampos() {
         tbNombre.setEnabled(true);
         tbDesc.setEnabled(true);
@@ -306,12 +337,12 @@ public class RegProducto extends javax.swing.JInternalFrame {
     private javax.swing.JButton btnCancel;
     private javax.swing.JButton btnNuevo;
     private javax.swing.JButton btnRegistro;
+    private javax.swing.JButton btnSelecImg;
     private javax.swing.ButtonGroup btngProducto;
     private javax.swing.JPanel jp1;
     private javax.swing.JPanel jp2;
     private javax.swing.JLabel lblCantidad;
     private javax.swing.JLabel lblDesc1;
-    private javax.swing.JLabel lblExaminar;
     private javax.swing.JLabel lblNombre;
     private javax.swing.JLabel lblRest;
     private javax.swing.JRadioButton rbIndividual;
@@ -320,5 +351,6 @@ public class RegProducto extends javax.swing.JInternalFrame {
     private javax.swing.JTextField tbDesc;
     private javax.swing.JTextField tbNombre;
     private javax.swing.JTextField tbRest;
+    private javax.swing.JTextField txtImagen;
     // End of variables declaration//GEN-END:variables
 }

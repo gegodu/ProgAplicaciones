@@ -6,26 +6,29 @@
 package lab01.Interfaces;
 
 import lab01.Clases.Producto;
+import lab01.Handlers.Fabrica;
 
 /**
  *
  * @author martin
  */
 public class VerInfoProd extends javax.swing.JFrame {
-
+    private ICtrlPedido ICP;
+    
     /**
      * Creates new form VerIndoProd
      */
-<span class="nc" id="L19">    public VerInfoProd(Producto prod) {</span>
-<span class="nc" id="L20">        initComponents();</span>
-<span class="nc" id="L21">        this.txtNomProd.setText(prod.getNombre());</span>
-<span class="nc" id="L22">        this.txtDescProd.setText(prod.getDescripcion());</span>
-<span class="nc" id="L23">        String precio = Double.toString(prod.getPrecio());</span>
-<span class="nc" id="L24">        this.txtPrecioProd.setText(precio);</span>
-<span class="nc" id="L25">    }</span>
+<span class="nc" id="L21">    public VerInfoProd(Producto prod) {</span>
+<span class="nc" id="L22">        initComponents();</span>
+<span class="nc" id="L23">        this.setTitle(&quot;Información del producto&quot;);</span>
+<span class="nc" id="L24">        this.txtNomProd.setText(prod.getNombre());</span>
+<span class="nc" id="L25">        this.txtDescProd.setText(prod.getDescripcion());</span>
+<span class="nc" id="L26">        String precio = Double.toString(prod.getPrecio());</span>
+<span class="nc" id="L27">        this.txtPrecioProd.setText(precio);</span>
+<span class="nc" id="L28">    }</span>
 
-<span class="nc" id="L27">    private VerInfoProd() {</span>
-<span class="nc" id="L28">        throw new UnsupportedOperationException(&quot;Not supported yet.&quot;); //To change body of generated methods, choose Tools | Templates.</span>
+<span class="nc" id="L30">    private VerInfoProd() {</span>
+<span class="nc" id="L31">        throw new UnsupportedOperationException(&quot;Not supported yet.&quot;); //To change body of generated methods, choose Tools | Templates.</span>
     }
 
     /**
@@ -37,83 +40,102 @@ public class VerInfoProd extends javax.swing.JFrame {
     // &lt;editor-fold defaultstate=&quot;collapsed&quot; desc=&quot;Generated Code&quot;&gt;//GEN-BEGIN:initComponents
     private void initComponents() {
 
-<span class="nc" id="L40">        jPanel1 = new javax.swing.JPanel();</span>
-<span class="nc" id="L41">        lblNomProd = new javax.swing.JLabel();</span>
-<span class="nc" id="L42">        txtNomProd = new javax.swing.JTextField();</span>
-<span class="nc" id="L43">        lblDescripcion = new javax.swing.JLabel();</span>
-<span class="nc" id="L44">        txtDescProd = new javax.swing.JTextField();</span>
-<span class="nc" id="L45">        lblPrecioProd = new javax.swing.JLabel();</span>
-<span class="nc" id="L46">        txtPrecioProd = new javax.swing.JTextField();</span>
-<span class="nc" id="L47">        lblEstadoPromo = new javax.swing.JLabel();</span>
-<span class="nc" id="L48">        txtEstadoPromo = new javax.swing.JTextField();</span>
-<span class="nc" id="L49">        jPanel2 = new javax.swing.JPanel();</span>
-<span class="nc" id="L50">        lblImagenProd = new javax.swing.JLabel();</span>
-<span class="nc" id="L51">        jButton1 = new javax.swing.JButton();</span>
+<span class="nc" id="L43">        jPanel1 = new javax.swing.JPanel();</span>
+<span class="nc" id="L44">        lblNomProd = new javax.swing.JLabel();</span>
+<span class="nc" id="L45">        txtNomProd = new javax.swing.JTextField();</span>
+<span class="nc" id="L46">        lblDescripcion = new javax.swing.JLabel();</span>
+<span class="nc" id="L47">        txtDescProd = new javax.swing.JTextField();</span>
+<span class="nc" id="L48">        lblPrecioProd = new javax.swing.JLabel();</span>
+<span class="nc" id="L49">        txtPrecioProd = new javax.swing.JTextField();</span>
+<span class="nc" id="L50">        lblEstadoPromo = new javax.swing.JLabel();</span>
+<span class="nc" id="L51">        txtEstadoPromo = new javax.swing.JTextField();</span>
+<span class="nc" id="L52">        jPanel2 = new javax.swing.JPanel();</span>
+<span class="nc" id="L53">        lblImagenProd = new javax.swing.JLabel();</span>
+<span class="nc" id="L54">        jButton1 = new javax.swing.JButton();</span>
+<span class="nc" id="L55">        btVerPedido = new javax.swing.JButton();</span>
 
-<span class="nc" id="L53">        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);</span>
+<span class="nc" id="L57">        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);</span>
 
-<span class="nc" id="L55">        lblNomProd.setText(&quot;Nombre: &quot;);</span>
+<span class="nc" id="L59">        lblNomProd.setText(&quot;Nombre: &quot;);</span>
 
-<span class="nc" id="L57">        txtNomProd.addActionListener(new java.awt.event.ActionListener() {</span>
+<span class="nc" id="L61">        txtNomProd.addActionListener(new java.awt.event.ActionListener() {</span>
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-<span class="nc" id="L59">                txtNomProdActionPerformed(evt);</span>
-<span class="nc" id="L60">            }</span>
+<span class="nc" id="L63">                txtNomProdActionPerformed(evt);</span>
+<span class="nc" id="L64">            }</span>
         });
 
-<span class="nc" id="L63">        lblDescripcion.setText(&quot;Descripción: &quot;);</span>
+<span class="nc" id="L67">        lblDescripcion.setText(&quot;Descripción: &quot;);</span>
 
-<span class="nc" id="L65">        lblPrecioProd.setText(&quot;Precio: &quot;);</span>
+<span class="nc" id="L69">        lblPrecioProd.setText(&quot;Precio: &quot;);</span>
 
-<span class="nc" id="L67">        lblEstadoPromo.setText(&quot;Estado: &quot;);</span>
+<span class="nc" id="L71">        lblEstadoPromo.setText(&quot;Estado: &quot;);</span>
 
-<span class="nc" id="L69">        lblImagenProd.setText(&quot;ACA VA IMAGEN&quot;);</span>
+<span class="nc" id="L73">        lblImagenProd.setText(&quot;ACA VA IMAGEN&quot;);</span>
 
-<span class="nc" id="L71">        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);</span>
-<span class="nc" id="L72">        jPanel2.setLayout(jPanel2Layout);</span>
-<span class="nc" id="L73">        jPanel2Layout.setHorizontalGroup(</span>
+<span class="nc" id="L75">        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);</span>
+<span class="nc" id="L76">        jPanel2.setLayout(jPanel2Layout);</span>
+<span class="nc" id="L77">        jPanel2Layout.setHorizontalGroup(</span>
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(lblImagenProd, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(lblImagenProd, javax.swing.GroupLayout.PREFERRED_SIZE, 181, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
-<span class="nc" id="L77">        jPanel2Layout.setVerticalGroup(</span>
+<span class="nc" id="L83">        jPanel2Layout.setVerticalGroup(</span>
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(lblImagenProd, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addComponent(lblImagenProd, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
 
-<span class="nc" id="L82">        jButton1.setText(&quot;Cerrar&quot;);</span>
+<span class="nc" id="L90">        jButton1.setText(&quot;Cerrar&quot;);</span>
 
-<span class="nc" id="L84">        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);</span>
-<span class="nc" id="L85">        jPanel1.setLayout(jPanel1Layout);</span>
-<span class="nc" id="L86">        jPanel1Layout.setHorizontalGroup(</span>
+<span class="nc" id="L92">        btVerPedido.setText(&quot;Ver pedidos&quot;);</span>
+<span class="nc" id="L93">        btVerPedido.addActionListener(new java.awt.event.ActionListener() {</span>
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+<span class="nc" id="L95">                btVerPedidoActionPerformed(evt);</span>
+<span class="nc" id="L96">            }</span>
+        });
+
+<span class="nc" id="L99">        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);</span>
+<span class="nc" id="L100">        jPanel1.setLayout(jPanel1Layout);</span>
+<span class="nc" id="L101">        jPanel1Layout.setHorizontalGroup(</span>
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(9, 9, 9)
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(lblDescripcion, javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(26, 26, 26)
-                        .addComponent(lblNomProd))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(27, 27, 27)
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(jPanel1Layout.createSequentialGroup()
+                            .addGap(67, 67, 67)
+                            .addComponent(lblNomProd))
+                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                            .addGap(42, 42, 42)
+                            .addComponent(lblDescripcion)))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(lblEstadoPromo)
-                            .addComponent(lblPrecioProd))))
+                            .addComponent(lblPrecioProd, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(lblEstadoPromo, javax.swing.GroupLayout.Alignment.TRAILING))))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(txtDescProd)
                     .addComponent(txtNomProd)
                     .addComponent(txtPrecioProd)
-                    .addComponent(txtEstadoPromo, javax.swing.GroupLayout.DEFAULT_SIZE, 178, Short.MAX_VALUE)))
+                    .addComponent(txtEstadoPromo, javax.swing.GroupLayout.DEFAULT_SIZE, 265, Short.MAX_VALUE))
+                .addGap(20, 20, 20))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+                .addComponent(btVerPedido)
+                .addGap(47, 47, 47)
+                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(47, 47, 47))
         );
-<span class="nc" id="L112">        jPanel1Layout.setVerticalGroup(</span>
+<span class="nc" id="L133">        jPanel1Layout.setVerticalGroup(</span>
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(14, 14, 14)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(lblNomProd, javax.swing.GroupLayout.PREFERRED_SIZE, 15, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -124,41 +146,50 @@ public class VerInfoProd extends javax.swing.JFrame {
                             .addComponent(lblDescripcion))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(lblPrecioProd)
-                            .addComponent(txtPrecioProd, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                            .addComponent(txtPrecioProd, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(lblPrecioProd, javax.swing.GroupLayout.PREFERRED_SIZE, 17, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(lblEstadoPromo)
+                            .addComponent(txtEstadoPromo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 29, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblEstadoPromo)
-                    .addComponent(txtEstadoPromo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 10, Short.MAX_VALUE)
-                .addComponent(jButton1))
+                    .addComponent(jButton1)
+                    .addComponent(btVerPedido))
+                .addGap(26, 26, 26))
         );
 
-<span class="nc" id="L138">        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());</span>
-<span class="nc" id="L139">        getContentPane().setLayout(layout);</span>
-<span class="nc" id="L140">        layout.setHorizontalGroup(</span>
+<span class="nc" id="L162">        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());</span>
+<span class="nc" id="L163">        getContentPane().setLayout(layout);</span>
+<span class="nc" id="L164">        layout.setHorizontalGroup(</span>
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 618, Short.MAX_VALUE)
                 .addContainerGap())
         );
-<span class="nc" id="L147">        layout.setVerticalGroup(</span>
+<span class="nc" id="L171">        layout.setVerticalGroup(</span>
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(27, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 244, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
-<span class="nc" id="L155">        pack();</span>
-<span class="nc" id="L156">    }// &lt;/editor-fold&gt;//GEN-END:initComponents</span>
+<span class="nc" id="L178">        pack();</span>
+<span class="nc" id="L179">    }// &lt;/editor-fold&gt;//GEN-END:initComponents</span>
 
     private void txtNomProdActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNomProdActionPerformed
         // TODO add your handling code here:
 
-<span class="nc" id="L161">    }//GEN-LAST:event_txtNomProdActionPerformed</span>
+<span class="nc" id="L184">    }//GEN-LAST:event_txtNomProdActionPerformed</span>
+
+    private void btVerPedidoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btVerPedidoActionPerformed
+        // TODO add your handling code here:
+<span class="nc" id="L188">        String nomProd = this.txtNomProd.getText();</span>
+<span class="nc" id="L189">        jfPedidosdeunProductos ped = new jfPedidosdeunProductos(nomProd);</span>
+        
+        
+<span class="nc" id="L192">    }//GEN-LAST:event_btVerPedidoActionPerformed</span>
 
     /**
      * @param args the command line arguments
@@ -170,33 +201,34 @@ public class VerInfoProd extends javax.swing.JFrame {
          * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
          */
         try {
-<span class="nc bnc" id="L173" title="All 2 branches missed.">            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {</span>
-<span class="nc bnc" id="L174" title="All 2 branches missed.">                if (&quot;Nimbus&quot;.equals(info.getName())) {</span>
-<span class="nc" id="L175">                    javax.swing.UIManager.setLookAndFeel(info.getClassName());</span>
-<span class="nc" id="L176">                    break;</span>
+<span class="nc bnc" id="L204" title="All 2 branches missed.">            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {</span>
+<span class="nc bnc" id="L205" title="All 2 branches missed.">                if (&quot;Nimbus&quot;.equals(info.getName())) {</span>
+<span class="nc" id="L206">                    javax.swing.UIManager.setLookAndFeel(info.getClassName());</span>
+<span class="nc" id="L207">                    break;</span>
                 }
             }
-<span class="nc" id="L179">        } catch (ClassNotFoundException ex) {</span>
-<span class="nc" id="L180">            java.util.logging.Logger.getLogger(VerInfoProd.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);</span>
-<span class="nc" id="L181">        } catch (InstantiationException ex) {</span>
-<span class="nc" id="L182">            java.util.logging.Logger.getLogger(VerInfoProd.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);</span>
-<span class="nc" id="L183">        } catch (IllegalAccessException ex) {</span>
-<span class="nc" id="L184">            java.util.logging.Logger.getLogger(VerInfoProd.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);</span>
-<span class="nc" id="L185">        } catch (javax.swing.UnsupportedLookAndFeelException ex) {</span>
-<span class="nc" id="L186">            java.util.logging.Logger.getLogger(VerInfoProd.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);</span>
-<span class="nc" id="L187">        }</span>
+<span class="nc" id="L210">        } catch (ClassNotFoundException ex) {</span>
+<span class="nc" id="L211">            java.util.logging.Logger.getLogger(VerInfoProd.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);</span>
+<span class="nc" id="L212">        } catch (InstantiationException ex) {</span>
+<span class="nc" id="L213">            java.util.logging.Logger.getLogger(VerInfoProd.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);</span>
+<span class="nc" id="L214">        } catch (IllegalAccessException ex) {</span>
+<span class="nc" id="L215">            java.util.logging.Logger.getLogger(VerInfoProd.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);</span>
+<span class="nc" id="L216">        } catch (javax.swing.UnsupportedLookAndFeelException ex) {</span>
+<span class="nc" id="L217">            java.util.logging.Logger.getLogger(VerInfoProd.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);</span>
+<span class="nc" id="L218">        }</span>
         //&lt;/editor-fold&gt;
         //&lt;/editor-fold&gt;
 
         /* Create and display the form */
-<span class="nc" id="L192">        java.awt.EventQueue.invokeLater(new Runnable() {</span>
+<span class="nc" id="L223">        java.awt.EventQueue.invokeLater(new Runnable() {</span>
             public void run() {
-<span class="nc" id="L194">                new VerInfoProd().setVisible(true);</span>
-<span class="nc" id="L195">            }</span>
+<span class="nc" id="L225">                new VerInfoProd().setVisible(true);</span>
+<span class="nc" id="L226">            }</span>
         });
-<span class="nc" id="L197">    }</span>
+<span class="nc" id="L228">    }</span>
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btVerPedido;
     private javax.swing.JButton jButton1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;

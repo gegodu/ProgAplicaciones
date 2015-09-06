@@ -20,11 +20,12 @@ public class Promocional extends Producto {
     private double descuento; //ver como se hace JoacoP(me imagino yo que seria un entero % y lo q se hace despues es a precio_total calcularsele ese descuento)
     private ArrayList<Cantidad_Individual> ColCantIndividual;
     
-    public Promocional(String nombre, String descripcion, /*double precio,*/ boolean activa, double descuento, ArrayList<Cantidad_Individual> ColCantIndividual) {
-        super(nombre, descripcion, /*precio,*/1);
+    public Promocional(String nombre, String descripcion, /*double precio,*/ boolean activa, double descuento, ArrayList<Cantidad_Individual> ColCantIndividual,  String img) {
+        super(nombre, descripcion, /*precio,*/1,  img);
         this.activa = activa;
         this.descuento = descuento;
         this.ColCantIndividual = ColCantIndividual;
+        this.setImagen(img);
         //this.setPrecioPromo(descuento); hay que llamar a esta operacion una vez creado el promocional...
     }//ver como se hace
 
