@@ -32,4 +32,5 @@ public interface ICtrlPedido {
     public abstract DataPedido altaPedido();
     public abstract Map listDataPedidos();
     public abstract void actualizarEPedido(String nickname, double id, estados estado) throws Exception;
+    public abstract Map listDataPedidosPorProducto(String nomProd);
 }

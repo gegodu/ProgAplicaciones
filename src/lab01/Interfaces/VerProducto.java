@@ -30,11 +30,13 @@ public class VerProducto extends javax.swing.JInternalFrame {
      * Creates new form VerProducto
      */
     ICtrlUsuario ICU;
+    int fila = 0;
     public VerProducto() {
         initComponents();
         Fabrica fabrica = Fabrica.getInstance();
         ICU = fabrica.getICtrlUsuario();
         modelo = (DefaultTableModel)jTabla.getModel();
+        
         cargarTabla();
     }
     DefaultTableModel modelo;
@@ -49,6 +51,11 @@ public class VerProducto extends javax.swing.JInternalFrame {
 
         jScrollPane1 = new javax.swing.JScrollPane();
         jTabla = new javax.swing.JTable();
+
+        setClosable(true);
+        setIconifiable(true);
+        setMaximizable(true);
+        setResizable(true);
 
         jTabla.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -170,7 +177,8 @@ public class VerProducto extends javax.swing.JInternalFrame {
                 Map.Entry mapcol = (Map.Entry) it2.next();
                 String nomProd = mapcol.getKey().toString();
                 lista[0]=nomProd;
-                modelo.insertRow((int)jTabla.getRowCount(), lista);
+                modelo.insertRow((int)fila, lista);
+                fila++;
                 
             }
                         

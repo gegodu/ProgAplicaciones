@@ -6,13 +6,15 @@
 package lab01.Interfaces;
 
 import lab01.Clases.Producto;
+import lab01.Handlers.Fabrica;
 
 /**
  *
  * @author martin
  */
 public class VerInfoProd extends javax.swing.JFrame {
-
+    private ICtrlPedido ICP;
+    
     /**
      * Creates new form VerIndoProd
      */
@@ -49,6 +51,7 @@ public class VerInfoProd extends javax.swing.JFrame {
         jPanel2 = new javax.swing.JPanel();
         lblImagenProd = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
+        btVerPedido = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
@@ -81,6 +84,13 @@ public class VerInfoProd extends javax.swing.JFrame {
 
         jButton1.setText("Cerrar");
 
+        btVerPedido.setText("Ver pedidos");
+        btVerPedido.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btVerPedidoActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -106,6 +116,8 @@ public class VerInfoProd extends javax.swing.JFrame {
                     .addComponent(txtEstadoPromo, javax.swing.GroupLayout.DEFAULT_SIZE, 178, Short.MAX_VALUE)))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(btVerPedido)
+                .addGap(70, 70, 70)
                 .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
@@ -132,7 +144,9 @@ public class VerInfoProd extends javax.swing.JFrame {
                     .addComponent(lblEstadoPromo)
                     .addComponent(txtEstadoPromo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 10, Short.MAX_VALUE)
-                .addComponent(jButton1))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jButton1)
+                    .addComponent(btVerPedido)))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -159,6 +173,14 @@ public class VerInfoProd extends javax.swing.JFrame {
         // TODO add your handling code here:
 
     }//GEN-LAST:event_txtNomProdActionPerformed
+
+    private void btVerPedidoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btVerPedidoActionPerformed
+        // TODO add your handling code here:
+        String nomProd = this.txtNomProd.getText();
+        jfPedidosdeunProductos ped = new jfPedidosdeunProductos(nomProd);
+        
+        
+    }//GEN-LAST:event_btVerPedidoActionPerformed
 
     /**
      * @param args the command line arguments
@@ -197,6 +219,7 @@ public class VerInfoProd extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btVerPedido;
     private javax.swing.JButton jButton1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;

@@ -8,8 +8,11 @@ package lab01.Interfaces;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
+import javax.swing.table.DefaultTableModel;
+import lab01.Clases.DataPedido;
 import lab01.Clases.DataRestaurante;
 import lab01.Handlers.CtrlUsuario;
+import lab01.Handlers.Fabrica;
 
 /**
  *
@@ -17,12 +20,25 @@ import lab01.Handlers.CtrlUsuario;
  */
 public class jfPedidosdeunProductos extends javax.swing.JFrame {
     CtrlUsuario ICU;
+    ICtrlPedido ICP;
+    DefaultTableModel modelo;
+
     
     /**
      * Creates new form jfPedidosdeunProductos
      */
-    public jfPedidosdeunProductos() {
+    public jfPedidosdeunProductos(String nomProd) {
         initComponents();
+        Fabrica fabrica = Fabrica.getInstance();
+        fabrica.getICtrlPedido();
+        modelo = (DefaultTableModel)TablaPedidosProducto.getModel();
+
+        cargarTabla(nomProd);
+        
+    }
+
+    private jfPedidosdeunProductos() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     /**
@@ -110,9 +126,21 @@ public class jfPedidosdeunProductos extends javax.swing.JFrame {
         });
     }
     
-    private void cargarTabla(){
-        
-        
+    private void cargarTabla(String nombre){
+
+        Map Datas = new HashMap(); 
+        Datas = ICP.listDataPedidosPorProducto(nombre);
+        Iterator it = Datas.entrySet().iterator();
+        String lista[]=new String[3];
+        while(it.hasNext()){
+            Map.Entry map = (Map.Entry) it.next();
+            DataPedido dp = (DataPedido) map.getValue();
+            //lista[0]=model.getSize()-1;
+            lista[0]=dp.getFecha();
+            lista[1]=dp.getNickUsr();
+            lista[2]=Double.toString(dp.getPrecio_total());
+                        
+        }
     }
     
 

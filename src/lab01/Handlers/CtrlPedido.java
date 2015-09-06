@@ -245,4 +245,40 @@ public class CtrlPedido implements ICtrlPedido {
         Cliente user = hu.obtenerUsuario(nickname);
         user.actualizarEstadoPedido(id, estado);
     }
+    
+    @Override
+    public Map listDataPedidosPorProducto(String nomProd){
+        Map aux = new HashMap();
+        HUsuario hu = HUsuario.getinstance();
+        Iterator user = hu.obtenerColeccion().entrySet().iterator();
+        while(user.hasNext()){
+            Map.Entry users = (Map.Entry) user.next();
+            if(users.getValue() instanceof Cliente){
+                Cliente client = (Cliente)users.getValue();
+                Iterator pedidos = client.getPedidos().entrySet().iterator();
+                while(pedidos.hasNext()){
+                    Map.Entry p = (Map.Entry) pedidos.next();
+                    Pedido ped = (Pedido)p.getValue();
+                    Iterator DatCarritos = ped.getDataPedido().getColCarrito().entrySet().iterator();
+                    Map.Entry DatCarrito = (Map.Entry) DatCarritos.next();
+                    DataCarrito dc = (DataCarrito)DatCarrito.getValue();
+                    if(dc.getNomProd() == nomProd){
+                        aux.put(ped.getDataPedido().getId(), ped.getDataPedido()); 
+                    }
+                    else{
+                        continue;
+                    }
+                    
+                }
+            }
+        }
+        return aux;
+    }
+
+
+
+
+
+
+
 }
